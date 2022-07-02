@@ -1,0 +1,93 @@
+/*------------------------ Header ------------------------*/
+header {
+  background-color: #042326;
+  height: 10vh;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+}
+
+.menu {
+  display: flex;
+}
+.menu li {
+  margin: 20px;
+}
+.menu li a {
+  color: white;
+}
+.menu li a:hover {
+  color: #60B450;
+}
+
+.logo img {
+  width: 30px;
+  height: auto;
+  margin-top: 20px;
+}
+.logo img:hover {
+  box-shadow: 0 5px 4px #60B450;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+.burgerButton {
+  display: none;
+}
+
+/*-------------------- About me --------------------*/
+.aboutMe {
+  background-color: #042326;
+  height: 90vh;
+}
+
+.mainTitle {
+  color: white;
+  font-weight: 500;
+  position: relative;
+  width: 400px;
+  height: 300px;
+}
+
+.titleContainer:before, .titleContainer:after, .titleContainer > :first-child:before, .titleContainer > :first-child:after {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-color: red;
+  /* or whatever colour */
+  border-style: solid;
+  /* or whatever style */
+  content: " ";
+}
+
+.titleContainer:before {
+  top: 0;
+  left: 0;
+  border-width: 1px 0 0 1px;
+}
+
+.titleContainer:after {
+  top: 0;
+  right: 0;
+  border-width: 0px 0px 0 0;
+}
+
+.titleContainer > :first-child:before {
+  bottom: 0;
+  right: 0;
+  border-width: 0 1px 1px 0;
+}
+
+.titleContainer > :first-child:after {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 0 0;
+}
+
+/*# sourceMappingURL=styles.css.map */
