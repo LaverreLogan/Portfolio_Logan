@@ -43,51 +43,48 @@ header {
 
 /*-------------------- About me --------------------*/
 .aboutMe {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: #042326;
   height: 90vh;
 }
 
-.mainTitle {
-  color: white;
-  font-weight: 500;
+.titleContainer {
   position: relative;
   width: 400px;
   height: 300px;
 }
 
-.titleContainer:before, .titleContainer:after, .titleContainer > :first-child:before, .titleContainer > :first-child:after {
+.titleContainer:before,
+.titleContainer > :first-child:before {
   position: absolute;
-  width: 80px;
-  height: 80px;
-  border-color: red;
-  /* or whatever colour */
-  border-style: solid;
-  /* or whatever style */
+  width: 40px;
+  height: 40px;
+  border: solid #60B450;
   content: " ";
 }
 
 .titleContainer:before {
-  top: 0;
-  left: 0;
-  border-width: 1px 0 0 1px;
-}
-
-.titleContainer:after {
-  top: 0;
-  right: 0;
-  border-width: 0px 0px 0 0;
+  top: -20%;
+  left: -10%;
+  border-width: 7px 0 0 7px;
 }
 
 .titleContainer > :first-child:before {
-  bottom: 0;
-  right: 0;
-  border-width: 0 1px 1px 0;
+  top: 30%;
+  left: 60%;
+  border-width: 0 7px 7px 0;
 }
 
-.titleContainer > :first-child:after {
-  bottom: 0;
-  left: 0;
-  border-width: 0 0 0 0;
+.mainTitle {
+  color: white;
+  font-weight: 500;
+}
+
+.imgMain {
+  width: 40%;
+  height: auto;
 }
 
 /*# sourceMappingURL=styles.css.map */
