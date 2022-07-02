@@ -83,8 +83,20 @@ header {
 }
 
 .imgMain {
-  width: 40%;
+  width: 35%;
   height: auto;
+}
+
+#githubLogo {
+  width: 40px;
+}
+
+#linkedinLogo {
+  width: 45px;
+}
+
+.mainLogo {
+  display: flex;
 }
 
 /*# sourceMappingURL=styles.css.map */
