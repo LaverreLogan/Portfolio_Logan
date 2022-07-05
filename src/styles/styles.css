@@ -15,7 +15,8 @@ header {
   display: flex;
 }
 .menu li {
-  margin: 20px;
+  margin-right: 100px;
+  font-size: 20px;
 }
 .menu li a {
   color: white;
@@ -42,48 +43,67 @@ header {
 }
 
 /*-------------------- About me --------------------*/
+.main {
+  background-color: #042326;
+}
+
 .aboutMe {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #042326;
+  margin: auto;
   height: 90vh;
+  width: 90vw;
 }
 
 .titleContainer {
   position: relative;
-  width: 400px;
-  height: 300px;
+  min-width: 300px;
+  height: 83px;
+  padding-bottom: 10vh;
 }
 
 .titleContainer:before,
 .titleContainer > :first-child:before {
   position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   border: solid #60B450;
   content: " ";
 }
 
 .titleContainer:before {
-  top: -20%;
-  left: -10%;
-  border-width: 7px 0 0 7px;
+  top: -15%;
+  left: 0;
+  border-width: 5px 0 0 5px;
 }
 
 .titleContainer > :first-child:before {
-  top: 30%;
-  left: 60%;
-  border-width: 0 7px 7px 0;
+  bottom: calc(-15% + 10vh);
+  right: 0;
+  border-width: 0 5px 5px 0;
 }
 
-.mainTitle {
+#mainTitle {
   color: white;
+  border-right: 0.15em solid #60B450;
   font-weight: 500;
+  font-size: 36px;
+  text-align: center;
+  animation: blink 0.75s step-end infinite;
 }
 
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #60B450;
+  }
+}
 .imgMain {
-  width: 35%;
+  max-width: 680px;
+  min-width: 30%;
   height: auto;
 }
 
@@ -97,6 +117,13 @@ header {
 
 .mainLogo {
   display: flex;
+  align-items: center;
+  position: absolute;
+  top: 120px;
+  left: 200px;
+}
+.mainLogo a {
+  margin: 5px;
 }
 
 /*# sourceMappingURL=styles.css.map */
