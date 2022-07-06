@@ -97,21 +97,11 @@ header {
 
 #mainTitle {
   color: white;
-  border-right: 0.15rem solid #60B450;
   font-weight: 500;
   font-size: 2rem;
   text-align: center;
-  animation: blink 0.75s step-end infinite;
 }
 
-@keyframes blink {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: var(--green-color);
-  }
-}
 .imgMain {
   max-width: 680px;
   min-width: 30%;
