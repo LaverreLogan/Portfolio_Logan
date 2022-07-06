@@ -1,25 +1,27 @@
-
-const title = document.getElementById('mainTitle');
-const text = "Hi, I am Logan, Web Developper";
-let index = 0;
-const randomSpeed = (min , max) => {
+const randomBetween = (min , max) => {
     return Math.floor(Math.random() * (max - min) + min)
 };
 
-const caret = "<span style='color:#60B450'> _</span>";
-const play = () => {
-    if (index > text.length) {
-        index = 0;
-        timer = setTimeout(play, 5000);
-    }else{
-        caret === "<span style='color:#60B450'>|</span>" ? caret = "" : caret = "<span style='color:#60B450'>|</span>";
+const animateText = (element, index = 0) => {
+    let text = element.parentElement.dataset.animate
 
-        if (index > text.length-1) {
-            caret = "";
-        }
-        title.innerHTML = text.slice(0, index) + caret;
-        index++;
-        timer = setTimeout(play, randomSpeed(50, 300));
-    }   
-};
-let timer = setTimeout(play);
+    if (index === -1) {
+        element.textContent = ''
+        index = 0
+    }
+
+    if (index === text.length) {
+        setTimeout(() => animateText(element, -1), 3000)
+        return
+    }
+    
+    element.insertAdjacentText('beforeend', text[index]);
+    setTimeout(() => animateText(element, index + 1), randomBetween(50, 300))
+}
+
+Array.from(document.querySelectorAll('[data-animate]')).forEach(element => {
+    let cursor = element.dataset.animateCursor
+
+    element.insertAdjacentHTML('beforeend', `<span class="content"></span><span class="cursor">${cursor}</span>`)
+    setTimeout(() => animateText(element.querySelector('.content')), 0)
+})

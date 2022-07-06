@@ -1,25 +1,55 @@
 :root {
   --fontsize: 16px;
   --green-color: #60B450;
-  overflow: hidden;
+}
+
+@keyframes animateCursor {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+[data-animate] .cursor {
+  color: var(--green-color);
+  padding: 0 0.25rem 0 0.25rem;
+  animation-name: animateCursor;
+  animation-duration: 200ms;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+body {
+  height: 100vh;
+  position: relative;
+  scroll-behavior: smooth;
 }
 
 /*------------------------ Header ------------------------*/
 header {
-  background-color: #042326;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.015);
+  backdrop-filter: blur(2px);
   height: 8vh;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 90%;
+  height: 8vh;
   margin: auto;
 }
 
 .menu {
   display: flex;
-  position: sticky;
 }
 .menu li {
   margin-right: 100px;
@@ -34,11 +64,9 @@ header {
 
 .logo img {
   width: 30px;
-  height: auto;
-  margin-top: 20px;
 }
-.logo img:hover {
-  box-shadow: 0 5px 4px #60B450;
+.logo :hover {
+  filter: drop-shadow(2px 2px 4px #60B450);
 }
 
 .mobileMenu {
@@ -51,22 +79,37 @@ header {
 
 /*-------------------- About me --------------------*/
 .main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   background-color: #042326;
   height: 100vh;
+  scroll-snap-type: y mandatory;
 }
 
 .aboutMe {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
   width: 90vw;
+  height: 92vh;
+  max-height: 100vh;
+  padding-top: 8vh;
   margin: auto;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
 }
 
 .titleContainer {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+  width: 50%;
 }
 
 #mainTitle {
@@ -103,9 +146,24 @@ header {
 }
 
 .imgMain {
-  max-width: 680px;
-  min-width: 30%;
+  width: clamp(45%, 500px, 65vw);
   height: auto;
+}
+
+.mainLogo {
+  position: absolute;
+  top: 58%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1.5rem;
+  width: 250px;
+}
+.mainLogo :hover {
+  filter: drop-shadow(1px 1px 2px #60B450);
+}
+.mainLogo a {
+  margin: 5px;
 }
 
 #githubLogo {
@@ -116,13 +174,29 @@ header {
   width: 40px;
 }
 
-.mainLogo {
-  display: flex;
-  align-items: center;
-  margin-top: 1rem;
+.souris {
+  position: absolute;
+  left: calc(50% - 15px);
+  bottom: 0;
+  width: 30px;
+  animation-name: MoveUpDown;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
 }
-.mainLogo a {
-  margin: 5px;
+
+@keyframes MoveUpDown {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: translate(0, -15%);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
