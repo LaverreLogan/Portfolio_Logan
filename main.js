@@ -16,7 +16,7 @@ const animateText = (element, index = 0) => {
     }
     
     element.insertAdjacentText('beforeend', text[index]);
-    setTimeout(() => animateText(element, index + 1), randomBetween(50, 300))
+    setTimeout(() => animateText(element, index + 1), randomBetween(50, 200))
 }
 
 Array.from(document.querySelectorAll('[data-animate]')).forEach(element => {
