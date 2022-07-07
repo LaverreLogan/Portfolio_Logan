@@ -2,26 +2,25 @@
     --fontsize: 16px;
     --green-color: #60B450;
 }
-@keyframes animateCursor {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  [data-animate] .cursor {
-    color: var(--green-color);
-    padding: 0 .25rem 0 .25rem;
-    animation-name: animateCursor;
-    animation-duration: 200ms;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-fill-mode: both;
-  }
 
-  body {
-    height: 100vh;
-    position: relative;
+html {
     scroll-behavior: smooth;
-  }
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    width: 100vw;
+    max-width: 1880px;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+}
+
+section {
+    scroll-snap-align: start;
+}
+
 /*------------------------ Header ------------------------*/
 
 header {
@@ -33,9 +32,10 @@ header {
     background-color: rgba(255, 255, 255, 0.015);
     backdrop-filter: blur(2px);
     height: 8vh;
+    width: 100vw;
 }
 
-.container {
+.headerContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,7 +65,7 @@ header {
     }
     :hover {
         filter: drop-shadow(2px 2px 4px #60B450);
-}
+    }
 }
 
 .mobileMenu {
@@ -76,37 +76,35 @@ header {
     display: none;
 }
 
-/*-------------------- About me --------------------*/
-.main {
-    position: relative;
+/*-------------------- Home Page --------------------*/
+
+.homePage {
     display: flex;
     flex-direction: column;
     background-color: #042326;
+    width: 100vw;
     height: 100vh;
-    scroll-snap-type: y mandatory;
+    max-height: 100vh;
+    overflow: hidden;
+    scroll-snap-align: start;
 }
-.aboutMe {
+
+.homeContainer {
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
+    height: 92vh;
     width: 90vw;
-    height: calc(100vh - 8vh);
-    max-height: 100vh;
-    padding-top: 8vh;
     margin: auto;
-    overflow: hidden;
 }
-.container {
-    display: flex;
-}
+
 .titleContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50%;
 }
+
 #mainTitle {
     position: relative;
     width: 250px;
@@ -141,12 +139,14 @@ header {
 }
 
 .imgMain {
-    width: clamp(45%, 500px, 65vw);
+    width: clamp(44%, 500px, 65vw);
     height: auto;
+    padding-top: 20vh;
 }
+
 .mainLogo {
     position: absolute;
-    top: 58%;
+    top: 50vh;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -159,6 +159,7 @@ header {
         margin: 5px;
     }
 }
+
 #githubLogo {
     width: 35px;
 }
@@ -167,8 +168,27 @@ header {
     width: 40px;
 }
 
+[data-animate] .cursor {
+    color: var(--green-color);
+    padding: 0 .25rem 0 .25rem;
+    animation-name: animateCursor;
+    animation-duration: 200ms;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+@keyframes animateCursor {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.sourisContainer {
+    height: 8vh;
+}
+
 .souris {
-    position: absolute;
+    position:sticky;
     left: calc(50% - 15px);
     bottom: 0;
     width: 30px;
@@ -179,6 +199,7 @@ header {
     animation-iteration-count: infinite;
     animation-play-state: running;
 }
+
 @keyframes MoveUpDown {
     0% {
         transform: scale(1,1);
@@ -189,4 +210,11 @@ header {
     100% {
         transform: scale(1,1);
     }
-  }
+}
+    
+/*------------------ About me ------------------*/
+
+.aboutMe {
+    height: 100vh;
+    scroll-snap-align: start;
+}

@@ -14,9 +14,9 @@
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="headerContainer">
             <button class="burgerButton"></button>
-            <a  class="logo" href="/">
+            <a  class="logo" href="#page1">
                 <img src="assets/logo/Logo.png" alt="">
             </a>
             <ul class="mobileMenu">
@@ -35,7 +35,7 @@
             </ul>
             <ul class="menu">
                 <li>
-                    <a href="">About me</a>
+                    <a href="#page2">About me</a>
                 </li>
                 <li>
                     <a href="">Skills</a>
@@ -49,9 +49,8 @@
             </ul>
         </div>
     </header>
-    <section class="main">
-        <div class="aboutMe">
-            <div class="container">
+    <section class="homePage" id="page1">
+            <div class="homeContainer">
                 <div class="titleContainer">
                 <h1 id="mainTitle" data-animate="Hi, I am Logan, Web Developper" data-animate-cursor="|"></h1>
                     <div class="mainLogo">
@@ -65,11 +64,13 @@
                 </div>
                 <img src="assets/imgs/Illu_1.png" alt="Illustration d'un ordinateur" class="imgMain">
             </div>
-            <div>
+            <div class="sourisContainer">
                 <img src="assets/imgs/288907413_1044856339501864_2033747940007282119_n.png" alt="Logo souris" class="souris">
             </div>
-        </div>
     </section>
-    <script src="styles/main.js"></script>
+    <section class="aboutMe" id="page2">
+        <div ></div>
+    </section>
+    <script src="main.js"></script>
 </body>
 </html>
