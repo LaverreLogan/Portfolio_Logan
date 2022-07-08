@@ -1,6 +1,8 @@
 :root {
   --fontsize: 16px;
-  --green-color: #60B450;
+  --light-green-color: #60B450;
+  --regular-green-color: #228c6e;
+  --dark-green-color: #042326;
 }
 
 html {
@@ -13,6 +15,12 @@ body {
   position: relative;
   overflow-x: hidden;
   overflow-y: scroll;
+}
+
+section {
+  height: 100vh;
+  width: 100vw;
+  max-height: 100vh;
 }
 
 /*------------------------ Header ------------------------*/
@@ -48,14 +56,14 @@ header {
   color: white;
 }
 .menu li a:hover {
-  color: var(--green-color);
+  color: var(--light-green-color);
 }
 
 .logo img {
   width: 30px;
 }
 .logo :hover {
-  filter: drop-shadow(2px 2px 4px #60B450);
+  filter: drop-shadow(2px 2px 4px var(--light-green-color));
 }
 
 .mobileMenu {
@@ -71,11 +79,7 @@ header {
   display: flex;
   flex-direction: column;
   background-color: #042326;
-  width: 100vw;
-  height: 100vh;
-  max-height: 100vh;
   overflow: hidden;
-  scroll-snap-align: start;
 }
 
 .homeContainer {
@@ -104,7 +108,7 @@ header {
   position: absolute;
   width: 20px;
   height: 20px;
-  border: solid var(--green-color);
+  border: solid var(--light-green-color);
   content: " ";
 }
 
@@ -143,7 +147,7 @@ header {
   width: 250px;
 }
 .mainLogo :hover {
-  filter: drop-shadow(1px 1px 2px #60B450);
+  filter: drop-shadow(1px 1px 2px var(--light-green-color));
 }
 .mainLogo a {
   margin: 5px;
@@ -158,7 +162,7 @@ header {
 }
 
 [data-animate] .cursor {
-  color: var(--green-color);
+  color: var(--light-green-color);
   padding: 0 0.25rem 0 0.25rem;
   animation-name: animateCursor;
   animation-duration: 200ms;
@@ -208,11 +212,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  scroll-snap-align: start;
-  background: #228c6e;
-  background: radial-gradient(circle, #228c6e 0%, #042326 100%, #228c6e 100%);
+  background: var(--regular-green-color);
+  background: radial-gradient(circle, var(--regular-green-color) 0%, #042326 100%, var(--regular-green-color) 100%);
 }
 
 .aboutMeContainer {
@@ -233,7 +234,7 @@ header {
   width: 170px;
   height: 170px;
   border-radius: 50%;
-  background: linear-gradient(to left, #60b450, #238C51);
+  background: linear-gradient(to left, var(--light-green-color), #ffffff);
   animation: spin 4s linear infinite;
 }
 .aboutMeContainer img {
@@ -254,7 +255,7 @@ header {
 .aboutMeText {
   display: flex;
   align-items: center;
-  background: linear-gradient(210deg, #228c6e 0%, #619a87 100%, white 100%);
+  background: linear-gradient(210deg, var(--regular-green-color) 0%, #619a87 100%, white 100%);
   width: 45rem;
   height: 20rem;
   border-radius: 30px;
@@ -262,17 +263,20 @@ header {
 .aboutMeText p {
   position: relative;
   font-family: "Roboto";
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: white;
   text-align: center;
   padding: 4rem 5rem;
+}
+.aboutMeText a {
+  color: var(--dark-green-color);
 }
 
 #greenQuote1, #greenQuote2 {
   position: absolute;
   font-size: 15rem;
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--green-color);
+  color: var(--light-green-color);
 }
 
 #greenQuote1 {
@@ -287,6 +291,9 @@ header {
 }
 
 .downloadButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   font-family: "Roboto";
   font-size: 1.3rem;
@@ -297,16 +304,23 @@ header {
   height: 3.5rem;
   border-radius: 15px;
   border: none;
-  background: #228c6e;
-  background: radial-gradient(circle, #228c6e 0%, #619a87 100%, #228c6e 100%);
+  background: var(--regular-green-color);
+  background: radial-gradient(circle, var(--regular-green-color) 0%, #619a87 100%, var(--regular-green-color) 100%);
   box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.548), 2px 4px 6px rgba(0, 0, 0, 0.137);
 }
 
 .downloadButton:hover {
   background: #256c74;
-  background: radial-gradient(circle, #256c74 0%, #439a7d 100%, #256c74 100%);
   cursor: pointer;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/*-------------------- Skills --------------------*/
+.skills {
+  background: radial-gradient(circle, #256c74 0%, #042326 53%, #042326 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
