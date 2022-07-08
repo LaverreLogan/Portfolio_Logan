@@ -216,7 +216,7 @@ header {
   background: radial-gradient(circle, var(--regular-green-color) 0%, #042326 100%, var(--regular-green-color) 100%);
 }
 
-.aboutMeContainer {
+.darkContainer {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -224,10 +224,10 @@ header {
   align-items: center;
   background: #042326;
   width: 60rem;
-  height: 35rem;
+  height: 40rem;
   margin-top: 8vh;
 }
-.aboutMeContainer .imgBorder {
+.darkContainer .imgBorder {
   position: absolute;
   top: -3px;
   left: 50%;
@@ -237,7 +237,7 @@ header {
   background: linear-gradient(to left, var(--light-green-color), #ffffff);
   animation: spin 4s linear infinite;
 }
-.aboutMeContainer img {
+.darkContainer img {
   position: absolute;
   top: -83px;
   width: 10rem;
@@ -252,15 +252,15 @@ header {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
-.aboutMeText {
+.greenContainer {
   display: flex;
   align-items: center;
   background: linear-gradient(210deg, var(--regular-green-color) 0%, #619a87 100%, white 100%);
   width: 45rem;
-  height: 20rem;
+  height: 25rem;
   border-radius: 30px;
 }
-.aboutMeText p {
+.greenContainer p {
   position: relative;
   font-family: "Roboto";
   font-size: 1.2rem;
@@ -268,7 +268,7 @@ header {
   text-align: center;
   padding: 4rem 5rem;
 }
-.aboutMeText a {
+.greenContainer a {
   color: var(--dark-green-color);
 }
 
@@ -317,10 +317,18 @@ header {
 
 /*-------------------- Skills --------------------*/
 .skills {
-  background: radial-gradient(circle, #256c74 0%, #042326 53%, #042326 100%);
+  background: linear-gradient(0deg, #0e4143 0%, #042326 25%, #042326 100%);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/*--------------------- Portfolio ---------------------*/
+.portfolio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, var(--regular-green-color) 0%, #042326 100%, var(--regular-green-color) 100%);
 }
 
 /*# sourceMappingURL=styles.css.map */
