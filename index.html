@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logan LAVERRE - Portfolio</title>
     <link rel="icon" href="assets/logo/favicon-32x32.png">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="./js/animationText.js" async></script>
+    <script src="./js/carousel.js" async></script>
 </head>
 <body>
     <header>
@@ -41,7 +43,7 @@
                     <a href="#page3">Skills</a>
                 </li>
                 <li>
-                    <a href="">Portfolio</a>
+                    <a href="#page4">Portfolio</a>
                 </li>
                 <li>
                     <a href="">Contact</a>
@@ -67,13 +69,14 @@
             <div class="sourisContainer">
                 <img src="assets/imgs/288907413_1044856339501864_2033747940007282119_n.png" alt="Logo souris" class="souris">
             </div>
+            
     </section>
     <section class="aboutMe" id="page2">
         <div class="darkContainer">
             <div class="imgBorder"></div>
-            <img src="./assets/imgs/Sans titre-1.png" alt="">
+            <img class="imgProfil" src="./assets/imgs/Sans titre-1.png" alt="Photo de Logan">
             <div class="greenContainer">
-                <p><span id="greenQuote1">«</span>My name is Logan Laverre and I am passionate about developpement and computers in general.<br/><br/>I was a shelf worker for almost 8 years and I have learned a lot about team work, autonomy and work ethic.<br/><br/>  I started to learn basics of HTML / CSS by myself and profesionalize my learning at the Instic's school based in Lyon.<br/><br/>If you want to know more about me, you can check my CV by <a href="https://i.ibb.co/f8qsy4q/CV-Logan.png" target="_blank">clicking this link</a>, or contact me !<span id="greenQuote2">«</span></p>
+                <p class="aboutMeP"><span id="greenQuote1">«</span>My name is Logan Laverre and I am passionate about developpement and computers in general.<br/><br/>I was a shelf worker for almost 8 years and I have learned a lot about team work, autonomy and work ethic.<br/><br/>  I started to learn basics of HTML / CSS by myself and profesionalize my learning at the Instic's school based in Lyon.<br/><br/>If you want to know more about me, you can check my CV by <a href="https://i.ibb.co/f8qsy4q/CV-Logan.png" target="_blank">clicking this link</a>, or contact me !<span id="greenQuote2">«</span></p>
             </div>
             <a class="downloadButton" href="https://i.ibb.co/f8qsy4q/CV-Logan.png" target="_blank">Click to watch my CV</a>
         </div>
@@ -84,13 +87,52 @@
         <img src="./assets/imgs/Illu-3.png" alt="">
     </section>
     <section class="portfolio" id="page4">
-        <div class="darkContainer">
-            <div class="greenContainer">
-                <h2></h2>
-                <p></p>
+            <div id="carouselContainer">
+                    <div class="itemBody">
+                        <div class="itemImg">
+                            <img src="./assets/imgs/mockup_test.jpg" alt="">
+                        </div>
+                        <div class="itemDivTitle">
+                            <h2 class="itemTitle">Mon titre</h2>
+                        </div>
+                        <div class="itemDescription">
+                           <p class="itemP">Ma description de mon projet</p>
+                        </div>
+                    </div>
+                    <div class="itemBody">
+                        <div class="itemImg">
+                            <img src="./assets/imgs/mockup_test.jpg" alt="">
+                        </div>
+                        <div class="itemDivTitle">
+                            <h2 class="itemTitle">Mon titre</h2>
+                        </div>
+                        <div class="itemDescription">
+                            <p class="itemP">Ma description de mon projet</p>
+                        </div>
+                    </div>
+                    <div class="itemBody">
+                        <div class="itemImg">
+                            <img src="./assets/imgs/mockup_test.jpg" alt="">
+                        </div>
+                        <div class="itemDivTitle">
+                            <h2 class="itemTitle">Mon titre</h2>
+                        </div>
+                        <div class="itemDescription">
+                            <p class="itemP">Ma description de mon projet</p>
+                        </div>
+                    </div>
+                    <div class="itemBody">
+                        <div class="itemImg">
+                            <img src="./assets/imgs/mockup_test.jpg" alt="">
+                        </div>
+                        <div class="itemDivTitle">
+                            <h2 class="itemTitle">Mon titre</h2>
+                        </div>
+                        <div class="itemDescription">
+                            <p class="itemP">Ma description de mon projet</p>
+                        </div>
+                    </div>
             </div>
-        </div>
     </section>
-    <script src="main.js"></script>
 </body>
 </html>
