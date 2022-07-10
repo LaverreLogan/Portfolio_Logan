@@ -373,7 +373,7 @@ header {
   border-radius: 50%;
   margin-top: -20px;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
 }
 
 .carousel__next:hover, .carousel__prev:hover {
@@ -384,6 +384,39 @@ header {
   background-image: url("../assets/imgs/left.svg");
   right: auto;
   left: 25%;
+}
+
+.carousel__prev-hidden, .carousel__next-hidden {
+  opacity: 0;
+}
+
+.carousel__pagination {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.carousel__pagination--button {
+  background-color: #FFF;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px;
+  box-shadow: 0 2px 5px #3232321a;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.carousel__pagination--button--active {
+  transform: scale(1.4);
+  background-color: #60B450;
+}
+
+.carousel__pagination--button:hover {
+  transform: scale(1.2);
 }
 
 /*# sourceMappingURL=styles.css.map */
