@@ -78,7 +78,7 @@ header {
 .homePage {
   display: flex;
   flex-direction: column;
-  background-color: #042326;
+  background-color: var(--dark-green-color);
   overflow: hidden;
 }
 
@@ -222,7 +222,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #042326;
+  background: var(--dark-green-color);
   width: 60rem;
   height: 40rem;
   margin-top: 8vh;
@@ -331,12 +331,44 @@ header {
   background: radial-gradient(circle, var(--regular-green-color) 0%, #042326 100%, var(--regular-green-color) 100%);
 }
 
-.itemP {
+.itemContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--dark-green-color);
+  width: 60rem;
+  height: 40rem;
+}
+
+.itemBody {
+  display: flex;
+  background: linear-gradient(210deg, var(--regular-green-color) 0%, #619a87 100%, white 100%);
+  width: 35rem;
+  height: 15rem;
+  border-radius: 30px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem;
+}
+
+.itemImg img {
+  width: 400px;
+  position: relative;
+  top: -6rem;
+  left: 10rem;
+}
+
+.itemDescription .itemP {
+  position: absolute;
+  width: 35rem;
+  bottom: 25%;
   font-size: 1rem;
   color: white;
 }
 
 .itemTitle {
+  position: absolute;
+  top: 45%;
   color: white;
 }
 
@@ -348,6 +380,7 @@ header {
 .carousel__item {
   display: flex;
   justify-content: center;
+  align-items: center;
   float: left;
 }
 
@@ -392,19 +425,19 @@ header {
 
 .carousel__pagination {
   position: absolute;
-  bottom: 0;
+  bottom: 3rem;
   left: 50%;
   text-align: center;
   transform: translateX(-50%);
 }
 
 .carousel__pagination--button {
-  background-color: #FFF;
+  background-color: white;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   display: inline-block;
-  margin: 5px;
+  margin: 10px;
   box-shadow: 0 2px 5px #3232321a;
   transition: transform 0.3s;
   cursor: pointer;
@@ -412,7 +445,7 @@ header {
 
 .carousel__pagination--button--active {
   transform: scale(1.4);
-  background-color: #60B450;
+  background-color: var(--light-green-color);
 }
 
 .carousel__pagination--button:hover {
