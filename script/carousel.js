@@ -14,12 +14,13 @@ class Carousel {
         this.isMobile = false
         this.currentSlide = 0
         this.moveCallbacks = []
-
         /* DOM modifications */
         this.root = this.createDivWithClass('carousel')
         this.container = this.createDivWithClass('carousel__container')
+        this.detailsContainer = this.createDivWithClass('detailsContainer')
         this.root.setAttribute('tabindex', '0')
         this.root.appendChild(this.container)
+        this.root.appendChild(this.detailsContainer)
         this.element.appendChild(this.root)
         this.items = children.map((child) => {
             let item = this.createDivWithClass('carousel__item')
@@ -34,7 +35,8 @@ class Carousel {
         if (this.options.pagination) {
             this.createPagination()
         }
-
+        // this.displayDetails()
+        
         //Events
         this.moveCallbacks.forEach(cb => cb(0))
         this.onWindoResize()
@@ -101,6 +103,21 @@ class Carousel {
             }
         })
     }
+    
+    // displayDetails (item) {
+    //     this.items.forEach(item => {
+    //         let image = document.querySelector('.itemImg')
+    //         let details = document.querySelector('.portfolioDetails')
+    //         let cross = document.querySelector('.x-mark')
+    
+    //         image.addEventListener('click', () => {
+    //             details.style.display = 'flex' 
+    //         })
+    //         cross.addEventListener('click', () => {
+    //             details.style.display = 'none'
+    //         })
+    //     })
+    // }
 
     gotoSlide (index) {
         if (index < 0) {
