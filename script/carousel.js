@@ -34,6 +34,7 @@ class Carousel {
         if (this.options.pagination) {
             this.createPagination()
         }
+
         //Events
         this.moveCallbacks.forEach(cb => cb(0))
         this.onWindoResize()
@@ -101,14 +102,6 @@ class Carousel {
         })
     }
 
-    next () {
-        this.gotoSlide(this.currentSlide + this.slidesToScroll)
-    }
-
-    prev () {
-        this.gotoSlide(this.currentSlide - this.slidesToScroll)
-    }
-
     gotoSlide (index) {
         if (index < 0) {
             if (this.options.loop) {
@@ -129,6 +122,15 @@ class Carousel {
         this.currentSlide = index
         this.moveCallbacks.forEach(cb => cb(index))
     }
+    
+    next () {
+        this.gotoSlide(this.currentSlide + this.slidesToScroll)
+    }
+
+    prev () {
+        this.gotoSlide(this.currentSlide - this.slidesToScroll)
+    }
+
 
     onMove (cb) {
         this.moveCallbacks.push(cb)

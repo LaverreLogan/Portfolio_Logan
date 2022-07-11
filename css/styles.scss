@@ -2,6 +2,7 @@
     --fontsize: 16px;
     --light-green-color: #60B450;
     --regular-green-color: #228c6e;
+    --blue-green-color: #256C74;
     --dark-green-color: #042326;
 }
 
@@ -364,29 +365,54 @@ header {
 }
 
 .itemImg {
+    position: absolute;
+    width: 400px;
     img {
+        top: -6rem;
+        left: 10rem;
         width: 400px;
         position: relative;
-        top: -4rem;
-        left: 10rem;
     }
 }
 
 .itemDescription {
+    position: absolute;
+    width: 35rem;
+    top: 24rem;
     .itemP {
         position: relative;
-        bottom: 50%;
         font-size: 1rem;
+        color: white;
+        // margin: 0;
+    }
+}
+
+.itemDivTitle {
+    position: absolute;
+    top: 45%;
+    .itemTitle {
+        position: relative;
+        font-size: 2rem;
         color: white;
     }
 }
 
-.itemTitle {
+.portfolioDetails {
     position: absolute;
-    top: 45%;
-    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60vw;
+    height: 80vh;
+    background-color: rgba(22, 22, 22, 0.705);
 }
 
+.portfolioDetailsContainer {
+    width: 25vw;
+    height: 65vh;
+    background-color: var(--blue-green-color);
+    border-radius: 20px;
+}
 /*------------- Carousel -------------*/
 
 .carousel {
@@ -416,25 +442,24 @@ header {
 .carousel__next, .carousel__prev {
     position: absolute;
     top: 50%;
-    right: 25%;
-    width: 40px;
-    height: 40px;
-    background: #FFF url('../assets/imgs/right.svg') center center no-repeat;
-    background-size: 20px 20px;
+    right: 12%;
+    width: 100px;
+    height: 100px;
+    background: url('../assets/imgs/angle-right-solid.png') center center no-repeat;
+    background-size: 50px 80px;
     border-radius: 50%;
     margin-top: -20px;
     cursor: pointer;
     transition: transform 0.3s, opacity 0.3s;
 }
 
-.carousel__next:hover, .carousel__prev:hover {
-    transform: scale(1.2);
+.carousel__prev {
+    background-image: url('../assets/imgs/angle-left-solid.png');
+    left: 12%;
 }
 
-.carousel__prev {
-    background-image: url('../assets/imgs/left.svg');
-    right: auto;
-    left: 25%;
+.carousel__next:hover, .carousel__prev:hover {
+    transform: scale(1.2);
 }
 
 .carousel__prev-hidden, .carousel__next-hidden {
