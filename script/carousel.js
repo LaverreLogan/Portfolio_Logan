@@ -14,6 +14,7 @@ class Carousel {
         this.isMobile = false
         this.currentSlide = 0
         this.moveCallbacks = []
+        
         /* DOM modifications */
         this.root = this.createDivWithClass('carousel')
         this.container = this.createDivWithClass('carousel__container')
@@ -35,7 +36,7 @@ class Carousel {
         if (this.options.pagination) {
             this.createPagination()
         }
-        // this.displayDetails()
+        this.displayDetails()
         
         //Events
         this.moveCallbacks.forEach(cb => cb(0))
@@ -104,20 +105,20 @@ class Carousel {
         })
     }
     
-    // displayDetails (item) {
-    //     this.items.forEach(item => {
-    //         let image = document.querySelector('.itemImg')
-    //         let details = document.querySelector('.portfolioDetails')
-    //         let cross = document.querySelector('.x-mark')
+    displayDetails () {
+        // this.items.forEach(item => {
+            let image = document.querySelector('.itemImg')
+            let details = document.querySelector('.portfolioDetails')
+            let cross = document.querySelector('.x-mark')
     
-    //         image.addEventListener('click', () => {
-    //             details.style.display = 'flex' 
-    //         })
-    //         cross.addEventListener('click', () => {
-    //             details.style.display = 'none'
-    //         })
-    //     })
-    // }
+            image.addEventListener('click', () => {
+                details.style.display = 'flex' 
+            })
+            cross.addEventListener('click', () => {
+                details.style.display = 'none'
+            })
+        // })
+    }
 
     gotoSlide (index) {
         if (index < 0) {
