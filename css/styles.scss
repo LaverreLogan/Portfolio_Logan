@@ -27,6 +27,48 @@ body {
     max-height: 100vh;
  }
 
+ .pdf {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateX(110vw);
+    z-index: 999;
+    width: 90vw;
+    height: 100vh;
+    transition: transform 150ms linear;
+  }
+
+  .pdf .close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    width: 10vw;
+    height: 100%;
+    left: -10vw;
+    background-color: rgba(0, 0, 0, .25);
+    color: white;
+  }
+  
+  .pdf .close:hover {
+    color: var(--light-green-color);
+  }
+  
+  input#showPDF {
+    display: none;
+  }
+  
+  input#showPDF:checked + .pdf {
+    transform: translateX(0);
+  }
+  
+  .pdf embed {
+    width: 100%;
+    height: 100%;
+  }
+
 /*------------------------ Header ------------------------*/
 
 header {
@@ -353,6 +395,7 @@ header {
 }
 
 .itemBody {
+    position: relative;
     display: flex;
     background: linear-gradient(210deg, var(--regular-green-color) 0%, rgba(97,154,135,1) 100%, rgba(255,255,255,1) 100%);
     width: 35rem;
@@ -375,30 +418,22 @@ header {
     
 }
 
-.itemImgMiddle {
+.itemSeeMore {
     position: absolute;
-    top:50%;
-    left: 50%;
-    color: white;
-    opacity: 0;
+    inset: 0;
     cursor: pointer;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    div {
-        position: relative;
-        background-color: #60B450;
-        border-radius: 10px;
-        width: 200px;
-        height: 30px;
-        margin: auto;
-        top: 50%;
-        text-align: center;
-        padding-top: 15px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
+    opacity: 0;
+    background-color: #60B450;
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+    padding-top: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.itemImg:hover .itemImgMiddle {
+
+.itemImg:hover .itemSeeMore {
     opacity: 1;
 }
 
@@ -409,8 +444,6 @@ header {
     cursor: pointer;
 }
 
-.itemImgMiddleText {
-}
 .itemDescription {
     position: absolute;
     width: 35rem;
@@ -432,14 +465,31 @@ header {
     }
 }
 
-.portfolioDetails {
+.itemDetails {
     position: absolute;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 55vw;
+    inset: -5rem 0;
+    opacity: 0;
+    pointer-events: none;
+    width: 100%;
     height: 85vh;
     background-color: rgba(22, 22, 22, 0.705);
+    transform: scale(.5);
+    transition: transform 150ms linear;
+}
+
+.itemBody input[type="checkbox"] {
+    display: none;
+  }
+  
+.itemBody input[type="checkbox"]:checked ~ .itemDetails {
+    display: flex;
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 999;
 }
 
 .portfolioDetailsContainer {
@@ -484,7 +534,6 @@ header {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
-    cursor: pointer;
     :hover {
         transform: scale(1.1);
     }
@@ -494,6 +543,10 @@ header {
         color: grey;
     }
 
+}
+
+.xmarkLabel {
+    cursor: pointer;
 }
 /*------------- Carousel -------------*/
 
