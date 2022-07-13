@@ -309,15 +309,15 @@ header {
     display: flex;
     align-items: center;
     background: linear-gradient(210deg, var(--regular-green-color) 0%, rgba(97,154,135,1) 100%, rgba(255,255,255,1) 100%);
-    width: 45rem;
-    height: 25rem;
+    width: 40rem;
+    height: 20rem;
     border-radius: 30px;
     .aboutMeP {
-        position: relative;
-        font-size: 1.2rem;
+        font-size: 1rem;
         color: white;
         text-align: center;
-        padding: 4rem 5rem;
+        height: 12rem;
+        padding: 0rem 5rem;
     }
     a {
         color: var(--dark-green-color);
@@ -332,13 +332,13 @@ header {
 }
 
 #greenQuote1 {
-    top: -11rem;
-    left: 0;
+    left: 9rem;
+    top: -0.7rem;
 }
 
 #greenQuote2 {
-    bottom: -8rem;
-    right: 0;
+    right: 9rem;
+    bottom: 2rem;
     transform: scale(-1, 1);
 }
 
@@ -406,14 +406,25 @@ header {
     padding: 5rem;
 }
 
+.itemBody input[type="checkbox"] {
+    display: none;
+  }
+  
+.itemBody input[type="checkbox"]:checked ~ .itemDetails {
+    display: flex;
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 999;
+}
+
 .itemImg {
     position: relative;
-    top: -6rem;
-    left: 10rem;
-    width: 400px;
+    top: -4rem;
+    left: 15rem;
+    width: 350px;
     img {
-        width: 400px;
-        
+        width: 100%;
     }
     
 }
@@ -444,23 +455,21 @@ header {
     cursor: pointer;
 }
 
-.itemDescription {
-    position: absolute;
-    width: 35rem;
-    top: 24rem;
-    .itemP {
-        position: relative;
-        font-size: 1rem;
+.itemDivTitle {
+    position: relative;
+    width: 46%;
+    inset: -180px -20px;
+    .itemTitle {
+        font-size: 2rem;
         color: white;
     }
 }
 
-.itemDivTitle {
-    position: absolute;
-    top: 45%;
-    .itemTitle {
-        position: relative;
-        font-size: 2rem;
+.itemDescription {
+    position: relative;
+    inset: -100px -20px;
+    .itemP {
+        font-size: 1rem;
         color: white;
     }
 }
@@ -468,36 +477,62 @@ header {
 .itemDetails {
     position: absolute;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    inset: -5rem 0;
+    top: -10.5rem;
+    left: -11.8rem;
     opacity: 0;
     pointer-events: none;
-    width: 100%;
+    width: 1100px;
     height: 85vh;
     background-color: rgba(22, 22, 22, 0.705);
     transform: scale(.5);
     transition: transform 150ms linear;
+    h2 {
+        height: 20px;
+        margin: 0;
+        color: white;
+    }
+    button {
+        height: 20px;
+        width: 150px;
+        border-radius: 10px;
+        color: white;
+        background-color: var(--blue-green-color);
+    }
 }
 
-.itemBody input[type="checkbox"] {
-    display: none;
-  }
-  
-.itemBody input[type="checkbox"]:checked ~ .itemDetails {
+.x-mark {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    :hover {
+        transform: scale(1.1);
+    }
+    img {
+        width: 20px;
+        height: 20px;
+        color: grey;
+    }
+
+}
+
+.xmarkLabel {
+    cursor: pointer;
+}
+
+.itemDetailsContainer {
     display: flex;
-    transform: scale(1);
-    opacity: 1;
-    pointer-events: auto;
-    z-index: 999;
+    justify-content: space-around;
+    width: 1100px;
 }
-
 .portfolioDetailsContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 25vw;
+    width: 450px;
     height: 75vh;
     background-color: var(--blue-green-color);
     border-radius: 20px;
@@ -530,24 +565,6 @@ header {
       }
 }
 
-.x-mark {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    :hover {
-        transform: scale(1.1);
-    }
-    img {
-        width: 20px;
-        height: 20px;
-        color: grey;
-    }
-
-}
-
-.xmarkLabel {
-    cursor: pointer;
-}
 /*------------- Carousel -------------*/
 
 .carousel {
