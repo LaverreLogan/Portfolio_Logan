@@ -373,7 +373,6 @@ header {
   height: 3.5rem;
   border-radius: 15px;
   border: none;
-  background: var(--regular-green-color);
   background: radial-gradient(circle, var(--regular-green-color) 0%, #619a87 100%, var(--regular-green-color) 100%);
   box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.548), 2px 4px 6px rgba(0, 0, 0, 0.137);
 }
@@ -668,16 +667,17 @@ header {
 .contact {
   background: linear-gradient(0deg, #0e4143 0%, #042326 25%, #042326 100%);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .contact .formContainer {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 3rem;
-  width: 40vw;
-  height: 50vh;
+  width: 35vw;
+  height: 30vh;
   background-color: #228c6e;
   border-radius: 0;
 }
@@ -711,18 +711,16 @@ header {
   box-shadow: 0 0 8px var(--light-green-color);
   outline: none;
 }
-.contact input[type=submit] {
-  border: none;
-  background: var(--regular-green-color);
-  position: absolute;
-  bottom: 10rem;
-  left: 50%;
-}
-.contact input:-webkit-autofill,
-.contact input:-webkit-autofill:hover,
-.contact input:-webkit-autofill:focus,
-.contact input:-webkit-autofill:active {
+.contact textarea:autofill, .contact input:autofill {
   transition: background-color 5000s ease-in-out 0s;
+  color: white;
+}
+
+.contactTitle {
+  text-align: center;
+  margin-bottom: 6rem;
+  top: 0;
+  color: white;
 }
 
 .credits {
@@ -733,6 +731,28 @@ header {
 
 .creditsName {
   color: var(--light-green-color);
+}
+
+.sendButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  background: radial-gradient(circle, var(--regular-green-color) 0%, #619a87 100%, var(--regular-green-color) 100%);
+  border-radius: 15px;
+  border: none;
+  width: 10rem;
+  height: 3.5rem;
+  position: absolute;
+  bottom: 6rem;
+}
+
+.sendButton:hover {
+  background: #256c74;
+  cursor: pointer;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /*# sourceMappingURL=styles.css.map */
