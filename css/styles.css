@@ -76,27 +76,34 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.015);
+  background-color: rgba(255, 255, 255, 0.041);
   backdrop-filter: blur(2px);
   height: 7vh;
   width: 100vw;
 }
 
 .headerContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
   height: 7vh;
   margin: auto;
 }
 
 .menu {
-  display: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: 90vw;
+}
+.menu .desktopList {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
 }
 .menu li {
-  margin-right: 100px;
   font-size: calc(var(--fontsize) * 1.25);
+  padding: 5px;
 }
 .menu li a {
   color: white;
@@ -113,8 +120,8 @@ header {
 }
 
 .mobileMenu {
+  display: none;
   position: relative;
-  display: flex;
   justify-content: center;
   align-items: center;
   max-width: 800px;
@@ -122,7 +129,6 @@ header {
   height: 100%;
   margin: auto;
   background: var(--grey-color);
-  z-index: 99;
 }
 .mobileMenu .mobileList {
   position: absolute;
@@ -136,24 +142,20 @@ header {
   width: 100vw;
   max-width: 800px;
   background: var(--grey-color);
-  opacity: 1;
-  pointer-events: none;
-  transform: translateY(-130%);
-  transition: transform 100ms linear;
+  transform: translate(130%, -130%);
+  transition: transform 150ms linear;
+  opacity: 0;
   z-index: 98;
 }
 .mobileMenu .mobileList li {
   margin: 1rem;
   height: 2rem;
+  padding: 5px;
 }
 .mobileMenu .mobileList li a {
-  font-size: var(--fontsize);
   color: white;
   width: 100px;
   font-size: calc(var(--fontsize) * 1.25);
-}
-.mobileMenu .mobileList li a:hover {
-  color: var(--light-green-color);
 }
 .mobileMenu input[type=checkbox] {
   display: none;
@@ -191,6 +193,7 @@ header {
 }
 .mobileMenu .logo {
   position: absolute;
+  z-index: 99;
 }
 
 .burgerLines:hover {
@@ -198,25 +201,37 @@ header {
 }
 
 #burgerCheck[type=checkbox]:checked ~ .mobileList {
-  transform: translateY(0);
+  transform: translate(0, 0);
   transition: transform 150ms linear;
   opacity: 1;
-  transition: 150ms linear;
-  z-index: 98;
 }
 
+#burgerCheck[type=checkbox]:checked ~ .burgerLines {
+  height: 23px;
+}
 #burgerCheck[type=checkbox]:checked ~ .burgerLines .line1 {
   transition: transform 150ms linear;
-  transform: rotate(35deg);
+  transform: rotate(45deg);
+  margin-left: 2px;
 }
 
 #burgerCheck[type=checkbox]:checked ~ .burgerLines .line2 {
   transform: scale(0);
+  transition: transform 150ms linear;
 }
 
 #burgerCheck[type=checkbox]:checked ~ .burgerLines .line3 {
   transition: transform 150ms linear;
-  transform: rotate(-35deg);
+  transform: rotate(-45deg);
+}
+
+.menu .active {
+  border: 2px solid var(--light-green-color);
+  box-shadow: 0 0 8px var(--light-green-color);
+  border-radius: 10px;
+}
+.menu .active a {
+  color: var(--light-green-color);
 }
 
 /*-------------------- Home Page --------------------*/
