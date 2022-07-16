@@ -5,6 +5,7 @@
   --regular-green-color: #228c6e;
   --blue-green-color: #256C74;
   --dark-green-color: #042326;
+  --grey-color: #1C1C1C;
 }
 
 html {
@@ -85,13 +86,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 100%;
   height: 7vh;
   margin: auto;
 }
 
 .menu {
-  display: flex;
+  display: none;
 }
 .menu li {
   margin-right: 100px;
@@ -112,11 +113,110 @@ header {
 }
 
 .mobileMenu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background: var(--grey-color);
+  z-index: 99;
+}
+.mobileMenu .mobileList {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
+  top: 7vh;
+  margin: 0;
+  padding-left: 0;
+  width: 100vw;
+  max-width: 800px;
+  background: var(--grey-color);
+  opacity: 1;
+  pointer-events: none;
+  transform: translateY(-130%);
+  transition: transform 100ms linear;
+  z-index: 98;
+}
+.mobileMenu .mobileList li {
+  margin: 1rem;
+  height: 2rem;
+}
+.mobileMenu .mobileList li a {
+  font-size: var(--fontsize);
+  color: white;
+  width: 100px;
+  font-size: calc(var(--fontsize) * 1.25);
+}
+.mobileMenu .mobileList li a:hover {
+  color: var(--light-green-color);
+}
+.mobileMenu input[type=checkbox] {
   display: none;
 }
+.mobileMenu .burgerLines {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  right: 2rem;
+  width: 30px;
+  z-index: 999;
+  cursor: pointer;
+}
+.mobileMenu .burgerLines .line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 30px;
+  background: white;
+}
+.mobileMenu .burgerLines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 150ms linear;
+  transform: rotate(0deg);
+}
+.mobileMenu .burgerLines .line2 {
+  transition: transform 0.4sec ease-in-out;
+}
+.mobileMenu .burgerLines .line3 {
+  transform-origin: 0% 0%;
+  transition: transform 150ms linear;
+  transform: rotate(0deg);
+}
+.mobileMenu .logo {
+  position: absolute;
+}
 
-.burgerButton {
-  display: none;
+.burgerLines:hover {
+  transform: scale(1.1);
+}
+
+#burgerCheck[type=checkbox]:checked ~ .mobileList {
+  transform: translateY(0);
+  transition: transform 150ms linear;
+  opacity: 1;
+  transition: 150ms linear;
+  z-index: 98;
+}
+
+#burgerCheck[type=checkbox]:checked ~ .burgerLines .line1 {
+  transition: transform 150ms linear;
+  transform: rotate(35deg);
+}
+
+#burgerCheck[type=checkbox]:checked ~ .burgerLines .line2 {
+  transform: scale(0);
+}
+
+#burgerCheck[type=checkbox]:checked ~ .burgerLines .line3 {
+  transition: transform 150ms linear;
+  transform: rotate(-35deg);
 }
 
 /*-------------------- Home Page --------------------*/
