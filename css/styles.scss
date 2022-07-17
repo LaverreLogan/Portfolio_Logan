@@ -84,8 +84,10 @@ header {
     right: 0;
     background-color: rgba(255, 255, 255, 0.041);
     backdrop-filter: blur(2px);
-    height: 7vh;
     width: 100vw;
+    -webkit-backface-visibility: hidden;
+-webkit-transform: translateZ(0);
+-webkit-transform: translate3d(0, 0, 0);
 }
 
 .headerContainer {
