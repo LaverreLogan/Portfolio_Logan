@@ -1,3 +1,4 @@
+
 :root {
     --fontsize: 16px;
     --light-green-color: #60B450;
@@ -5,7 +6,12 @@
     --blue-green-color: #256C74;
     --dark-green-color: #042326;
     --grey-color: #1C1C1C;
+    --breakpoint-extra-large: 1200px;
+    --breakpoint-large: 1024px;
+    --breakpoint-medium: 768px;
+    --breakpoint-small: 480px;
 }
+
 
 html {
     scroll-behavior: smooth;
@@ -231,6 +237,7 @@ header {
         color: var(--light-green-color);
     }
 }
+
 /*-------------------- Home Page --------------------*/
 
 .homePage {
@@ -245,7 +252,7 @@ header {
     justify-content: space-around;
     align-items: center;
     height: 92vh;
-    width: 90vw;
+    width: 90%;
     margin: auto;
 }
 
@@ -290,7 +297,7 @@ header {
 }
 
 .imgMain {
-    width: clamp(44%, 500px, 65vw);
+    width: clamp(45%, 500px, 65vw);
     height: auto;
     padding-top: 20vh;
 }
@@ -313,6 +320,7 @@ header {
 
 #githubLogo {
     width: 35px;
+    color: white;
 }
 
 #linkedinLogo {
@@ -334,11 +342,11 @@ header {
     to { opacity: 1; }
 }
 
-.sourisContainer {
+.mouseContainer {
     height: 8vh;
 }
 
-.souris {
+.mouse {
     position:sticky;
     left: calc(50% - 15px);
     bottom: 0;
@@ -349,6 +357,10 @@ header {
     animation-delay: 0s;
     animation-iteration-count: infinite;
     animation-play-state: running;
+}
+
+#imgHand {
+    display: none;
 }
 
 @keyframes MoveUpDown {
@@ -362,7 +374,7 @@ header {
         transform: scale(1,1);
     }
 }
-    
+
 /*------------------ About me ------------------*/
 
 .aboutMe {
@@ -429,14 +441,12 @@ header {
 }
 @keyframes spin {
     0% {
-      transform: translate(-50%, -50%) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
     100% {
-      transform: translate(-50%, -50%) rotate(360deg);
-      
+        transform: translate(-50%, -50%) rotate(360deg);
     }
-   
-  }
+}
 .greenContainer {
     display: flex;
     align-items: center;
@@ -651,7 +661,7 @@ header {
         height: 20px;
         color: grey;
     }
-
+    
 }
 
 .xmarkLabel {
@@ -872,4 +882,39 @@ header {
     background: rgb(37,108,116);
     cursor: pointer;
     box-shadow: 1px 1px 2px rgba(black, 0.5);
+}
+
+/*-------------------- Responsive --------------------*/
+@media screen and (max-width: 768px) {
+    /*------------ Header ------------*/
+    .menu {
+        display: none;
+    }
+    .mobileMenu {
+        display: flex;
+    }
+    /*----------- Home Page -----------*/
+    .homeContainer {
+        width: 100%;
+    }
+    .titleContainer {
+        z-index: 99;
+    }
+    .imgMain {
+        position: absolute;
+        opacity: 0.3;
+        width: clamp(45%, 500px, 90vw);
+    }
+    #imgMouse {
+        display: none;
+    }
+    #imgHand {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 900px){
+    .menu .desktopList {
+        width: 60%;
+    }
 }

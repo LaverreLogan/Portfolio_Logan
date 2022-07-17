@@ -6,6 +6,10 @@
   --blue-green-color: #256C74;
   --dark-green-color: #042326;
   --grey-color: #1C1C1C;
+  --breakpoint-extra-large: 1200px;
+  --breakpoint-large: 1024px;
+  --breakpoint-medium: 768px;
+  --breakpoint-small: 480px;
 }
 
 html {
@@ -247,7 +251,7 @@ header {
   justify-content: space-around;
   align-items: center;
   height: 92vh;
-  width: 90vw;
+  width: 90%;
   margin: auto;
 }
 
@@ -292,7 +296,7 @@ header {
 }
 
 .imgMain {
-  width: clamp(44%, 500px, 65vw);
+  width: clamp(45%, 500px, 65vw);
   height: auto;
   padding-top: 20vh;
 }
@@ -315,6 +319,7 @@ header {
 
 #githubLogo {
   width: 35px;
+  color: white;
 }
 
 #linkedinLogo {
@@ -339,11 +344,11 @@ header {
     opacity: 1;
   }
 }
-.sourisContainer {
+.mouseContainer {
   height: 8vh;
 }
 
-.souris {
+.mouse {
   position: sticky;
   left: calc(50% - 15px);
   bottom: 0;
@@ -354,6 +359,10 @@ header {
   animation-delay: 0s;
   animation-iteration-count: infinite;
   animation-play-state: running;
+}
+
+#imgHand {
+  display: none;
 }
 
 @keyframes MoveUpDown {
@@ -868,6 +877,46 @@ header {
   background: #256c74;
   cursor: pointer;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/*-------------------- Responsive --------------------*/
+@media screen and (max-width: 768px) {
+  /*------------ Header ------------*/
+  .menu {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+
+  /*----------- Home Page -----------*/
+  .homeContainer {
+    width: 100%;
+  }
+
+  .titleContainer {
+    z-index: 99;
+  }
+
+  .imgMain {
+    position: absolute;
+    opacity: 0.3;
+    width: clamp(45%, 500px, 90vw);
+  }
+
+  #imgMouse {
+    display: none;
+  }
+
+  #imgHand {
+    display: block;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 900px) {
+  .menu .desktopList {
+    width: 60%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
