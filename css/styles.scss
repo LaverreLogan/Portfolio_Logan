@@ -79,7 +79,7 @@ input#showPDF:checked + .pdf {
 
 header {
     position: fixed;
-    z-index: 100;
+    z-index: 99999;
     top: 0;
     left: 0;
     right: 0;
@@ -529,8 +529,14 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    img {
+        max-width: 60%;
+        height: auto;
+    }
 }
-
+.mobileSkills {
+    display: none;
+}
 /* --------------------------------------------------- */
 /*--------------------- Portfolio ---------------------*/
 /* --------------------------------------------------- */
@@ -976,9 +982,24 @@ header {
     #imgHand {
         display: block;
     }
+    /*-------------- About Me --------------*/
     .greenContainer {
         .aboutMeP {
             font-size: 0.9rem;
+        }
+    }
+    /*---------------- Skills ----------------*/
+    .desktopSkills {
+        display: none;
+    } 
+    .mobileSkills {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 90vh;
+        img {
+            max-width: 50%;
         }
     }
 }
