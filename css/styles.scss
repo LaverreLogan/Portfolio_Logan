@@ -6,16 +6,15 @@
     --blue-green-color: #256C74;
     --dark-green-color: #042326;
     --grey-color: #1C1C1C;
-    --breakpoint-extra-large: 1200px;
-    --breakpoint-large: 1024px;
-    --breakpoint-medium: 768px;
-    --breakpoint-small: 480px;
+    --vh: 1px;
 }
 
 
 html {
     scroll-behavior: smooth;
     font-family: 'Roboto';
+    box-sizing: border-box;
+    height: 100%;
 }
 
 body {
@@ -74,7 +73,9 @@ input#showPDF:checked + .pdf {
     height: 100%;
 }
 
+/* ------------------------------------------------------ */
 /*------------------------ Header ------------------------*/
+/* ------------------------------------------------------ */
 
 header {
     position: fixed;
@@ -237,7 +238,9 @@ header {
     }
 }
 
+/* ------------------------------------------------- */
 /*-------------------- Home Page --------------------*/
+/* ------------------------------------------------- */
 
 .homePage {
     display: flex;
@@ -374,7 +377,9 @@ header {
     }
 }
 
+/* -------------------------------------------- */
 /*------------------ About me ------------------*/
+/* -------------------------------------------- */
 
 .aboutMe {
     display: flex;
@@ -422,11 +427,12 @@ header {
     .imgProfil {
         position: absolute;
         top: -83px;
-        width: 10rem;
+        width: 160px;
         border-radius: 50%;
     }
     
 }
+
 @keyframes glow {
     0% {
         background-position: 0 0;
@@ -438,6 +444,7 @@ header {
         background-position: 0 0;
     }
 }
+
 @keyframes spin {
     0% {
         transform: translate(-50%, -50%) rotate(0deg);
@@ -446,23 +453,29 @@ header {
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
+
 .greenContainer {
     display: flex;
+    justify-content: center;
     align-items: center;
     background: linear-gradient(210deg, var(--regular-green-color) 0%, rgba(97,154,135,1) 100%, rgba(255,255,255,1) 100%);
+    opacity: 0.8;
+    backdrop-filter: blur(10px);
     width: 40rem;
     height: 20rem;
     border-radius: 30px;
-    .aboutMeP {
-        font-size: 1rem;
-        color: white;
-        text-align: center;
-        height: 12rem;
-        padding: 0rem 5rem;
-    }
-    a {
-        color: var(--dark-green-color);
-    }
+    position: relative;
+    z-index: 99;
+}
+.aboutMeP {
+    position: absolute;
+    width: 60%;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    padding: 0rem 5rem;
+    opacity: 1;
+    z-index: 100;
 }
 
 #greenQuote1, #greenQuote2 {
@@ -470,16 +483,17 @@ header {
     font-size: 15rem;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--light-green-color);
+    z-index: 98;
 }
 
 #greenQuote1 {
-    left: 9rem;
-    top: -0.7rem;
+    left: 107px;
+    top: -15px;
 }
 
 #greenQuote2 {
-    right: 9rem;
-    bottom: 2rem;
+    right: 107px;
+    bottom: 25px;
     transform: scale(-1, 1);
 }
 
@@ -506,7 +520,9 @@ header {
     box-shadow: 1px 1px 2px rgba(black, 0.5);
 }
 
+/* ---------------------------------------------- */
 /*-------------------- Skills --------------------*/
+/* ---------------------------------------------- */
 
 .skills {
     background: linear-gradient(0deg, rgba(14,65,67,1) 0%, rgba(4,35,38,1) 25%, rgba(4,35,38,1) 100%);
@@ -515,7 +531,9 @@ header {
     justify-content: center;
 }
 
+/* --------------------------------------------------- */
 /*--------------------- Portfolio ---------------------*/
+/* --------------------------------------------------- */
 
 .portfolio {
     display: flex;
@@ -710,7 +728,9 @@ header {
     }
 }
 
+/* ---------------------------------- */
 /*------------- Carousel -------------*/
+/* ---------------------------------- */
 
 .carousel {
     position: relative;
@@ -792,7 +812,9 @@ header {
     transform: scale(1.2);
 }
 
+/* ------------------------------------------------- */
 /*--------------------- Contact ---------------------*/
+/* ------------------------------------------------- */
 
 .contact {
     background: linear-gradient(0deg, rgba(14,65,67,1) 0%, rgba(4,35,38,1) 25%, rgba(4,35,38,1) 100%);
@@ -883,7 +905,51 @@ header {
     box-shadow: 1px 1px 2px rgba(black, 0.5);
 }
 
+/* -------------------------------------------------- */
 /*-------------------- Responsive --------------------*/
+/* -------------------------------------------------- */
+
+@media screen and (max-width: 900px ) {
+    .darkContainer {
+        width: 100vw;
+        height: 55vh;
+        .imgBorder {
+            width: 140px;
+            height: 140px;
+            top: -18px;
+        }
+        .imgProfil {
+            width: 130px;
+        }
+    }
+    .greenContainer {
+        width: 80vw;
+        height: 40vh;
+    }
+    #greenQuote1, #greenQuote2 {
+        font-size: 10rem;
+    }
+    #greenQuote1 {
+        top: -50px;
+        left: 55px;
+    }
+    #greenQuote2 {
+        bottom: -25px;
+        right: 55px;
+    }
+    .downloadButton {
+        width: 10rem;
+        height: 3rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 900px){
+    .menu .desktopList {
+        width: 60%;
+    }
+}
+
 @media screen and (max-width: 768px) {
     /*------------ Header ------------*/
     .menu {
@@ -910,10 +976,26 @@ header {
     #imgHand {
         display: block;
     }
+    .greenContainer {
+        .aboutMeP {
+            font-size: 0.9rem;
+        }
+    }
 }
 
-@media screen and (min-width: 768px) and (max-width: 900px){
-    .menu .desktopList {
-        width: 60%;
+@media screen and (max-width: 500px) {
+    .greenContainer{
+        width: 95vw;
+    }
+    .aboutMeP {
+        width: 90%;
+    }
+    #greenQuote1 {
+        left: 0;
+        top: -50px;
+    }
+    #greenQuote2 {
+        right: 0;
+        bottom: -25px;
     }
 }
