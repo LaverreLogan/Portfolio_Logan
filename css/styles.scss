@@ -462,7 +462,7 @@ header {
     opacity: 0.8;
     backdrop-filter: blur(10px);
     width: 40rem;
-    height: 20rem;
+    height: 22rem;
     border-radius: 30px;
     position: relative;
     z-index: 99;
@@ -511,13 +511,13 @@ header {
     border-radius: 15px;
     border: none;
     background: radial-gradient(circle, var(--regular-green-color) 0%, rgba(97,154,135,1) 100%, var(--regular-green-color) 100%);
-    box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.548), 2px 4px 6px rgba(0, 0, 0, 0.137);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.548), 2px 4px 6px rgba(0, 0, 0, 0.137);
 }
 
 .downloadButton:hover {
     background: rgb(37,108,116);
     cursor: pointer;
-    box-shadow: 1px 1px 2px rgba(black, 0.5);
+    box-shadow: inset 2px 2px 2px black;
 }
 
 /* ---------------------------------------------- */
@@ -551,6 +551,7 @@ header {
 .darkPortfolio {
     position: absolute;
     margin: 0;
+    height: 40rem;
 }
 
 .itemContainer {
@@ -564,12 +565,13 @@ header {
 .itemBody {
     position: relative;
     display: flex;
-    background: linear-gradient(210deg, var(--regular-green-color) 0%, rgba(97,154,135,1) 100%, rgba(255,255,255,1) 100%);
-    width: 35rem;
-    height: 15rem;
-    border-radius: 30px;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
+    background: linear-gradient(210deg, var(--regular-green-color) 0%, rgba(97,154,135,1) 100%, rgba(255,255,255,1) 100%);
+    width: 30rem;
+    height: 12rem;
+    border-radius: 30px;
     padding: 5rem;
 }
 
@@ -587,9 +589,9 @@ header {
 }
 
 .itemImg {
-    position: relative;
-    top: -4rem;
-    left: 15rem;
+    position: absolute;
+    top: -90px;
+    left: 245px;
     width: 350px;
     img {
         width: 100%;
@@ -625,9 +627,9 @@ header {
 }
 
 .itemDivTitle {
-    position: relative;
-    width: 46%;
-    inset: -180px -20px;
+    position: absolute;
+    width: 45%;
+    inset: 115px 50px;
     .itemTitle {
         font-size: 2rem;
         color: white;
@@ -635,8 +637,8 @@ header {
 }
 
 .itemDescription {
-    position: relative;
-    inset: -100px -20px;
+    position: absolute;
+    inset: 220px 50px;
     .itemP {
         font-size: 1rem;
         color: white;
@@ -649,26 +651,29 @@ header {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    top: -10.5rem;
-    left: -11.8rem;
     opacity: 0;
     pointer-events: none;
-    width: 1100px;
-    height: 85vh;
+    width: 60rem;
+    height: 80vh;
     background-color: rgba(22, 22, 22, 0.705);
     transform: scale(.1);
     transition: transform 150ms linear;
-    h2 {
-        height: 20px;
-        margin: 0;
-        color: white;
-    }
-    button {
-        height: 20px;
+    a {
+        position: absolute;
+        bottom: 8px;
+        height: 25px;
         width: 150px;
         border-radius: 10px;
         color: white;
         background-color: var(--blue-green-color);
+        text-align: center;
+        line-height: 26px;
+        cursor: pointer;
+        box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.548), 2px 4px 6px rgba(0, 0, 0, 0.137);
+    }
+    a:hover {
+        background-color: #228c6e;
+        box-shadow: inset 2px 2px 2px black;
     }
 }
 
@@ -694,43 +699,45 @@ header {
 .itemDetailsContainer {
     display: flex;
     justify-content: space-around;
-    width: 1100px;
+    width: 60rem;
 }
 .portfolioDetailsContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 450px;
-    height: 75vh;
+    width: 25rem;
+    height: 72vh;
     background-color: var(--blue-green-color);
     border-radius: 20px;
-    img {
-        position: absolute;
-        top: 9rem;
-        width: 30%;
-        max-width: 300px;
-        height: auto;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+    .portfolioDetailsImg {
+        margin: 0;
+        height: 45%;
+        img {
+            width: 250px;
+        }
     }
-    h2 {
-        position: absolute;
-        top: 27rem;
+    .portfolioDetailsTitle {
+        height: 10%;
         color: white;
     }
-    p, ul {
-        position: absolute;
-        top: 32rem;
-        width: 20vw;
+    .portfolioDetailsText {
+        height: 30%;
+        width: 80%;
+        color: white;
         text-align: left;
-        color: white;
-    }
-    ul li::before {
-        content: "\2022"; 
-        color: var(--light-green-color);
-        font-weight: bold;
-        display: inline-block;
-        width: 1rem;
-        margin-left: -1em;
+        p {
+            text-align: center;
+        }
+        ul li::before {
+            content: "\2022"; 
+            color: var(--light-green-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1rem;
+            margin-left: -1em;
+        }
     }
 }
 
@@ -740,6 +747,9 @@ header {
 
 .carousel {
     position: relative;
+    width: 60rem;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .carousel__item {
@@ -747,12 +757,13 @@ header {
     justify-content: center;
     align-items: center;
     float: left;
-    
+    height: 100vh;
 }
 
 .carousel__container {
     transition: transform 0.3s;
     transform: translate3d(0,0,0);
+    height: 100vh;
 }
 
 
@@ -765,7 +776,7 @@ header {
 .carousel__next, .carousel__prev {
     position: absolute;
     top: 50%;
-    right: 12%;
+    right: 2rem;
     width: 100px;
     height: 100px;
     background: url('../assets/imgs/angle-right-solid.png') center center no-repeat;
@@ -773,12 +784,12 @@ header {
     border-radius: 50%;
     margin-top: -20px;
     cursor: pointer;
-    transition: transform 0.3s, opacity 0.3s;
+    // transition: transform 0.3s, opacity 0.3s;
 }
 
 .carousel__prev {
     background-image: url('../assets/imgs/angle-left-solid.png');
-    left: 12%;
+    left: 2rem;
 }
 
 .carousel__next:hover, .carousel__prev:hover {
@@ -791,7 +802,7 @@ header {
 
 .carousel__pagination {
     position: absolute;
-    bottom: 3rem;
+    bottom: 10rem;
     left: 50%;
     text-align: center;
     transform: translateX(-50%)
@@ -916,9 +927,9 @@ header {
 /* -------------------------------------------------- */
 
 @media screen and (max-width: 900px ) {
+    /*-------------- About Me --------------*/
     .darkContainer {
         width: 100vw;
-        height: 55vh;
         .imgBorder {
             width: 140px;
             height: 140px;
@@ -947,6 +958,26 @@ header {
         width: 10rem;
         height: 3rem;
         font-size: 0.8rem;
+    }/*-------------- Portfolio --------------*/
+    .itemBody {
+        width: 60vw;
+    }
+    .darkPortfolio {
+        width: 100vw;
+    }
+    .itemImg {
+        width: 250px;
+        height: auto;
+        left: 45%;
+    }
+    .carousel {
+        width: 100vw;
+    }
+    .carousel__next {
+        right: 0;
+    }
+    .carousel__prev {
+        left: 0;
     }
 }
 
@@ -1002,6 +1033,11 @@ header {
             max-width: 50%;
         }
     }
+    /*--------------- Portfolio ---------------*/ 
+    .carousel__prev, .carousel__next {
+        width: 80px;
+        height: 80px;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -1018,5 +1054,28 @@ header {
     #greenQuote2 {
         right: 0;
         bottom: -25px;
+    }
+    .itemBody {
+        height: 60vh;
+        width: 80vw;
+        padding: 0;
+    }
+    .itemImg, .itemDivTitle, .itemDescription {
+        position: relative;
+        max-width: 80%;
+        width: auto;
+        left: auto;
+        inset: auto;
+    }
+    .itemImg {
+        max-width: 250px;
+    }
+    .itemDescription {
+        p {
+            text-align: center;
+        }
+    }
+    .carousel__pagination {
+        bottom: 8rem;
     }
 }
