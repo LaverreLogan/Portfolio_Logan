@@ -14,7 +14,6 @@
     <script src="script/animationText.js" async></script>
     <script src="script/carousel.js" async></script>
     <script src="script/main.js" async></script>
-    <!-- <script src="script/test.js" async></script> -->
 </head>
 <body>
     <header>
@@ -311,17 +310,16 @@
     </section>
     <section class="contact" id="page5">
         <h2 class="contactTitle">You want to start a project or you have a question ? <br><br>Contact me !</h2>
-        <form action="mailto:laverrelogan@gmail.com" method="post" class="formContainer">
+        <form action="mailto:laverrelogan@gmail.com" method="post" class="formContainer" name="contactForm" onsubmit = "return(formValidation());">
             <div class="nameContainer">
-                <input type="text" placeholder="Name" autocomplete="off" required minlength="1" maxlength="10">
-                <input type="email" placeholder="Email" autocomplete="off" required minlength="1" maxlength="45">
+                <input type="text" placeholder="Name" autocomplete="off" name="Name">
+                <input type="email" placeholder="Email" autocomplete="off" name="Email">
             </div>
-            <textarea placeholder="Your message" autocomplete="false" minlength="1" maxlength="100"></textarea>
+            <textarea placeholder="Your message" autocomplete="false" name="Message"></textarea>
             <input type="submit" value="Send" class="sendButton">
         </form>
-        
-        
         <p class="credits">© 2022 | <span class="creditsName">Logan LAVERRE</span></p>
     </section>
+
 </body>
 </html>

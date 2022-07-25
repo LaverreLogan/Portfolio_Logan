@@ -1,3 +1,5 @@
+/*------------------- Navbar highlight -------------------*/
+
 const sections = document.querySelectorAll('section');
 const navList = document.querySelectorAll('nav .menu ul li');
 window.addEventListener('scroll', () => {
@@ -17,6 +19,9 @@ window.addEventListener('scroll', () => {
     })
 })
 
+
+/*------------------ Section height ------------------*/
+
 function setVh() {
     let vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     sections.forEach( section => {
@@ -26,3 +31,24 @@ function setVh() {
 setVh();
 window.addEventListener('onorientationchange', setVh, true);
 window.addEventListener('resize', setVh, true);
+
+/*------------------- Form validity -------------------*/
+
+function formValidation() {
+    if (document.contactForm.Name.value === "") {
+        alert('Please provide your name');
+        document.contactForm.name.focus();
+        return false;
+    }
+    if (document.contactForm.Email.value === "") {
+        alert('Please provide your email');
+        document.contactForm.Email.focus();
+        return false;
+    }
+    if (document.contactForm.Message.value === "") {
+        alert('Please provide your message');
+        document.contactForm.Message.focus();
+        return false;
+    }
+    return true;
+}
