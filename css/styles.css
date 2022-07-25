@@ -848,7 +848,7 @@ header {
   display: flex;
   justify-content: space-between;
 }
-.contact input[type=text] {
+.contact input[type=text], .contact input[type=email] {
   font-family: "Roboto";
   color: white;
   height: 2rem;
@@ -954,6 +954,7 @@ header {
   }
 
   .downloadButton {
+    margin-bottom: 40px;
     width: 10rem;
     height: 3rem;
     font-size: 0.8rem;
@@ -1036,6 +1037,11 @@ header {
 }
 @media screen and (max-width: 768px) {
   /*------------ Header ------------*/
+  .headerContainer {
+    height: 60px;
+    position: sticky;
+  }
+
   .menu {
     display: none;
   }
@@ -1068,6 +1074,10 @@ header {
   }
 
   /*-------------- About Me --------------*/
+  .aboutMe {
+    padding-top: 50px;
+  }
+
   .greenContainer .aboutMeP {
     font-size: 0.9rem;
   }
@@ -1089,6 +1099,10 @@ header {
   }
 
   /*--------------- Portfolio ---------------*/
+  .portfolio {
+    padding-top: 30px;
+  }
+
   .carousel__prev, .carousel__next {
     width: 80px;
     height: 80px;

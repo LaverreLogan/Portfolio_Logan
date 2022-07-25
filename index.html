@@ -313,10 +313,10 @@
         <h2 class="contactTitle">You want to start a project or you have a question ? <br><br>Contact me !</h2>
         <form action="mailto:laverrelogan@gmail.com" method="post" class="formContainer">
             <div class="nameContainer">
-                <input type="text" placeholder="Name" autocomplete="off" required>
-                <input type="text" placeholder="Email" autocomplete="off" required>
+                <input type="text" placeholder="Name" autocomplete="off" required minlength="1" maxlength="10">
+                <input type="email" placeholder="Email" autocomplete="off" required minlength="1" maxlength="45">
             </div>
-            <textarea name="" id="" placeholder="Your message" autocomplete="false"></textarea>
+            <textarea placeholder="Your message" autocomplete="false" minlength="1" maxlength="100"></textarea>
             <input type="submit" value="Send" class="sendButton">
         </form>
         
