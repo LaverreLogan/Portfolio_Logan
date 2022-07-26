@@ -505,20 +505,20 @@ header {
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 500;
   position: absolute;
   bottom: -1.7rem;
-  width: 15rem;
-  height: 3.5rem;
-  border-radius: 15px;
+  width: 10rem;
+  height: 3rem;
+  border-radius: 10px;
   border: none;
-  background: radial-gradient(circle, var(--regular-green-color) 0%, #619a87 100%, var(--regular-green-color) 100%);
+  background: linear-gradient(60deg, var(--regular-green-color) 0%, var(--light-green-color) 100%);
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.548), 2px 4px 6px rgba(0, 0, 0, 0.137);
 }
 
 .downloadButton:hover {
-  background: #256c74;
+  background: var(--regular-green-color);
   cursor: pointer;
   box-shadow: inset 2px 2px 2px black;
 }
