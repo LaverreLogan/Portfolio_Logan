@@ -8,9 +8,10 @@ class Carousel {
         /* DOM modifications */
         this.root = this.createDivWithClass('carousel')
         this.container = this.createDivWithClass('carousel__container')
+        this.main = document.getElementById('pagination_prev_next')
         this.root.setAttribute('tabindex', '0')
-        this.root.appendChild(this.container)
         this.element.appendChild(this.root)
+        this.root.appendChild(this.container)
         this.items = children.map((child) => {
             let item = this.createDivWithClass('carousel__item')
             item.appendChild(child)
@@ -70,7 +71,7 @@ class Carousel {
     createPagination () {
         let pagination = this.createDivWithClass('carousel__pagination')
         let buttons = []
-        this.root.appendChild(pagination)
+        this.main.appendChild(pagination)
         
         for (let i = 0; i < this.items.length; i = i + 1) {
             let button = this.createDivWithClass('carousel__pagination--button')
