@@ -646,7 +646,7 @@ header {
     width: 45%;
     inset: 115px 50px;
     .itemTitle {
-        font-size: 2rem;
+        font-size: 1.8rem;
         color: white;
     }
 }
@@ -759,10 +759,7 @@ header {
 /* ---------------------------------- */
 /*------------- Carousel -------------*/
 /* ---------------------------------- */
-#carouselContainer {
-    position: relative;
-    height: 100vh;
-}
+
 .carousel {
     position: relative;
     width: 60rem;
@@ -820,7 +817,7 @@ header {
 
 .carousel__pagination {
     position: absolute;
-    bottom: 0;
+    bottom: 45px;
     left: 50%;
     text-align: center;
     transform: translateX(-50%)

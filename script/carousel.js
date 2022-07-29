@@ -71,7 +71,7 @@ class Carousel {
     createPagination () {
         let pagination = this.createDivWithClass('carousel__pagination')
         let buttons = []
-        this.main.appendChild(pagination)
+        this.root.appendChild(pagination)
         
         for (let i = 0; i < this.items.length; i = i + 1) {
             let button = this.createDivWithClass('carousel__pagination--button')
@@ -133,7 +133,7 @@ class Carousel {
 }
 
 let onReady = () => {
-    new Carousel(document.querySelector('#carouselContainer'))
+    new Carousel(document.querySelector('#portfolioContainer'))
 }
 
 if (document.readyState !== 'loading') {
