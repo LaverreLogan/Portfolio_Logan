@@ -112,7 +112,7 @@
         <div id="portfolioContainer">
             <div class="itemBody">
                 <input type="checkbox" id="portfolioItem1">
-                <div class="itemImg">
+                <div class="itemImg" onclick="extendSlider()">
                     <label for="portfolioItem1"><img src="./assets/imgs/mockup_test.jpg" alt=""></label>
                     <label for="portfolioItem1" class="itemSeeMore">Click to see more !</label>
                 </div>
@@ -123,7 +123,7 @@
                     <p class="itemP">Roland-Garros first official Nft collection.</p>
                 </div>
                 <div class="itemDetails">
-                    <div class="x-mark">
+                    <div class="x-mark" onclick="closeExtend()">
                         <label for="portfolioItem1" class="xmarkLabel"><img src="./assets/imgs/xmark-solid.png" alt=""></label>
                     </div>
                     <div class="itemDetailsContainer">
@@ -160,7 +160,7 @@
             </div>
             <div class="itemBody">
                 <input type="checkbox" id="portfolioItem2">
-                <div class="itemImg">
+                <div class="itemImg" onclick="extendSlider()">
                     <label for="portfolioItem2"><img src="./assets/imgs/mockup_test.jpg" alt=""></label>
                     <label for="portfolioItem2" class="itemSeeMore">Click to see more !</label>
                 </div>
@@ -171,7 +171,7 @@
                     <p class="itemP">This website is the project of a conception and robotic enthusiast</p>
                 </div>
                 <div class="itemDetails">
-                    <div class="x-mark">
+                    <div class="x-mark" onclick="closeExtend()">
                         <label for="portfolioItem2" class="xmarkLabel"><img src="./assets/imgs/xmark-solid.png" alt=""></label>
                     </div>
                     <div class="itemDetailsContainer">
@@ -210,7 +210,7 @@
             </div>
             <div class="itemBody">
                 <input type="checkbox" id="portfolioItem3">
-                <div class="itemImg">
+                <div class="itemImg" onclick="extendSlider()">
                     <label for="portfolioItem3"><img src="./assets/imgs/mockup_test.jpg" alt=""></label>
                     <label for="portfolioItem3" class="itemSeeMore">Click to see more !</label>
                 </div>
@@ -221,7 +221,7 @@
                     <p class="itemP">Very unique activity who aim to become the first NFT project to support a professional football club.</p>
                 </div>
                 <div class="itemDetails">
-                    <div class="x-mark">
+                    <div class="x-mark" onclick="closeExtend()">
                         <label for="portfolioItem3" class="xmarkLabel"><img src="./assets/imgs/xmark-solid.png" alt=""></label>
                     </div>
                     <div class="itemDetailsContainer">
@@ -257,7 +257,7 @@
             </div>
             <div class="itemBody">
                 <input type="checkbox" id="portfolioItem4">
-                <div class="itemImg">
+                <div class="itemImg" onclick="extendSlider()">
                     <label for="portfolioItem4"><img src="./assets/imgs/mockup_test.jpg" alt=""></label>
                     <label for="portfolioItem4" class="itemSeeMore">Click to see more !</label>
                 </div>
@@ -268,7 +268,7 @@
                     <p class="itemP">This company wants to be the reference of luxury streetwear brand.</p>
                 </div>
                 <div class="itemDetails">
-                    <div class="x-mark">
+                    <div class="x-mark" onclick="closeExtend()">
                         <label for="portfolioItem4" class="xmarkLabel"><img src="./assets/imgs/xmark-solid.png" alt=""></label>
                     </div>
                     <div class="itemDetailsContainer">
@@ -313,7 +313,10 @@
             <textarea placeholder="Your message" autocomplete="false" name="Message"></textarea>
             <input type="submit" value="Send" class="sendButton">
         </form>
-        <p class="credits">© 2022 | <span class="creditsName">Logan LAVERRE</span></p>
+        <div class="credits">
+            <p>© 2022 | <span class="creditsName">Logan LAVERRE</span></p>
+        </div>
+        
     </section>
 </body>
 </html>

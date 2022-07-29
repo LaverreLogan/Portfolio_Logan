@@ -25,7 +25,7 @@ window.addEventListener('scroll', () => {
 function setVh() {
     let vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     sections.forEach( section => {
-        section.setAttribute("style", "height:" + vH + "px")
+        section.setAttribute("style", "min-height:" + vH + "px")
     })
 }
 setVh();
@@ -51,4 +51,23 @@ function formValidation() {
         return false;
     }
     return true;
+}
+
+
+onclick="closeExtend()"
+onclick="extendSlider()"
+
+function extendSlider() {
+    console.log("open");
+    document.getElementsByClassName('carousel__pagination')[0].style.opacity = "0";
+    document.getElementsByClassName('carousel__prev')[0].style.opacity = "0";
+    document.getElementsByClassName('carousel__next')[0].style.opacity = "0";
+}
+
+
+function closeExtend() {
+    console.log("close");
+    document.getElementsByClassName('carousel__pagination')[0].style.opacity = "100";
+    document.getElementsByClassName('carousel__prev')[0].style.opacity = "100";
+    document.getElementsByClassName('carousel__next')[0].style.opacity = "100";
 }

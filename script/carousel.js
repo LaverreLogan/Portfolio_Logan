@@ -8,7 +8,7 @@ class Carousel {
         /* DOM modifications */
         this.root = this.createDivWithClass('carousel')
         this.container = this.createDivWithClass('carousel__container')
-        this.main = document.getElementById('pagination_prev_next')
+        this.main = document.getElementById('portfolioContainer')
         this.root.setAttribute('tabindex', '0')
         this.element.appendChild(this.root)
         this.root.appendChild(this.container)

@@ -836,12 +836,14 @@ header {
 .contact {
   background: linear-gradient(0deg, #0e4143 0%, #042326 25%, #042326 100%);
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .contact .formContainer {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   padding: 3rem;
@@ -882,15 +884,12 @@ header {
   box-shadow: 0 0 8px var(--light-green-color);
   outline: none;
 }
-.contact textarea:autofill, .contact input:autofill {
-  transition: background-color 5000s ease-in-out 0s;
-  color: white;
-}
 
 .contactTitle {
+  position: absolute;
   text-align: center;
   margin-bottom: 6rem;
-  top: 0;
+  top: 7vh;
   color: white;
 }
 
@@ -898,6 +897,7 @@ header {
   position: absolute;
   color: white;
   bottom: 0;
+  margin-top: 2rem;
 }
 
 .creditsName {
@@ -918,7 +918,7 @@ header {
   width: 10rem;
   height: 3.5rem;
   position: absolute;
-  bottom: 5rem;
+  bottom: -5rem;
 }
 
 .sendButton:hover {
@@ -1129,7 +1129,7 @@ header {
   }
 
   /*--------------------- Contact ---------------------*/
-  .contact input[type=text] {
+  .contact input[type=text], .contact input[type=email] {
     width: 40%;
   }
 
@@ -1190,6 +1190,18 @@ header {
   .carousel__prev, .carousel__next {
     width: 50px;
     height: 50px;
+  }
+
+  /* Contact */
+  .nameContainer {
+    flex-direction: column;
+  }
+
+  .contact input[type=text], .contact input[type=email] {
+    width: 100%;
+  }
+  .contact textarea {
+    margin-top: 30px;
   }
 }
 
