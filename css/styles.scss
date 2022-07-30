@@ -29,8 +29,8 @@ body {
 
 section {
     position: relative;
-    min-height: fill-available;
-    min-height: -webkit-fill-available;
+    // min-height: fill-available;
+    // min-height: -webkit-fill-available;
     min-height: 100vh;
     width: 100vw;
 }
