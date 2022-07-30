@@ -255,6 +255,7 @@ header {
 
 .homeContainer {
   display: flex;
+  position: relative;
   justify-content: space-around;
   align-items: center;
   height: 92vh;
@@ -838,7 +839,6 @@ header {
 .contact {
   background: linear-gradient(0deg, #0e4143 0%, #042326 25%, #042326 100%);
   display: flex;
-  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;

@@ -22,29 +22,29 @@ window.addEventListener('scroll', () => {
 
 /*------------------ Section height ------------------*/
 
-function setVh() {
-    let vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    sections.forEach( section => {
-        section.setAttribute("style", "min-height:" + vH + "px")
-    })
-}
+// function setVh() {
+//     let vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+//     sections.forEach( section => {
+//         section.setAttribute("style", "min-height:" + vH + "px")
+//     })
+// }
 
 
-const vW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-const vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-if (vW < 550 + "px") {
-    sections.forEach( section => {
-        section.setAttribute("style", "min-height: 600px")
-    })
-} else {
-    sections.forEach( section => {
-        section.setAttribute("style", "min-height:" + vH + "px");
-        window.addEventListener('resize', setVh, true);
-    })
-}
-console.log("vw:" + vW)
-console.log("vh:" +vH)
-setVh();
+// const vW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+// const vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+// if (vW < 550 + "px") {
+//     sections.forEach( section => {
+//         section.setAttribute("style", "min-height: 600px")
+//     })
+// } else {
+//     sections.forEach( section => {
+//         section.setAttribute("style", "min-height:" + vH + "px");
+//         window.addEventListener('resize', setVh, true);
+//     })
+// }
+// console.log("vw:" + vW)
+// console.log("vh:" +vH)
+// setVh();
 
 
 
