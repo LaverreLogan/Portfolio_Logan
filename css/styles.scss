@@ -28,9 +28,10 @@ body {
 }
 
 section {
-    height: 100vh;
+    min-height: 100vh;
+    min-height: fill-available;
+    min-height: -webkit-fill-available;
     width: 100vw;
-    max-height: 100vh;
 }
 
 .pdf {

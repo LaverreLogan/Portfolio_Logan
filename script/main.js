@@ -22,15 +22,15 @@ window.addEventListener('scroll', () => {
 
 /*------------------ Section height ------------------*/
 
-function setVh() {
-    let vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    sections.forEach( section => {
-        section.setAttribute("style", "min-height:" + vH + "px")
-    })
-}
-setVh();
-window.addEventListener('onorientationchange', setVh, true);
-window.addEventListener('resize', setVh, true);
+// function setVh() {
+//     let vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+//     sections.forEach( section => {
+//         section.setAttribute("style", "min-height:" + vH + "px")
+//     })
+// }
+// setVh();
+// window.addEventListener('resize', setVh, true);
+
 
 /*------------------- Form validity -------------------*/
 
@@ -53,6 +53,8 @@ function formValidation() {
     return true;
 }
 
+
+/* Pagination and arrows behavior */
 
 onclick="closeExtend()"
 onclick="extendSlider()"
