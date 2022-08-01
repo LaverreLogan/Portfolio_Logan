@@ -1143,6 +1143,7 @@ header {
 }
 @media screen and (max-width: 500px) {
   section {
+    min-height: 480px;
     max-height: 740px;
     max-width: 500px;
   }
