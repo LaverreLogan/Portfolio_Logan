@@ -24,9 +24,9 @@ window.addEventListener('scroll', () => {
 
 function setVh() {
     let vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    sections.forEach( section => {
-        section.setAttribute("style", "min-height:" + vH + "px")
-    })
+        sections.forEach( section => {
+            section.setAttribute("style", "min-height:" + vH + "px")
+        })
 }
 
 
@@ -43,7 +43,9 @@ function setVh() {
 // }
 // console.log("vw:" + vW)
 // console.log("vh:" +vH)
-setVh();
+if (document.documentElement.clientWidth > 500) {
+    setVh();
+}
 window.addEventListener('resize', setVh, true);
 
 

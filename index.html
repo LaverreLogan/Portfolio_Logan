@@ -305,14 +305,15 @@
     </section>
     <section class="contact" id="page5">
         <h2 class="contactTitle">You want to start a project or you have a question ? <br><br>Contact me !</h2>
-        <form action="mailto:laverrelogan@gmail.com" method="post" class="formContainer" name="contactForm" onsubmit = "return(formValidation());">
+        <form action="mailto:laverrelogan@gmail.com" method="post" class="formContainer" id="messageForm" name="contactForm" onsubmit = "return(formValidation());">
             <div class="nameContainer">
                 <input type="text" placeholder="Name" autocomplete="off" name="Name">
                 <input type="email" placeholder="Email" autocomplete="off" name="Email">
             </div>
             <textarea placeholder="Your message" autocomplete="false" name="Message"></textarea>
-            <input type="submit" value="Send" class="sendButton">
+            <!-- <input type="submit" value="Send" class="sendButton"> -->
         </form>
+        <button type="submit" class="sendButton" form="messageForm">Send</button>
         <div class="credits">
             <p>© 2022 | <span class="creditsName">Logan LAVERRE</span></p>
         </div>
