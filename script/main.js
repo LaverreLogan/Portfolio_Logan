@@ -29,10 +29,10 @@ function setVh() {
     homePage.setAttribute("style", "min-height:" + vH + "px");
 }
 
-if (document.documentElement.clientWidth < 500) {
+
     setVh();
     window.addEventListener('resize', setVh, true);
-}
+
 
 
 

@@ -66,7 +66,7 @@
     </header>
     <input type="checkbox" id="showPDF">
     <div class="pdf">
-        <label for="showPDF" class="close">X</label>
+        <label for="showPDF" class="close"><img class="redArrow" src="assets/imgs/arrow-left-solid.png" alt=""></label>
         <embed src="./assets/pdf/CV_Logan.pdf" type="application/pdf"></embed>
     </div>
     <section class="homePage" id="page1">
@@ -89,7 +89,7 @@
             <img src="assets/imgs/hand-point-down-solid.png" alt="Image main" class="mouse" id="imgHand">
         </div>
     </section>
-    <section class="aboutMe" id="page2">
+    <section class="container aboutMe" id="page2">
         <div class="darkContainer">
             <div class="imgBorder"></div>
             <img class="imgProfil" src="./assets/imgs/Sans titre-1.png" alt="Photo de Logan">
@@ -100,14 +100,14 @@
             <label for="showPDF" class="downloadButton">Look at my CV</label>
         </div>
     </section>
-    <section class="skills" id="page3">
+    <section class="container skills" id="page3">
         <img src="assets/imgs/Illu_2.png" alt="" class="desktopSkills">
         <div class="mobileSkills">
             <img src="assets/imgs/Illu-FR1.png" alt="">
             <img src="assets/imgs/Illu-FR2.png" alt="">
         </div>
     </section>
-    <section class="portfolio" id="page4">
+    <section class="container portfolio" id="page4">
         <div class="darkContainer darkPortfolio" id="darkPortfolio"></div>
         <div id="portfolioContainer">
             <div class="itemBody">
@@ -303,7 +303,7 @@
             </div>
         </div>
     </section>
-    <section class="contact" id="page5">
+    <section class="container contact" id="page5">
         <h2 class="contactTitle">You want to start a project or you have a question ? <br><br>Contact me !</h2>
         <form action="mailto:laverrelogan@gmail.com" method="post" class="formContainer" id="messageForm" name="contactForm" onsubmit = "return(formValidation());">
             <div class="nameContainer">

@@ -28,9 +28,9 @@ body {
   overflow-y: scroll;
 }
 
-section {
+.container {
   position: relative;
-  height: 100vh;
+  height: 864px;
   width: 100vw;
 }
 
@@ -41,22 +41,22 @@ section {
   right: 0;
   transform: translateX(110vw);
   z-index: 999;
-  width: 90vw;
+  width: 100vw;
   height: 100vh;
   transition: transform 150ms linear;
 }
 
 .pdf .close {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 3rem;
-  width: 10vw;
-  height: 100%;
-  left: -10vw;
-  background-color: rgba(0, 0, 0, 0.25);
+  width: 100%;
+  left: 25px;
+  top: 10%;
   color: white;
+  cursor: pointer;
+}
+.pdf .close .redArrow {
+  width: 50px;
 }
 
 .pdf .close:hover {
@@ -81,7 +81,7 @@ input#showPDF:checked + .pdf {
 /* ------------------------------------------------------ */
 header {
   position: fixed;
-  z-index: 99999;
+  z-index: 99;
   top: 0;
   left: 0;
   right: 0;
@@ -92,7 +92,7 @@ header {
 
 .headerContainer {
   width: 100%;
-  height: 8vh;
+  height: 70px;
   margin: auto;
 }
 
@@ -144,7 +144,7 @@ header {
   flex-direction: column;
   align-items: center;
   height: 250px;
-  top: 7vh;
+  top: 70px;
   margin: 0;
   padding-left: 0;
   width: 100vw;
@@ -248,8 +248,10 @@ header {
 .homePage {
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: var(--dark-green-color);
   overflow: hidden;
+  height: calc(100vh - 70px);
 }
 
 .homeContainer {
@@ -257,7 +259,6 @@ header {
   position: relative;
   justify-content: space-around;
   align-items: center;
-  height: 92vh;
   width: 90%;
   margin: auto;
 }
@@ -305,12 +306,12 @@ header {
 .imgMain {
   width: clamp(45%, 500px, 65vw);
   height: auto;
-  padding-top: 20vh;
+  padding-top: 70px;
 }
 
 .mainLogo {
   position: absolute;
-  top: 50vh;
+  top: 55%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -352,13 +353,12 @@ header {
   }
 }
 .mouseContainer {
-  height: 8vh;
+  height: 70px;
+  position: sticky;
+  bottom: 0;
 }
 
 .mouse {
-  position: sticky;
-  left: calc(50% - 15px);
-  bottom: 0;
   width: 30px;
   animation-name: MoveUpDown;
   animation-duration: 1.5s;
@@ -401,9 +401,10 @@ header {
   justify-content: center;
   align-items: center;
   background: var(--dark-green-color);
+  max-width: 100%;
   width: 60rem;
   height: 40rem;
-  margin-top: 8vh;
+  margin-top: 75px;
 }
 .darkContainer .imgBorder {
   position: absolute;
@@ -948,7 +949,6 @@ header {
 
   .greenContainer {
     width: 80vw;
-    height: 40vh;
   }
 
   #greenQuote1, #greenQuote2 {
