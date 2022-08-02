@@ -2,6 +2,7 @@
 
 const sections = document.querySelectorAll('section');
 const navList = document.querySelectorAll('nav .menu ul li');
+
 window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach( section => {
@@ -22,31 +23,16 @@ window.addEventListener('scroll', () => {
 
 /*------------------ Section height ------------------*/
 
+let homePage = document.getElementById('page1');
 function setVh() {
     let vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-        sections.forEach( section => {
-            section.setAttribute("style", "min-height:" + vH + "px")
-        })
+    homePage.setAttribute("style", "min-height:" + vH + "px");
 }
 
-
-// const vW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-// const vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-// if (vW < 550 + "px") {
-//     sections.forEach( section => {
-//         section.setAttribute("style", "min-height: 600px")
-//     })
-// } else {
-//     sections.forEach( section => {
-//         section.setAttribute("style", "min-height:" + vH + "px");
-//     })
-// }
-// console.log("vw:" + vW)
-// console.log("vh:" +vH)
-if (document.documentElement.clientWidth > 500) {
+if (document.documentElement.clientWidth < 500) {
     setVh();
+    window.addEventListener('resize', setVh, true);
 }
-window.addEventListener('resize', setVh, true);
 
 
 
