@@ -67,7 +67,6 @@
     <input type="checkbox" id="showPDF">
     <div class="pdf">
         <label for="showPDF" class="close"><img class="redArrow" src="assets/imgs/arrow-left-solid.png" alt=""></label>
-        <!-- <embed src="./assets/pdf/CV_Logan.pdf" type="application/pdf"></embed> -->
         <object height="900" width="1000" data="./assets/pdf/CV_Logan.pdf"></object>
     </div>
     <section class="homePage" id="page1">
@@ -306,13 +305,12 @@
     </section>
     <section class="container contact" id="page5">
         <h2 class="contactTitle">You want to start a project or you have a question ? <br><br>Contact me !</h2>
-        <form action="mailto:laverrelogan@gmail.com" method="post" class="formContainer" id="messageForm" name="contactForm" onsubmit = "return(formValidation());">
+        <form action="contact.php" method="post" class="formContainer" id="messageForm" name="contactForm">
             <div class="nameContainer">
-                <input type="text" placeholder="Name" autocomplete="off" name="Name">
-                <input type="email" placeholder="Email" autocomplete="off" name="Email">
+                <input type="text" placeholder="Name" name="name" required>
+                <input type="email" placeholder="Email" name="email" required>
             </div>
-            <textarea placeholder="Your message" autocomplete="false" name="Message"></textarea>
-            <!-- <input type="submit" value="Send" class="sendButton"> -->
+            <textarea placeholder="Your message" autocomplete="false" name="message"></textarea>
         </form>
         <button type="submit" class="sendButton" form="messageForm">Send</button>
         <div class="credits">

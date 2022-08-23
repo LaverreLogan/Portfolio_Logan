@@ -516,7 +516,7 @@ header {
     border: none;
     background: var(--light-green-color);
     box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.548), 2px 4px 6px rgba(0, 0, 0, 0.137);
-    
+    user-select: none;
 }
 
 .downloadButton:hover {

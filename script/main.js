@@ -34,31 +34,6 @@ function setVh() {
     window.addEventListener('resize', setVh, true);
 
 
-
-
-
-/*------------------- Form validity -------------------*/
-
-function formValidation() {
-    if (document.contactForm.Name.value === "") {
-        alert('Please provide your name');
-        document.contactForm.name.focus();
-        return false;
-    }
-    if (document.contactForm.Email.value === "") {
-        alert('Please provide your email');
-        document.contactForm.Email.focus();
-        return false;
-    }
-    if (document.contactForm.Message.value === "") {
-        alert('Please provide your message');
-        document.contactForm.Message.focus();
-        return false;
-    }
-    return true;
-}
-
-
 /* Pagination and arrows behavior */
 
 onclick="closeExtend()"
