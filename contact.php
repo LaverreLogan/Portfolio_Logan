@@ -17,13 +17,12 @@ $keys = [
  */
 
 function isFormSubmited($keys) {
-	foreach ($keys as $key => $label) {
+	foreach ($keys as $key) {
 		if (empty($_POST[$key])) {
-            echo "<script>alert(\"Le formulaire n'est pas complet\")</script>";
-            header('Location: /#page5');
+			header('Location: /#page5');
+            return false;
 		}
 	}
-
 	return true;
 }
 

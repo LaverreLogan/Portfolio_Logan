@@ -51,21 +51,6 @@ class Carousel {
         this.root.appendChild(prevButton)
         nextButton.addEventListener('click', this.next.bind(this))
         prevButton.addEventListener('click', this.prev.bind(this))
-        // if (this.options.loop === true){
-        //     return
-        // }
-        // this.onMove(index => {
-        //     if (index === 0) {
-        //         prevButton.classList.add('carousel__prev-hidden')
-        //     } else {
-        //         prevButton.classList.remove('carousel__prev-hidden')
-        //     }
-        //     if (this.items[this.currentSlide + 1] === undefined) {
-        //         nextButton.classList.add('carousel__next-hidden')
-        //     } else {
-        //         nextButton.classList.remove('carousel__next-hidden')
-        //     }
-        // })
     }
 
     createPagination () {

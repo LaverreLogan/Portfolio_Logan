@@ -97,6 +97,7 @@ header {
   align-items: center;
   margin: auto;
   width: 90vw;
+  height: 100%;
 }
 .menu .desktopList {
   display: flex;
@@ -235,6 +236,15 @@ header {
 }
 .menu .active a {
   color: var(--light-green-color);
+}
+
+.langSwitcher {
+  display: flex;
+}
+.langSwitcher p {
+  margin: 0;
+  color: #fff;
+  cursor: pointer;
 }
 
 /* ------------------------------------------------- */
@@ -885,6 +895,10 @@ header {
   outline: none;
 }
 
+.error {
+  border: solid 2px red;
+}
+
 .contactTitle {
   text-align: center;
   margin-bottom: 6rem;
@@ -973,6 +987,7 @@ header {
   /*-------------- Portfolio --------------*/
   .itemBody {
     width: 60vw;
+    height: 200px;
   }
 
   .darkPortfolio {
@@ -1117,6 +1132,18 @@ header {
   }
 
   /*--------------- Portfolio ---------------*/
+  .carousel {
+    height: 864px;
+  }
+
+  .carousel__item {
+    height: 864px;
+  }
+
+  .darkContainer {
+    height: 700px;
+  }
+
   .portfolio {
     padding-top: 30px;
   }
@@ -1173,7 +1200,7 @@ header {
 
   /*-------------------- Portfolio --------------------*/
   .itemBody {
-    height: 60vh;
+    height: 550px;
     width: 80vw;
     padding: 0;
   }

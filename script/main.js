@@ -34,13 +34,9 @@ function setVh() {
     window.addEventListener('resize', setVh, true);
 
 
-/* Pagination and arrows behavior */
-
-onclick="closeExtend()"
-onclick="extendSlider()"
+/*-------------- Pagination and arrows behavior --------------*/
 
 function extendSlider() {
-    console.log("open");
     document.getElementsByClassName('carousel__pagination')[0].style.opacity = "0";
     document.getElementsByClassName('carousel__prev')[0].style.opacity = "0";
     document.getElementsByClassName('carousel__next')[0].style.opacity = "0";
@@ -48,7 +44,6 @@ function extendSlider() {
 
 
 function closeExtend() {
-    console.log("close");
     document.getElementsByClassName('carousel__pagination')[0].style.opacity = "100";
     document.getElementsByClassName('carousel__prev')[0].style.opacity = "100";
     document.getElementsByClassName('carousel__next')[0].style.opacity = "100";

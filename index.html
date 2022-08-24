@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +14,7 @@
     <script src="script/animationText.js" async></script>
     <script src="script/carousel.js" async></script>
     <script src="script/main.js" async></script>
+    
 </head>
 <body>
     <header>
@@ -25,16 +26,16 @@
                 <input type="checkbox" id="burgerCheck">
                 <ul class="mobileList">
                     <li>
-                        <a href="#page2">About me</a>
+                        <a href="#page2" data-i18n-key="link1">About me</a>
                     </li>
                     <li>
-                        <a href="#page3">Skills</a>
+                        <a href="#page3" data-i18n-key="link2">Skills</a>
                     </li>
                     <li>
-                        <a href="#page4">Portfolio</a>
+                        <a href="#page4" data-i18n-key="link3">Portfolio</a>
                     </li>
                     <li>
-                        <a href="#page5">Contact</a>
+                        <a href="#page5" data-i18n-key="link4">Contact</a>
                     </li>
                 </ul>
                 <label class="burgerLines" for="burgerCheck">
@@ -49,16 +50,23 @@
                 </a>
                 <ul class="desktopList">
                     <li class="page2">
-                        <a href="#page2">About me</a>
+                        <a href="#page2" data-i18n-key="link1">About me</a>
                     </li>
                     <li class="page3">
-                        <a href="#page3">Skills</a>
+                        <a href="#page3" data-i18n-key="link2">Skills</a>
                     </li>
                     <li class="page4">
-                        <a href="#page4">Portfolio</a>
+                        <a href="#page4" data-i18n-key="link3">Portfolio</a>
                     </li>
                     <li class="page5">
-                        <a href="#page5">Contact</a>
+                        <a href="#page5" data-i18n-key="link4">Contact</a>
+                    </li>
+                    <li>
+                        <div data-i18n-switcher class="langSwitcher">
+                            <p onclick="setLocale('en')" id="switchEn">En</p>
+                            <p>|</p>
+                            <p onclick="setLocale('fr')" id="switchFr">Fr</p>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -95,13 +103,13 @@
             <img class="imgProfil" src="./assets/imgs/Sans titre-1.png" alt="Photo de Logan">
             <span id="greenQuote1">«</span>
             <div class="greenContainer"></div>
-            <p class="aboutMeP">My name is Logan Laverre and I am passionate about developement and computers in general.<br/><br/>I was a shelf worker for almost 8 years and I have learned a lot about team work, autonomy and work ethic.<br/><br/>  I started to learn basics of HTML / CSS by myself and profesionalize my learning at the Instic's school based in Lyon.<br/><br/>If you want to know more about me, you can check my CV or contact me !</p>
+            <p class="aboutMeP" data-i18n-key="aboutMeText">My name is Logan Laverre and I am passionate about developement and computers in general.<br/><br/>I was a shelf worker for almost 8 years and I have learned a lot about team work, autonomy and work ethic.<br/><br/>  I started to learn basics of HTML / CSS by myself and profesionalize my learning at the Instic's school based in Lyon.<br/><br/>If you want to know more about me, you can check my CV or contact me !</p>
             <span id="greenQuote2">«</span>
-            <label for="showPDF" class="downloadButton">Look at my CV</label>
+            <label for="showPDF" class="downloadButton" data-i18n-key="aboutMeButton">Look at my CV</label>
         </div>
     </section>
     <section class="container skills" id="page3">
-        <img src="assets/imgs/Illu_2.png" alt="" class="desktopSkills">
+        <img src="assets/imgs/Illu_2FR.png" alt="" class="desktopSkills">
         <div class="mobileSkills">
             <img src="assets/imgs/Illu-FR1.png" alt="">
             <img src="assets/imgs/Illu-FR2.png" alt="">
@@ -114,13 +122,13 @@
                 <input type="checkbox" id="portfolioItem1">
                 <div class="itemImg" onclick="extendSlider()">
                     <label for="portfolioItem1"><img src="./assets/imgs/mockup_test.jpg" alt=""></label>
-                    <label for="portfolioItem1" class="itemSeeMore">Click to see more !</label>
+                    <label for="portfolioItem1" class="itemSeeMore" data-i18n-key="seeMoreButton">Click to see more !</label>
                 </div>
                 <div class="itemDivTitle">
-                    <h2 class="itemTitle">Game, seat<br> & match</h2>
+                    <h2 class="itemTitle" data-i18n-key="portfolioTitle1">Game, seat<br> & match</h2>
                 </div>
                 <div class="itemDescription">
-                    <p class="itemP">Roland-Garros first official Nft collection.</p>
+                    <p class="itemP" data-i18n-key="portfolioText1">Roland-Garros first official Nft collection.</p>
                 </div>
                 <div class="itemDetails">
                     <div class="x-mark" onclick="closeExtend()">
@@ -132,10 +140,10 @@
                                 <img src="./assets/imgs/city4trip-2.png" alt="">
                             </div>
                             <div class="portfolioDetailsTitle">
-                                <h2>Project infos</h2>
+                                <h2 data-i18n-key="portfolioProjectTitle">Project infos</h2>
                             </div>
                             <div class="portfolioDetailsText">
-                                <p>The famous tennis Roland-Garros tournament launched their first NFT collection in the form of a virtual seat on the Philippe-Chatrier court. Holders received exclusive benefits during the tournament. </p>
+                                <p data-i18n-key="portfolioDetailsText1">The famous tennis Roland-Garros tournament launched their first NFT collection in the form of a virtual seat on the Philippe-Chatrier court. Holders received exclusive benefits during the tournament.</p>
                             </div>
                         </div>
                         <div class="portfolioDetailsContainer">
@@ -143,32 +151,32 @@
                                 <img src="./assets/imgs/city4trip.png" alt="">
                             </div>
                             <div class="portfolioDetailsTitle">
-                                <h2>Realisation</h2>
+                                <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
                             </div>
                             <div class="portfolioDetailsText">
                                 <ul>
-                                    <li>Development with Vue.js</li>
-                                    <li>Html / CSS integration</li>
-                                    <li>I18n integration</li>
-                                    <li>Responsive design</li>
+                                    <li data-i18n-key="portfolioDetailsList1_1">Development with Vue.js</li>
+                                    <li data-i18n-key="portfolioDetailsList1_2">Html / CSS integration</li>
+                                    <li data-i18n-key="portfolioDetailsList1_3">I18n integration</li>
+                                    <li data-i18n-key="portfolioDetailsList1_4">Responsive design</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <a href="https://club.rolandgarros.com/" target="_blank">Visit website</a>
+                    <a href="https://club.rolandgarros.com/" target="_blank" data-i18n-key="portfolioDetailsLink">Visit website</a>
                 </div>
             </div>
             <div class="itemBody">
                 <input type="checkbox" id="portfolioItem2">
                 <div class="itemImg" onclick="extendSlider()">
                     <label for="portfolioItem2"><img src="./assets/imgs/mockup_test.jpg" alt=""></label>
-                    <label for="portfolioItem2" class="itemSeeMore">Click to see more !</label>
+                    <label for="portfolioItem2" class="itemSeeMore" data-i18n-key="seeMoreButton">Click to see more !</label>
                 </div>
                 <div class="itemDivTitle">
-                    <h2 class="itemTitle">Foxlabs</h2>
+                    <h2 class="itemTitle" data-i18n-key="portfolioTitle2">Foxlabs</h2>
                 </div>
                 <div class="itemDescription">
-                    <p class="itemP">This website is the project of a conception and robotic enthusiast</p>
+                    <p class="itemP" data-i18n-key="portfolioText2">This website is the project of a conception and robotic enthusiast</p>
                 </div>
                 <div class="itemDetails">
                     <div class="x-mark" onclick="closeExtend()">
@@ -180,10 +188,10 @@
                                 <img src="./assets/imgs/city4trip-2.png" alt="">
                             </div>
                             <div class="portfolioDetailsTitle">
-                                <h2>Project infos</h2>
+                                <h2 data-i18n-key="portfolioProjectTitle">Project infos</h2>
                             </div>
                             <div class="portfolioDetailsText">
-                                <p>Foxlabs is a storefront / e-shop website where you can order and purchase 3D prints and prototypes.</p>
+                                <p data-i18n-key="portfolioDetailsText2">Foxlabs is a storefront / e-shop website where you can order and purchase 3D prints and prototypes.</p>
                             </div>
                         </div>
                         <div class="portfolioDetailsContainer">
@@ -191,34 +199,34 @@
                                 <img src="./assets/imgs/city4trip.png" alt="">
                             </div>
                             <div class="portfolioDetailsTitle">
-                                <h2>Realisation</h2>
+                                <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
                             </div>
                             <div class="portfolioDetailsText">
                                 <ul>
-                                    <li>Development with Vue.js</li>
-                                    <li>Html / CSS integration</li>
-                                    <li>Shopify API integration</li>
-                                    <li>User page creation</li>
-                                    <li>Requests with GraphQL</li>
-                                    <li>Responsive design</li>
+                                    <li data-i18n-key="portfolioDetailsList2_1">Development with Vue.js</li>
+                                    <li data-i18n-key="portfolioDetailsList2_2">Html / CSS integration</li>
+                                    <li data-i18n-key="portfolioDetailsList2_3">Shopify API integration</li>
+                                    <li data-i18n-key="portfolioDetailsList2_4">User page creation</li>
+                                    <li data-i18n-key="portfolioDetailsList2_5">Requests with GraphQL</li>
+                                    <li data-i18n-key="portfolioDetailsList2_6">Responsive design</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <a href="https://www.foxlabs.fr/" target="_blank">Visit website</a>
+                    <a href="https://www.foxlabs.fr/" target="_blank" data-i18n-key="portfolioDetailsLink">Visit website</a>
                 </div>
             </div>
             <div class="itemBody">
                 <input type="checkbox" id="portfolioItem3">
                 <div class="itemImg" onclick="extendSlider()">
                     <label for="portfolioItem3"><img src="./assets/imgs/mockup_test.jpg" alt=""></label>
-                    <label for="portfolioItem3" class="itemSeeMore">Click to see more !</label>
+                    <label for="portfolioItem3" class="itemSeeMore" data-i18n-key="seeMoreButton">Click to see more !</label>
                 </div>
                 <div class="itemDivTitle">
-                    <h2 class="itemTitle">Crypto <br>Shrimps</h2>
+                    <h2 class="itemTitle" data-i18n-key="portfolioTitle3">Crypto <br>Shrimps</h2>
                 </div>
                 <div class="itemDescription">
-                    <p class="itemP">Very unique activity who aim to become the first NFT project to support a professional football club.</p>
+                    <p class="itemP" data-i18n-key="portfolioText3">Very unique activity who aim to become the first NFT project to support a professional football club.</p>
                 </div>
                 <div class="itemDetails">
                     <div class="x-mark" onclick="closeExtend()">
@@ -230,10 +238,10 @@
                                 <img src="./assets/imgs/city4trip-2.png" alt="">
                             </div>
                             <div class="portfolioDetailsTitle">
-                                <h2>Project infos</h2>
+                                <h2 data-i18n-key="portfolioProjectTitle">Project infos</h2>
                             </div>
                             <div class="portfolioDetailsText">
-                                <p>A NFT collection where the benefits will be used to create a special connection between supporters and a professional football club.</p>
+                                <p data-i18n-key="portfolioDetailsText3">A NFT collection where the benefits will be used to create a special connection between supporters and a professional football club.</p>
                             </div>
                         </div>
                         <div class="portfolioDetailsContainer">
@@ -241,31 +249,31 @@
                                 <img src="./assets/imgs/city4trip.png" alt="">
                             </div>
                             <div class="portfolioDetailsTitle">
-                                <h2>Realisation</h2>
+                                <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
                             </div>
                             <div class="portfolioDetailsText">
                                 <ul>
-                                    <li>Development with Vue.js</li>
-                                    <li>Html / CSS integration</li>
-                                    <li>Api's integration (Roadmap and distribution graph)</li>
+                                    <li data-i18n-key="portfolioDetailsList3_1">Development with Vue.js</li>
+                                    <li data-i18n-key="portfolioDetailsList3_2">Html / CSS integration</li>
+                                    <li data-i18n-key="portfolioDetailsList3_3">Api's integration (Roadmap and distribution graph)</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <a href="https://www.cryptoshrimps.io/" target="_blank">Visit website</a>
+                    <a href="https://www.cryptoshrimps.io/" target="_blank" data-i18n-key="portfolioDetailsLink">Visit website</a>
                 </div>
             </div>
             <div class="itemBody">
                 <input type="checkbox" id="portfolioItem4">
                 <div class="itemImg" onclick="extendSlider()">
                     <label for="portfolioItem4"><img src="./assets/imgs/mockup_test.jpg" alt=""></label>
-                    <label for="portfolioItem4" class="itemSeeMore">Click to see more !</label>
+                    <label for="portfolioItem4" class="itemSeeMore" data-i18n-key="seeMoreButton">Click to see more !</label>
                 </div>
                 <div class="itemDivTitle">
-                    <h2 class="itemTitle">Praverse</h2>
+                    <h2 class="itemTitle" data-i18n-key="portfolioTitle4">Praverse</h2>
                 </div>
                 <div class="itemDescription">
-                    <p class="itemP">This company wants to be the reference of luxury streetwear brand.</p>
+                    <p class="itemP" data-i18n-key="portfolioText4">This company wants to be the reference of luxury streetwear brand.</p>
                 </div>
                 <div class="itemDetails">
                     <div class="x-mark" onclick="closeExtend()">
@@ -277,10 +285,10 @@
                                 <img src="./assets/imgs/city4trip-2.png" alt="">
                             </div>
                             <div class="portfolioDetailsTitle">
-                                <h2>Project infos</h2>
+                                <h2 data-i18n-key="portfolioProjectTitle">Project infos</h2>
                             </div>
                             <div class="portfolioDetailsText">
-                                <p> You can purchase NFT on the Etherum blockchain to collect clothes and accessories who have been hand-drawn by a stylist.</p>
+                                <p data-i18n-key="portfolioDetailsText4">You can purchase NFT on the Etherum blockchain to collect clothes and accessories who have been hand-drawn by a stylist.</p>
                             </div>
                         </div>
                         <div class="portfolioDetailsContainer">
@@ -288,13 +296,13 @@
                                 <img src="./assets/imgs/city4trip.png" alt="">
                             </div>
                             <div class="portfolioDetailsTitle">
-                                <h2>Realisation</h2>
+                                <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
                             </div>
                             <div class="portfolioDetailsText">
                                 <ul>
-                                    <li>Development with Vue.js</li>
-                                    <li>Html / CSS integration</li>
-                                    <li>Responsive design</li>
+                                    <li data-i18n-key="portfolioDetailsList4_1">Development with Vue.js</li>
+                                    <li data-i18n-key="portfolioDetailsList4_2">Html / CSS integration</li>
+                                    <li data-i18n-key="portfolioDetailsList4_3">Responsive design</li>
                                 </ul>
                             </div>
                         </div>
@@ -304,18 +312,19 @@
         </div>
     </section>
     <section class="container contact" id="page5">
-        <h2 class="contactTitle">You want to start a project or you have a question ? <br><br>Contact me !</h2>
+        <h2 class="contactTitle"  data-i18n-key="contactTitle">You want to start a project or you have a question ? <br><br>Contact me !</h2>
         <form action="contact.php" method="post" class="formContainer" id="messageForm" name="contactForm">
             <div class="nameContainer">
-                <input type="text" placeholder="Name" name="name" required>
-                <input type="email" placeholder="Email" name="email" required>
+                <input type="text" id="formName" placeholder="Name" name="name" required pattern="^[A-Za-z '-]+$" maxlength="20">
+                <input type="email" id="formMail" placeholder="Email" name="email" required>
             </div>
-            <textarea placeholder="Your message" autocomplete="false" name="message"></textarea>
+            <textarea placeholder="Your message" id="formMsg" autocomplete="false" name="message"></textarea>
         </form>
-        <button type="submit" class="sendButton" form="messageForm">Send</button>
+        <button type="submit" class="sendButton" form="messageForm"  data-i18n-key="contactButton">Send</button>
         <div class="credits">
             <p>© 2022 | <span class="creditsName">Logan LAVERRE</span></p>
         </div>
     </section>
+    <script src="script/i18n.js"></script>
 </body>
 </html>
