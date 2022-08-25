@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const initialLocale = supportedOrDefault(browserLocales(true));
     setLocale(initialLocale);
     bindLocaleSwitcher(initialLocale);
-    // selectedLang();
+    selectedLang();
     setImg(initialLocale);
     translatePh();
 });
@@ -42,22 +42,20 @@ function translateElement(element) {
     element.innerHTML = translation;
 }
 
-// function translatePh(initialLocale) {
-//     const formName = document.getElementById('formName').getAttribute('placeholder');
-//     const formMail = document.getElementById('formMail').getAttribute('placeholder');
-//     const formMsg = document.getElementById('formMsg').getAttribute('placeholder');
-//     if (initialLocale === "fr") {
-//         this.formName.setAttribute('placeholder', 'Nom');
-//         this.formMail.setAttribute('placeholder', 'Mail');
-//         this.formMsg.setAttribute('placeholder', 'Votre message');
-//         console.log(formName, formMail, formMsg);
-//     } else if (initialLocale === "en") {
-//         this.formName.setAttribute('placeholder', 'Name');
-//         this.formMail.setAttribute('placeholder', 'Email');
-//         this.formMsg.setAttribute('placeholder', 'Your message');
-//         console.log(formName, formMail, formMsg);
-//     }
-// }
+function translatePh() {
+    const formName = document.getElementById('formName').getAttribute('placeholder');
+    const formMail = document.getElementById('formMail').getAttribute('placeholder');
+    const formMsg = document.getElementById('formMsg').getAttribute('placeholder');
+    if (locale === "fr") {
+        this.formName.setAttribute('placeholder', 'Nom');
+        this.formMail.setAttribute('placeholder', 'Mail');
+        this.formMsg.setAttribute('placeholder', 'Votre message');
+    } else if (locale === "en") {
+        this.formName.setAttribute('placeholder', 'Name');
+        this.formMail.setAttribute('placeholder', 'Email');
+        this.formMsg.setAttribute('placeholder', 'Your message');
+    }
+}
 
 function bindLocaleSwitcher(initialValue) {
     const switcher = 
@@ -69,29 +67,30 @@ function bindLocaleSwitcher(initialValue) {
     };
 }
 
-// function selectedLang() {
-//     const en = document.getElementById('switchEn');
-//     const fr = document.getElementById('switchFr');
-//     if (newLocale = "fr") {
-//         en.classList.remove('active');
-//         fr.classList.add('active');
-//     }
-//     if (newLocale = "en") {
-//         fr.classList.remove('active');
-//         en.classList.add('active');
-//     }
-// }
+function selectedLang() {
+    if (locale === "fr") {
+    } else if (locale === "en") {
+    }
+}
+
+
+const switchEn = document.getElementById('switchEn');
+const switchFr = document.getElementById('switchFr');
 
 async function translateFr() {
     setLocale('fr');
     document.getElementById('desktopSkillsFr').style.display = "block";
     document.getElementById('desktopSkillsEn').style.display = "none";
+    switchEn.classList.remove('activeLink');
+    switchFr.classList.add('activeLink');
 }
 
 async function translateEn() {
     setLocale('en');
     document.getElementById('desktopSkillsEn').style.display = "block";
     document.getElementById('desktopSkillsFr').style.display = "none";
+    switchFr.classList.remove('activeLink');
+    switchEn.classList.add('activeLink');
 }  
 
 function isSupported(locale) {
@@ -111,11 +110,17 @@ function setImg(initialLocale) {
     if(initialLocale === "fr") {
         document.getElementById('desktopSkillsFr').style.display = "block";
         document.getElementById('desktopSkillsEn').style.display = "none";
+        switchEn.classList.remove('activeLink');
+        switchFr.classList.add('activeLink');
     } else if (initialLocale === "en") {
         document.getElementById('desktopSkillsEn').style.display = "block";
         document.getElementById('desktopSkillsFr').style.display = "none";
+        switchFr.classList.remove('activeLink');
+        switchEn.classList.add('activeLink');
     } else {
         document.getElementById('desktopSkillsFr').style.display = "block";
         document.getElementById('desktopSkillsEn').style.display = "none";
+        switchEn.classList.remove('activeLink');
+        switchFr.classList.add('activeLink');
     }
 }
