@@ -942,6 +942,22 @@ header {
   box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+.privacyTerms {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  font-size: 11px;
+  color: #18301a;
+  align-self: flex-start;
+}
+.privacyTerms p {
+  margin: 0;
+}
+
 /* -------------------------------------------------- */
 /*-------------------- Responsive --------------------*/
 /* -------------------------------------------------- */
@@ -1135,9 +1151,20 @@ header {
   .carousel {
     height: 864px;
   }
-
-  .carousel__item {
+  .carousel .carousel__container {
     height: 864px;
+  }
+  .carousel .carousel__container .carousel__item {
+    height: 864px;
+  }
+  .carousel .carousel__container .carousel__item .itemBody .itemDetails {
+    height: 850px;
+  }
+  .carousel .carousel__container .carousel__item .itemBody .itemDetails .itemDetailsContainer .portfolioDetailsContainer {
+    height: 300px;
+  }
+  .carousel .carousel__container .carousel__item .itemBody .itemDetails .itemDetailsContainer .portfolioDetailsContainer .portfolioDetailsImg {
+    margin-top: 10px;
   }
 
   .darkContainer {

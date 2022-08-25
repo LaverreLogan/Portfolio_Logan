@@ -14,7 +14,7 @@
     <script src="script/animationText.js" async></script>
     <script src="script/carousel.js" async></script>
     <script src="script/main.js" async></script>
-    
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lfb4KQhAAAAAPi5jACDfRncMywjZHqIqnEzJLQD"></script>
 </head>
 <body>
     <header>
@@ -63,9 +63,9 @@
                     </li>
                     <li>
                         <div data-i18n-switcher class="langSwitcher">
-                            <p onclick="setLocale('en')" id="switchEn">En</p>
+                            <p onclick="translateEn()" id="switchEn">En</p>
                             <p>|</p>
-                            <p onclick="setLocale('fr')" id="switchFr">Fr</p>
+                            <p onclick="translateFr()" id="switchFr">Fr</p>
                         </div>
                     </li>
                 </ul>
@@ -109,7 +109,8 @@
         </div>
     </section>
     <section class="container skills" id="page3">
-        <img src="assets/imgs/Illu_2FR.png" alt="" class="desktopSkills">
+        <img src="assets/imgs/Illu_2FR.png" alt="" class="desktopSkills" id="desktopSkillsFr">
+        <img src="assets/imgs/Illu_2.png" alt="" class="desktopSkills" id="desktopSkillsEn">
         <div class="mobileSkills">
             <img src="assets/imgs/Illu-FR1.png" alt="">
             <img src="assets/imgs/Illu-FR2.png" alt="">
@@ -315,12 +316,32 @@
         <h2 class="contactTitle"  data-i18n-key="contactTitle">You want to start a project or you have a question ? <br><br>Contact me !</h2>
         <form action="contact.php" method="post" class="formContainer" id="messageForm" name="contactForm">
             <div class="nameContainer">
-                <input type="text" id="formName" placeholder="Name" name="name" required pattern="^[A-Za-z '-]+$" maxlength="20">
-                <input type="email" id="formMail" placeholder="Email" name="email" required>
+                <label for="formName">Nom</label>
+                <input type="text" id="formName" name="name" required pattern="^[A-Za-z '-]+$" maxlength="20" data-i18n-ph="formName" class="formInput">
+                <label for="formMail">Email</label>
+                <input type="email" id="formMail" data-i18n-ph="formMail" name="email" class="formInput" required>
+                <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
             </div>
-            <textarea placeholder="Your message" id="formMsg" autocomplete="false" name="message"></textarea>
+            <label for="formMsg">Your message</label>
+            <textarea data-i18n-ph="formMsg" id="formMsg" autocomplete="false" name="message" class="formInput"></textarea>
+            <div class="privacyTerms">
+                <p data-i18n-key="privacyTerms1">
+                    This site is protected by reCAPTCHA and the Google
+                </p>
+                <a href="https://policies.google.com/privacy" data-i18n-key="privacyLink1">Privacy Policy</a>
+                <p data-i18n-key="privacyTerms2">
+                    and
+                </p>
+                <a href="https://policies.google.com/terms" data-i18n-key="privacyLink2">Terms of Service</a> 
+                <p data-i18n-key="privacyTerms3">apply.</p>
+            </div>
         </form>
         <button type="submit" class="sendButton" form="messageForm"  data-i18n-key="contactButton">Send</button>
+        <script>
+            grecaptcha.ready(function () {
+                grecaptcha.execute('6Lfb4KQhAAAAAPi5jACDfRncMywjZHqIqnEzJLQD', {action: 'homepage'})
+            });
+        </script>
         <div class="credits">
             <p>© 2022 | <span class="creditsName">Logan LAVERRE</span></p>
         </div>

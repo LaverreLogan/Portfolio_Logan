@@ -949,6 +949,19 @@ header {
     box-shadow: inset 2px 2px 2px rgba(black, 0.5);
 }
 
+.grecaptcha-badge { visibility: hidden; }
+
+.privacyTerms {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    font-size: 11px;
+    color: rgb(24, 48, 26);
+    align-self: flex-start;
+    p {
+        margin: 0;
+    }
+}
 /* -------------------------------------------------- */
 /*-------------------- Responsive --------------------*/
 /* -------------------------------------------------- */
@@ -1122,9 +1135,25 @@ header {
     /*--------------- Portfolio ---------------*/ 
     .carousel {
         height: 864px;
-    }
-    .carousel__item {
-        height: 864px;
+        .carousel__container {
+            height: 864px;
+            .carousel__item {
+                height: 864px;
+                .itemBody {
+                    .itemDetails {
+                        height: 850px;
+                        .itemDetailsContainer {
+                            .portfolioDetailsContainer {
+                                height: 300px;
+                                .portfolioDetailsImg {
+                                    margin-top: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     .darkContainer {
         height: 700px;

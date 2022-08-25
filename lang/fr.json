@@ -3,7 +3,7 @@
     "link2": "Compétences",
     "link3": "Portfolio",
     "link4": "Contact",
-    "aboutMeText": "Je m'appelle Logan Laverre et je suis passionné de développement et d'informatique en général<br/><br/>J'étais manutentionnaire pendant environ 8 ans and j'ai beaucoup appris sur le travail d'équipe, l'autonomie and l'éthique de travail.<br/><br/>J'ai commencé à apprendre les bases du HTML / CSS en autodidacte et professionalisé mon apprentissage à l'école Instic basé à Lyon.<br/><br/>Si vous voulez en savoir plus sur moi, vous pouvez consulter mon CV ou me contacter !",
+    "aboutMeText": "Je m'appelle Logan Laverre et je suis passionné de développement et d'informatique en général<br/><br/>J'étais manutentionnaire pendant environ 8 ans et j'ai beaucoup appris sur le travail d'équipe, l'autonomie et l'éthique de travail.<br/><br/>J'ai commencé à apprendre les bases du HTML / CSS en autodidacte et professionalisé mon apprentissage à l'école Instic basé à Lyon.<br/><br/>Si vous voulez en savoir plus sur moi, vous pouvez consulter mon CV ou me contacter !",
     "aboutMeButton": "Voir mon CV",
     "seeMoreButton": "Voir plus !",
     "portfolioTitle1": "Game, seat<br> & match",
@@ -38,5 +38,11 @@
     "portfolioDetailsList4_2": "Intégration Html / CSS",
     "portfolioDetailsList4_3": "Responsive design",
     "contactTitle": "Vous voulez démarrer un projet ou vous avez une question ? <br><br>Contactez moi !",
+    "formName": "Nom",
+    "privacyTerms1": "Ce site est protégé par reCAPTCHA et la&nbsp;",
+    "privacyLink1": "Politique de Confidentialité",
+    "privacyTerms2": "&nbsp;et les&nbsp;",
+    "privacyLink2": "Conditions d'utilisation",
+    "privacyTerms3": "&nbsp;de Google s'appliquent.",
     "contactButton": "Envoyer"
 }

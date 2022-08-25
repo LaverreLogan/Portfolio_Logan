@@ -28,8 +28,6 @@ function setVh() {
     let vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     homePage.setAttribute("style", "min-height:" + vH + "px");
 }
-
-
     setVh();
     window.addEventListener('resize', setVh, true);
 

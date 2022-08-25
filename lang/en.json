@@ -38,5 +38,11 @@
     "portfolioDetailsList4_2": "Html / CSS integration",
     "portfolioDetailsList4_3": "Responsive design",
     "contactTitle": "You want to start a project or you have a question ? <br><br>Contact me !",
+    "formName": "Name",
+    "privacyTerms1": "This site is protected by reCAPTCHA and the Google&nbsp;",
+    "privacyLink1": "Privacy Policy",
+    "privacyTerms2": "&nbsp;and&nbsp;",
+    "privacyLink2": "Terms of Service",
+    "privacyTerms3": "&nbsp;apply.",
     "contactButton": "Send"
 }
