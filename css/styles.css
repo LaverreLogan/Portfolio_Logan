@@ -713,6 +713,15 @@ header {
 
 .xmarkLabel {
   cursor: pointer;
+  font-size: 36px;
+  color: #b1b1b1;
+}
+.xmarkLabel :hover {
+  color: #60B450;
+}
+
+.xmarkLabel:hover {
+  color: var(--light-green-color);
 }
 
 .itemDetailsContainer {
@@ -965,7 +974,7 @@ header {
 /* -------------------------------------------------- */
 /*-------------------- Responsive --------------------*/
 /* -------------------------------------------------- */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 920px) {
   /*-------------- About Me --------------*/
   .darkContainer {
     width: 100vw;
