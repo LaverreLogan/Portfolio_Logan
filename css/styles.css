@@ -63,12 +63,7 @@ input#showPDF {
 }
 
 input#showPDF:checked + .pdf {
-  transform: translateX(0);
-}
-
-.pdf embed {
-  width: 100%;
-  height: 100%;
+  transform: translateX(23vw);
 }
 
 /* ------------------------------------------------------ */
@@ -674,21 +669,22 @@ header {
   opacity: 0;
   pointer-events: none;
   width: 60rem;
-  height: 83vh;
+  height: 40rem;
   background-color: rgba(22, 22, 22, 0.705);
   transform: scale(0.1);
   transition: transform 150ms linear;
 }
 .itemDetails a {
   position: absolute;
-  bottom: 8px;
-  height: 25px;
-  width: 150px;
+  bottom: 20px;
+  height: 40px;
+  width: 180px;
+  font-size: 18px;
   border-radius: 10px;
   color: white;
   background-color: var(--blue-green-color);
   text-align: center;
-  line-height: 26px;
+  line-height: 40px;
   cursor: pointer;
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.548), 2px 4px 6px rgba(0, 0, 0, 0.137);
 }
@@ -735,31 +731,34 @@ header {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 25rem;
-  height: 72vh;
+  width: 40rem;
+  height: 30rem;
   background-color: var(--blue-green-color);
   border-radius: 20px;
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
 }
 .portfolioDetailsContainer .portfolioDetailsImg {
-  margin: 0;
-  height: 45%;
+  margin: 20px 0 0 0;
 }
 .portfolioDetailsContainer .portfolioDetailsImg img {
-  width: 250px;
+  width: 400px;
 }
 .portfolioDetailsContainer .portfolioDetailsTitle {
-  height: 10%;
   color: white;
 }
+.portfolioDetailsContainer .portfolioDetailsTitle h2 {
+  font-size: 30px;
+}
 .portfolioDetailsContainer .portfolioDetailsText {
-  height: 30%;
   padding: 0 20px;
   color: white;
   text-align: left;
 }
 .portfolioDetailsContainer .portfolioDetailsText p {
   text-align: center;
+}
+.portfolioDetailsContainer .portfolioDetailsText ul li {
+  font-size: 18px;
 }
 .portfolioDetailsContainer .portfolioDetailsText ul li::before {
   content: "•";
@@ -1024,8 +1023,8 @@ header {
   }
 
   .itemDetails {
-    width: 95vw;
-    height: 85vh;
+    width: 100vw;
+    height: 40rem;
   }
 
   .itemDetailsContainer {
@@ -1171,7 +1170,7 @@ header {
     height: 864px;
   }
   .carousel .carousel__container .carousel__item .itemBody .itemDetails {
-    height: 850px;
+    height: 700px;
   }
   .carousel .carousel__container .carousel__item .itemBody .itemDetails .itemDetailsContainer .portfolioDetailsContainer {
     height: 300px;

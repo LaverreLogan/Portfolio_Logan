@@ -43,7 +43,7 @@
 			$content .= $label .":". wordwrap($value, 70). "\r\n";
 		}
 
-		return mail($email, 'Nouveau contact', $content);
+		return mail(htmlentities($email, ENT_QUOTES, 'UTF-8'), 'Nouveau contact', htmlentities($content, ENT_QUOTES, 'UTF-8'));
 	}
 
 	function saveContact($data) {

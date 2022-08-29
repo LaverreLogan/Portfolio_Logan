@@ -55,6 +55,7 @@ class Carousel {
 
     createPagination () {
         let pagination = this.createDivWithClass('carousel__pagination')
+        pagination.setAttribute('id', 'pagination')
         let buttons = []
         this.root.appendChild(pagination)
         
@@ -98,23 +99,6 @@ class Carousel {
     onMove (cb) {
         this.moveCallbacks.push(cb)
     }
-
-    // get slidesToScroll () {
-    //     return this.isMobile ? 1 : 1
-    // }
-
-    // get slidesVisible () {
-    //     return this.isMobile ? 1 : 1
-    // }
-
-    // onWindoResize () {
-    //     let mobile = window.innerWidth < 800
-    //     if (mobile !== this.isMobile) {
-    //         this.isMobile = mobile
-    //         this.setStyle()
-    //         this.moveCallbacks.forEach(cb => cb(this.currentSlide))
-    //     }
-    // }
 }
 
 let onReady = () => {
