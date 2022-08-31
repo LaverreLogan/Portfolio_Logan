@@ -548,9 +548,9 @@ header {
         height: auto;
     }
 }
-.mobileSkills {
-    display: none;
-}
+// .mobileSkills {
+//     display: none;
+// }
 /* --------------------------------------------------- */
 /*--------------------- Portfolio ---------------------*/
 /* --------------------------------------------------- */
@@ -1134,15 +1134,11 @@ header {
         }
     }
     /*---------------- Skills ----------------*/
-    .desktopSkills {
-        display: none;
-    } 
+    // .desktopSkills {
+    //     display: none;
+    // } 
     .mobileSkills {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        height: 90vh;
+        
         img {
             max-width: 50%;
         }

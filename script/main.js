@@ -28,20 +28,18 @@ function setVh() {
     let vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     homePage.setAttribute("style", "min-height:" + vH + "px");
 }
-if (document.readyState !== 'loading') {
     setVh();
-}
 window.addEventListener('resize', setVh, true);
 
 /*------------------------ Pagination ------------------------*/
 
-let pagination = document.getElementById('pagination');
-function paginationHeight() {
-    let height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    pagination.setAttribute("style", "bottom:" + height / 48 + "%")
-}
-paginationHeight();
-window.addEventListener('resize', paginationHeight, true);
+// let pagination = document.getElementById('pagination');
+// function paginationHeight() {
+//     let height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+//     pagination.setAttribute("style", "bottom:" + height / 48 + "%")
+// }
+//     paginationHeight();
+// window.addEventListener('resize', paginationHeight, true);
 
 /*-------------- Pagination and arrows behavior --------------*/
 

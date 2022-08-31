@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     selectedLang();
     setImg(initialLocale);
     translatePh();
+    isMobile();
 });
 async function setLocale(newLocale) {
     if (newLocale === locale) return;
@@ -77,18 +78,48 @@ function selectedLang() {
 const switchEn = document.getElementById('switchEn');
 const switchFr = document.getElementById('switchFr');
 
+function isMobile() {
+    let vW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    if (vW <= 768) {
+        console.log(vW);
+        return true;
+    } else { 
+        console.log(vW);
+        return false; 
+    }
+}
+window.addEventListener('resize', isMobile);
+
 async function translateFr() {
     setLocale('fr');
-    document.getElementById('desktopSkillsFr').style.display = "block";
-    document.getElementById('desktopSkillsEn').style.display = "none";
+    if (isMobile = true) {
+        document.getElementById('desktopSkillsFr').style.display = "none";
+        document.getElementById('desktopSkillsEn').style.display = "none";
+        document.getElementById('mobileSkillsFr').style.display = "block";
+        document.getElementById('mobileSkillsEn').style.display = "none";
+    } else {
+        document.getElementById('desktopSkillsFr').style.display = "block";
+        document.getElementById('desktopSkillsEn').style.display = "none";
+        document.getElementById('mobileSkillsFr').style.display = "none";
+        document.getElementById('mobileSkillsEn').style.display = "none";
+    }
     switchEn.classList.remove('activeLink');
     switchFr.classList.add('activeLink');
 }
 
 async function translateEn() {
     setLocale('en');
-    document.getElementById('desktopSkillsEn').style.display = "block";
-    document.getElementById('desktopSkillsFr').style.display = "none";
+    if (isMobile = true) {
+        document.getElementById('desktopSkillsFr').style.display = "none";
+        document.getElementById('desktopSkillsEn').style.display = "none";
+        document.getElementById('mobileSkillsFr').style.display = "none";
+        document.getElementById('mobileSkillsEn').style.display = "block";
+    } else {
+        document.getElementById('desktopSkillsFr').style.display = "none";
+        document.getElementById('desktopSkillsEn').style.display = "block";
+        document.getElementById('mobileSkillsFr').style.display = "none";
+        document.getElementById('mobileSkillsEn').style.display = "none";
+    }
     switchFr.classList.remove('activeLink');
     switchEn.classList.add('activeLink');
 }  
@@ -107,20 +138,44 @@ languageCodeOnly ? locale.split("-")[0] : locale,);
 }
 
 function setImg(initialLocale) {
-    if(initialLocale === "fr") {
-        document.getElementById('desktopSkillsFr').style.display = "block";
-        document.getElementById('desktopSkillsEn').style.display = "none";
-        switchEn.classList.remove('activeLink');
-        switchFr.classList.add('activeLink');
-    } else if (initialLocale === "en") {
-        document.getElementById('desktopSkillsEn').style.display = "block";
+    if (isMobile === false) {
+        document.getElementById('mobileSkillsFr').style.display = "none";
+        document.getElementById('mobileSkillsEn').style.display = "none";
+        if(initialLocale === "fr") {
+            document.getElementById('desktopSkillsFr').style.display = "block";
+            document.getElementById('desktopSkillsEn').style.display = "none";
+            switchEn.classList.remove('activeLink');
+            switchFr.classList.add('activeLink');
+        } else if (initialLocale === "en") {
+            document.getElementById('desktopSkillsEn').style.display = "block";
+            document.getElementById('desktopSkillsFr').style.display = "none";
+            switchFr.classList.remove('activeLink');
+            switchEn.classList.add('activeLink');
+        } else {
+            document.getElementById('desktopSkillsFr').style.display = "block";
+            document.getElementById('desktopSkillsEn').style.display = "none";
+            switchEn.classList.remove('activeLink');
+            switchFr.classList.add('activeLink');
+        }
+    } else if (isMobile === true) {
         document.getElementById('desktopSkillsFr').style.display = "none";
-        switchFr.classList.remove('activeLink');
-        switchEn.classList.add('activeLink');
-    } else {
-        document.getElementById('desktopSkillsFr').style.display = "block";
         document.getElementById('desktopSkillsEn').style.display = "none";
-        switchEn.classList.remove('activeLink');
-        switchFr.classList.add('activeLink');
+        if(initialLocale === "fr") {
+            document.getElementById('mobileSkillsFr').style.display = "block";
+            document.getElementById('mobileSkillsEn').style.display = "none";
+            switchEn.classList.remove('activeLink');
+            switchFr.classList.add('activeLink');
+        } else if (initialLocale === "en") {
+            document.getElementById('mobileSkillsEn').style.display = "block";
+            document.getElementById('mobileSkillsFr').style.display = "none";
+            switchFr.classList.remove('activeLink');
+            switchEn.classList.add('activeLink');
+        } else {
+            document.getElementById('mobileSkillsFr').style.display = "block";
+            document.getElementById('mobileSkillsEn').style.display = "none";
+            switchEn.classList.remove('activeLink');
+            switchFr.classList.add('activeLink');
+        }
     }
+    
 }
