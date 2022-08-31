@@ -58,37 +58,29 @@
 	 * Formulaire de contact
 	 */
 
+
 	if (isFormSubmited($keys)) {
-		$contact = postData($keys);
-		
-		saveContact($_POST);
-		try {
-			sendEmail($email, $contact);
-		} catch (\Exception $e) 
-		{ unset($e); }
-
-
-
+		if (checkRecaptcha()) {
+			$contact = postData($keys);
+			
+			saveContact($_POST);
+			try {
+				sendEmail($email, $contact);
+			} catch (\Exception $e) 
+			{ unset($e); }
+		}
 		header('Location: /#page5');
 		exit;
 	}
 
-	if(isset($_POST['g-recaptcha-response'])) {
-		$captcha = $_POST['g-recaptca-response'];
-	} else {
-		$captcha = false;
-	}
-
-	if (!$captcha) {
-		echo "<script>alert \"Error in captcha\"</script>";
-	} else {
+	function checkRecaptcha() {
+		if(isset($_POST['g-recaptcha-response'])) {
+			$captcha = $_POST['g-recaptca-response'];
+		} else {
+			return false;
+		}
 		$secret = Env::get('RECAPTCHA_SECRET');
 		$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
 		$response = json_decode($response);
-		if ($response->succes === false) {
-			echo "<script>alert \"Error in response\"</script>";
-		}
-	}
-	if ($response->success==true && $response->score <= 0.5) {
-		echo "<script>alert \"Robot\"</script>";
+		return $response->succes;
 	}
