@@ -79,20 +79,19 @@ const switchEn = document.getElementById('switchEn');
 const switchFr = document.getElementById('switchFr');
 
 function isMobile() {
-    let vW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    if (vW <= 768) {
-        console.log(vW);
-        return true;
-    } else { 
-        console.log(vW);
-        return false; 
-    }
+    return Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= 768;
 }
-window.addEventListener('resize', isMobile);
+window.addEventListener('resize', () => {
+    if (locale === 'fr') {
+        translateFr();
+    } else {
+        translateEn();
+    }
+});
 
 async function translateFr() {
     setLocale('fr');
-    if (isMobile = true) {
+    if (isMobile() === true) {
         document.getElementById('desktopSkillsFr').style.display = "none";
         document.getElementById('desktopSkillsEn').style.display = "none";
         document.getElementById('mobileSkillsFr').style.display = "block";
@@ -109,7 +108,7 @@ async function translateFr() {
 
 async function translateEn() {
     setLocale('en');
-    if (isMobile = true) {
+    if (isMobile() === true) {
         document.getElementById('desktopSkillsFr').style.display = "none";
         document.getElementById('desktopSkillsEn').style.display = "none";
         document.getElementById('mobileSkillsFr').style.display = "none";
@@ -138,7 +137,7 @@ languageCodeOnly ? locale.split("-")[0] : locale,);
 }
 
 function setImg(initialLocale) {
-    if (isMobile === false) {
+    if (isMobile() === false) {
         document.getElementById('mobileSkillsFr').style.display = "none";
         document.getElementById('mobileSkillsEn').style.display = "none";
         if(initialLocale === "fr") {
@@ -157,7 +156,7 @@ function setImg(initialLocale) {
             switchEn.classList.remove('activeLink');
             switchFr.classList.add('activeLink');
         }
-    } else if (isMobile === true) {
+    } else if (isMobile() === true) {
         document.getElementById('desktopSkillsFr').style.display = "none";
         document.getElementById('desktopSkillsEn').style.display = "none";
         if(initialLocale === "fr") {

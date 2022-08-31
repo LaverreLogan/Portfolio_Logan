@@ -1,18 +1,16 @@
 <?php
-
+	require 'utils.php';
 	/**
 	 * Variables
 	 */
 
-	$email = 'laverrelogan@gmail.com';
-
+	$email = Env::get("EMAIL_FROM");
 	$keys = [
 		'name' => 'Nom',
 		'email' => 'E-mail',
 		'message' => 'Message',
 	];
-	define('SITE_KEY', '6Lfb4KQhAAAAAPi5jACDfRncMywjZHqIqnEzJLQD');
-	define('SECRET_KEY', '6Lfb4KQhAAAAACIo7h7JDfgO4PtrxEgoxt8iifPP');
+
 	/**
 	 * Functions
 	 */
@@ -84,7 +82,7 @@
 	if (!$captcha) {
 		echo "<script>alert \"Error in captcha\"</script>";
 	} else {
-		$secret = "6Lfb4KQhAAAAACIo7h7JDfgO4PtrxEgoxt8iifPP";
+		$secret = Env::get('RECAPTCHA_SECRET');
 		$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
 		$response = json_decode($response);
 		if ($response->succes === false) {
