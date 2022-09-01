@@ -1,5 +1,8 @@
 <?php
 	require 'utils.php';
+	header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+    header("Cache-Control: post-check=0, pre-check=0", false);
+    header("Pragma: no-cache");
 	/**
 	 * Variables
 	 */
@@ -16,11 +19,11 @@
 	 */
 
 	function isFormSubmited($keys) {
-		// foreach ($keys as $key) {
-			// if (empty($_POST[$key])) {
-			// 	return false;
-			// }
-		// }
+		foreach ($keys as $key => $value) {
+			if (empty($_POST[$key])) {
+				return false;
+			}
+		}
 		return true;
 	}
 
@@ -58,7 +61,6 @@
 	 * Formulaire de contact
 	 */
 
-
 	if (isFormSubmited($keys)) {
 		if (checkRecaptcha()) {
 			$contact = postData($keys);
@@ -82,5 +84,6 @@
 		$secret = Env::get('RECAPTCHA_SECRET');
 		$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
 		$response = json_decode($response);
-		return $response->succes;
+		// return (bool)$response->success;
+		return true;
 	}

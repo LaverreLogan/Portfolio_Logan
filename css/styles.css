@@ -409,7 +409,7 @@ header {
   background: var(--dark-green-color);
   max-width: 100%;
   width: 60rem;
-  height: 40rem;
+  height: 38rem;
   margin-top: 75px;
 }
 .darkContainer .imgBorder {
@@ -545,6 +545,23 @@ header {
 .skills img {
   max-width: 60%;
   height: auto;
+}
+
+.localeFr #mobileSkillsEn, .localeFr #desktopSkillsEn {
+  display: none;
+}
+
+.localeEn #mobileSkillsFr, .localeEn #desktopSkillsFr {
+  display: none;
+}
+
+.desktopSkills {
+  display: flex;
+  justify-content: center;
+}
+
+.mobileSkills {
+  display: none;
 }
 
 /* --------------------------------------------------- */
@@ -716,12 +733,6 @@ header {
   color: var(--light-green-color);
 }
 
-.itemDetailsContainer {
-  display: flex;
-  justify-content: space-around;
-  width: 60rem;
-}
-
 .portfolioDetailsContainer {
   display: flex;
   flex-direction: column;
@@ -859,75 +870,101 @@ header {
   align-items: center;
   justify-content: center;
 }
-.contact .formContainer {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: center;
-  padding: 3rem;
-  width: 40rem;
-  height: 30vh;
-  min-height: 300px;
-  background: radial-gradient(circle, var(--regular-green-color) 0%, #619a87 100%, var(--regular-green-color) 100%);
-  border-radius: 0;
-  box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
-}
-.contact .nameContainer {
-  width: 100%;
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-}
-.contact input[type=text], .contact input[type=email] {
-  font-family: "Roboto";
-  color: white;
-  height: 2rem;
-  background: transparent;
-  border: none;
-  border-bottom: solid 2px var(--light-green-color);
-  margin-bottom: 50px;
-}
-.contact input::placeholder, .contact textarea::placeholder {
-  color: white;
-}
-.contact textarea {
-  background: transparent;
-  border: 2px solid var(--light-green-color);
-  width: 100%;
-  height: 100%;
-}
-.contact textarea:focus, .contact input:focus {
-  border: 2px solid var(--light-green-color);
-  border-radius: 5px;
-  box-shadow: 0 0 8px var(--light-green-color);
-  outline: none;
-}
-
-.error {
-  border: solid 2px red;
-}
 
 .contactTitle {
+  position: absolute;
   text-align: center;
   margin-bottom: 6rem;
   top: 7vh;
   color: white;
 }
 
-.credits {
+.formContainer {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  width: 40rem;
+  height: 20rem;
+  min-height: 300px;
+  background: radial-gradient(circle, var(--regular-green-color) 0%, #619a87 100%, var(--regular-green-color) 100%);
+  border-radius: 0;
+  box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+.formControl {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.formControl .error {
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 8px #bb0000;
+  border-radius: 5px;
+}
+.formControl i {
+  position: absolute;
+  right: 10px;
+  bottom: 32px;
+  color: #ff0000;
+}
+.formControl small {
   position: absolute;
   bottom: 0;
-  text-align: center;
-  width: 100vw;
-  background: var(--grey-color);
+  left: 0;
+  color: #ff0000;
+}
+
+.formMsg {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+}
+.formMsg small {
+  bottom: -20px;
+}
+
+.nameContainer {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type=text], input[type=email] {
+  display: block;
+  font-family: "Roboto";
+  color: white;
+  padding: 8px;
+  background: transparent;
+  border: none;
+  border-bottom: solid 2px var(--light-green-color);
+}
+
+input::placeholder, textarea::placeholder {
   color: white;
 }
 
-.creditsName {
-  color: var(--light-green-color);
+textarea {
+  display: block;
+  background: transparent;
+  border: 2px solid var(--light-green-color);
+  width: 100%;
+  height: 100%;
+}
+
+textarea:focus, input:focus {
+  border: 2px solid var(--light-green-color);
+  border-radius: 5px;
+  box-shadow: 0 0 8px var(--light-green-color);
+  outline: none;
 }
 
 .sendButton {
+  position: absolute;
+  bottom: -60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -955,15 +992,30 @@ header {
 }
 
 .privacyTerms {
+  position: absolute;
+  bottom: 0;
   display: flex;
   flex-wrap: wrap;
   margin-top: 5px;
   font-size: 11px;
   color: #18301a;
-  align-self: flex-start;
+  align-self: center;
 }
 .privacyTerms p {
   margin: 0;
+}
+
+.credits {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100vw;
+  background: var(--grey-color);
+  color: white;
+}
+
+.creditsName {
+  color: var(--light-green-color);
 }
 
 /* -------------------------------------------------- */
@@ -1023,21 +1075,6 @@ header {
     height: 40rem;
   }
 
-  .itemDetailsContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  .portfolioDetailsContainer {
-    width: 90vw;
-    height: 35vh;
-    align-items: flex-end;
-  }
-
   .itemImg {
     width: 250px;
     height: auto;
@@ -1061,27 +1098,15 @@ header {
     width: 80vw;
     padding: 1.5rem;
   }
+
+  .formMsg small {
+    bottom: 32px;
+    left: 5px;
+  }
 }
 @media screen and (min-width: 769px) and (max-width: 900px) {
   .menu .desktopList {
     width: 60%;
-  }
-
-  .portfolioDetailsContainer .portfolioDetailsImg {
-    position: absolute;
-    height: auto;
-    left: 30px;
-  }
-  .portfolioDetailsContainer .portfolioDetailsText, .portfolioDetailsContainer .portfolioDetailsTitle {
-    width: 50%;
-    height: auto;
-    margin-right: 50px;
-  }
-  .portfolioDetailsContainer .portfolioDetailsTitle {
-    text-align: center;
-  }
-  .portfolioDetailsContainer .portfolioDetailsText p {
-    text-align: left;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1140,6 +1165,14 @@ header {
   }
 
   /*---------------- Skills ----------------*/
+  .desktopSkills {
+    display: none;
+  }
+
+  .mobileSkills {
+    display: flex;
+    justify-content: center;
+  }
   .mobileSkills img {
     max-width: 50%;
   }
@@ -1148,20 +1181,21 @@ header {
   .carousel {
     height: 864px;
   }
-  .carousel .carousel__container {
+
+  .carousel__container {
     height: 864px;
   }
-  .carousel .carousel__container .carousel__item {
+
+  .carousel__item {
     height: 864px;
   }
-  .carousel .carousel__container .carousel__item .itemBody .itemDetails {
+
+  .itemBody .itemDetails {
     height: 700px;
   }
-  .carousel .carousel__container .carousel__item .itemBody .itemDetails .itemDetailsContainer .portfolioDetailsContainer {
-    height: 300px;
-  }
-  .carousel .carousel__container .carousel__item .itemBody .itemDetails .itemDetailsContainer .portfolioDetailsContainer .portfolioDetailsImg {
-    margin-top: 10px;
+
+  .portfolioDetailsContainer {
+    width: 90vw;
   }
 
   .darkContainer {
@@ -1177,20 +1211,22 @@ header {
     height: 80px;
   }
 
-  .portfolioDetailsContainer {
-    align-items: center;
+  .portfolioDetailsContainer .portfolioDetailsImg {
+    width: 90%;
+    text-align: center;
   }
   .portfolioDetailsContainer .portfolioDetailsImg img {
-    width: 150px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
   }
   .portfolioDetailsContainer .portfolioDetailsText {
-    height: 38%;
-    margin: auto;
+    margin: 0;
   }
 
   /*--------------------- Contact ---------------------*/
   .contact input[type=text], .contact input[type=email] {
-    width: 40%;
+    width: 90%;
   }
 
   .sendButton {
@@ -1245,8 +1281,8 @@ header {
     text-align: center;
   }
 
-  .portfolioDetailsContainer .portfolioDetailsText {
-    font-size: 0.85rem;
+  .portfolioDetailsContainer .portfolioDetailsText ul li {
+    font-size: 0.9rem;
   }
 
   /*-------------------- Carousel --------------------*/
@@ -1271,8 +1307,10 @@ header {
   .contact input[type=text], .contact input[type=email] {
     width: 100%;
   }
-  .contact textarea {
-    margin-top: 30px;
+
+  .privacyTerms {
+    width: 90%;
+    align-self: flex-start;
   }
 }
 

@@ -1,7 +1,7 @@
 <?php
 class Env
 {
-	protected static ?array $variables = null;
+	protected static $variables = null;
 
 	protected static function read()
 	{
@@ -42,7 +42,7 @@ class Env
 		return array_key_exists($key, self::$variables);
 	}
 
-	public static function get(string $key, mixed $default = null): mixed
+	public static function get(string $key, $default = null)
 	{
 		self::read();
 

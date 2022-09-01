@@ -89,36 +89,19 @@ window.addEventListener('resize', () => {
     }
 });
 
+
 async function translateFr() {
     setLocale('fr');
-    if (isMobile() === true) {
-        document.getElementById('desktopSkillsFr').style.display = "none";
-        document.getElementById('desktopSkillsEn').style.display = "none";
-        document.getElementById('mobileSkillsFr').style.display = "block";
-        document.getElementById('mobileSkillsEn').style.display = "none";
-    } else {
-        document.getElementById('desktopSkillsFr').style.display = "block";
-        document.getElementById('desktopSkillsEn').style.display = "none";
-        document.getElementById('mobileSkillsFr').style.display = "none";
-        document.getElementById('mobileSkillsEn').style.display = "none";
-    }
+    document.body.classList.remove('localeEn');
+    document.body.classList.add('localeFr');
     switchEn.classList.remove('activeLink');
     switchFr.classList.add('activeLink');
 }
 
 async function translateEn() {
     setLocale('en');
-    if (isMobile() === true) {
-        document.getElementById('desktopSkillsFr').style.display = "none";
-        document.getElementById('desktopSkillsEn').style.display = "none";
-        document.getElementById('mobileSkillsFr').style.display = "none";
-        document.getElementById('mobileSkillsEn').style.display = "block";
-    } else {
-        document.getElementById('desktopSkillsFr').style.display = "none";
-        document.getElementById('desktopSkillsEn').style.display = "block";
-        document.getElementById('mobileSkillsFr').style.display = "none";
-        document.getElementById('mobileSkillsEn').style.display = "none";
-    }
+    document.body.classList.remove('localeFr');
+    document.body.classList.add('localeEn');
     switchFr.classList.remove('activeLink');
     switchEn.classList.add('activeLink');
 }  
@@ -137,44 +120,20 @@ languageCodeOnly ? locale.split("-")[0] : locale,);
 }
 
 function setImg(initialLocale) {
-    if (isMobile() === false) {
-        document.getElementById('mobileSkillsFr').style.display = "none";
-        document.getElementById('mobileSkillsEn').style.display = "none";
-        if(initialLocale === "fr") {
-            document.getElementById('desktopSkillsFr').style.display = "block";
-            document.getElementById('desktopSkillsEn').style.display = "none";
-            switchEn.classList.remove('activeLink');
-            switchFr.classList.add('activeLink');
-        } else if (initialLocale === "en") {
-            document.getElementById('desktopSkillsEn').style.display = "block";
-            document.getElementById('desktopSkillsFr').style.display = "none";
-            switchFr.classList.remove('activeLink');
-            switchEn.classList.add('activeLink');
-        } else {
-            document.getElementById('desktopSkillsFr').style.display = "block";
-            document.getElementById('desktopSkillsEn').style.display = "none";
-            switchEn.classList.remove('activeLink');
-            switchFr.classList.add('activeLink');
-        }
-    } else if (isMobile() === true) {
-        document.getElementById('desktopSkillsFr').style.display = "none";
-        document.getElementById('desktopSkillsEn').style.display = "none";
-        if(initialLocale === "fr") {
-            document.getElementById('mobileSkillsFr').style.display = "block";
-            document.getElementById('mobileSkillsEn').style.display = "none";
-            switchEn.classList.remove('activeLink');
-            switchFr.classList.add('activeLink');
-        } else if (initialLocale === "en") {
-            document.getElementById('mobileSkillsEn').style.display = "block";
-            document.getElementById('mobileSkillsFr').style.display = "none";
-            switchFr.classList.remove('activeLink');
-            switchEn.classList.add('activeLink');
-        } else {
-            document.getElementById('mobileSkillsFr').style.display = "block";
-            document.getElementById('mobileSkillsEn').style.display = "none";
-            switchEn.classList.remove('activeLink');
-            switchFr.classList.add('activeLink');
-        }
+    if(initialLocale === "fr") {
+        document.body.classList.remove('localeEn');
+        document.body.classList.add('localeFr');
+        switchEn.classList.remove('activeLink');
+        switchFr.classList.add('activeLink');
+    } else if (initialLocale === "en") {
+        document.body.classList.remove('localeFr');
+        document.body.classList.add('localeEn');
+        switchFr.classList.remove('activeLink');
+        switchEn.classList.add('activeLink');
+    } else {
+        document.body.classList.remove('localeFr');
+        document.body.classList.add('localeEn');
+        switchEn.classList.remove('activeLink');
+        switchFr.classList.add('activeLink');
     }
-    
 }

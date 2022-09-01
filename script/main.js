@@ -55,3 +55,7 @@ function closeExtend() {
     document.getElementsByClassName('carousel__prev')[0].style.opacity = "100";
     document.getElementsByClassName('carousel__next')[0].style.opacity = "100";
 }
+
+
+const emptyInput = document.forms.contactForm.value;
+console.log(emptyInput);

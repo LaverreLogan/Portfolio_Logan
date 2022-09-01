@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="script/animationText.js" async></script>
     <script src="script/carousel.js" async></script>
-    
+    <script src="https://kit.fontawesome.com/fb6886427e.js" crossorigin="anonymous"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6Lfb4KQhAAAAAPi5jACDfRncMywjZHqIqnEzJLQD"></script>
 </head>
 <body>
@@ -115,8 +115,10 @@
         </div>
     </section>
     <section class="container skills" id="page3">
-        <img src="assets/imgs/Illu2_FR.png" alt="Illustration compétences" class="desktopSkills" id="desktopSkillsFr">
-        <img src="assets/imgs/Illu2_EN.png" alt="Illustration compétences" class="desktopSkills" id="desktopSkillsEn">
+        <div class="desktopSkills">
+            <img src="assets/imgs/Illu2_FR.png" alt="Illustration compétences" id="desktopSkillsFr">
+            <img src="assets/imgs/Illu2_EN.png" alt="Illustration compétences" id="desktopSkillsEn">
+        </div>
         <div class="mobileSkills">
             <img src="assets/imgs/Illu3_FR.png" alt="Illustration compétences" id="mobileSkillsFr">
             <img src="assets/imgs/Illu3_EN.png" alt="Illustration compétences" id="mobileSkillsEn">
@@ -141,22 +143,20 @@
                     <div class="x-mark" onclick="closeExtend()">
                         <label for="portfolioItem1" class="xmarkLabel">&times;</label>
                     </div>
-                    <div class="itemDetailsContainer">
-                        <div class="portfolioDetailsContainer">
-                            <div class="portfolioDetailsImg">
-                                <img src="./assets/imgs/Mock2RG.png" alt="Mockup ordinateur">
-                            </div>
-                            <div class="portfolioDetailsTitle">
-                                <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
-                            </div>
-                            <div class="portfolioDetailsText">
-                                <ul>
-                                    <li data-i18n-key="portfolioDetailsList1_1">Development with Vue.js</li>
-                                    <li data-i18n-key="portfolioDetailsList1_2">Html / CSS integration</li>
-                                    <li data-i18n-key="portfolioDetailsList1_3">I18n integration</li>
-                                    <li data-i18n-key="portfolioDetailsList1_4">Responsive design</li>
-                                </ul>
-                            </div>
+                    <div class="portfolioDetailsContainer">
+                        <div class="portfolioDetailsImg">
+                            <img src="./assets/imgs/Mock2RG.png" alt="Mockup ordinateur">
+                        </div>
+                        <div class="portfolioDetailsTitle">
+                            <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
+                        </div>
+                        <div class="portfolioDetailsText">
+                            <ul>
+                                <li data-i18n-key="portfolioDetailsList1_1">Development with Vue.js</li>
+                                <li data-i18n-key="portfolioDetailsList1_2">Html / CSS integration</li>
+                                <li data-i18n-key="portfolioDetailsList1_3">I18n integration</li>
+                                <li data-i18n-key="portfolioDetailsList1_4">Responsive design</li>
+                            </ul>
                         </div>
                     </div>
                     <a href="https://club.rolandgarros.com/" target="_blank" data-i18n-key="portfolioDetailsLink" rel="nofollow" class="portfolioDetailsLink">Visit website</a>
@@ -178,7 +178,6 @@
                     <div class="x-mark" onclick="closeExtend()">
                         <label for="portfolioItem2" class="xmarkLabel">&times;</label>
                     </div>
-                    <div class="itemDetailsContainer">
                         <div class="portfolioDetailsContainer">
                             <div class="portfolioDetailsImg">
                                 <img src="./assets/imgs/Mock2FX.png" alt="Mockup ordinateur">
@@ -197,7 +196,6 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
                     <a href="https://www.foxlabs.fr/" target="_blank" data-i18n-key="portfolioDetailsLink" rel="nofollow">Visit website</a>
                 </div>
             </div>
@@ -217,7 +215,6 @@
                     <div class="x-mark" onclick="closeExtend()">
                         <label for="portfolioItem3" class="xmarkLabel">&times;</label>
                     </div>
-                    <div class="itemDetailsContainer">
                         <div class="portfolioDetailsContainer">
                             <div class="portfolioDetailsImg">
                                 <img src="./assets/imgs/Mock2SH.png" alt="Mockup ordinateur">
@@ -233,7 +230,6 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
                     <a href="https://www.cryptoshrimps.io/" target="_blank" data-i18n-key="portfolioDetailsLink" rel="nofollow">Visit website</a>
                 </div>
             </div>
@@ -253,7 +249,6 @@
                     <div class="x-mark" onclick="closeExtend()">
                         <label for="portfolioItem4" class="xmarkLabel">&times;</label>
                     </div>
-                    <div class="itemDetailsContainer">
                         <div class="portfolioDetailsContainer">
                             <div class="portfolioDetailsImg">
                                 <img src="./assets/imgs/Mock2PNFT.png" alt="Mockup ordinateur">
@@ -269,7 +264,6 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -277,13 +271,26 @@
     <section class="container contact" id="page5">
         <h2 class="contactTitle"  data-i18n-key="contactTitle">You want to start a project or you have a question ? <br><br>Contact me !</h2>
         <form action="contact.php" method="post" class="formContainer" id="messageForm" name="contactForm">
+            <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+            <input type="hidden" name="action" value="validate_captcha">
             <div class="nameContainer">
-                <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
-                <input type="hidden" name="action" value="validate_captcha">
-                <input type="text" id="formName" name="name" required pattern="^[A-Za-z '-]+$" maxlength="20" data-i18n-ph="formName" class="formInput">
-                <input type="email" id="formMail" data-i18n-ph="formMail" name="email" class="formInput" required>
+                <div class="formControl">
+                    <input type="text" id="formName" name="name" required pattern="^[A-Za-z '-]+$" maxlength="20" data-i18n-ph="formName" class="formInput">
+                    <small>blabla</small>
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <div class="formControl">
+                    <input type="email" id="formMail" data-i18n-ph="formMail" name="email" class="formInput error" required>
+                    <small>blabla</small>
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
             </div>
-            <textarea data-i18n-ph="formMsg" id="formMsg" autocomplete="false" name="message" class="formInput" pattern="^[A-Za-z0-9 '-]+$"></textarea>
+            <div class="formControl formMsg">
+                <textarea data-i18n-ph="formMsg" id="formMsg" autocomplete="false" name="message" class="formInput" pattern="^[A-Za-z0-9 '-]+$"></textarea>
+                <small>blabla</small>
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <button type="submit" class="sendButton" form="messageForm"  data-i18n-key="contactButton">Send</button>
             <div class="privacyTerms">
                 <p data-i18n-key="privacyTerms1">
                     This site is protected by reCAPTCHA and the Google
@@ -296,7 +303,6 @@
                 <p data-i18n-key="privacyTerms3">apply.</p>
             </div>
         </form>
-        <button type="submit" class="sendButton" form="messageForm"  data-i18n-key="contactButton">Send</button>
         <script>
             grecaptcha.ready(function () {
                 grecaptcha.execute('6Lfb4KQhAAAAAPi5jACDfRncMywjZHqIqnEzJLQD', {action: 'validate_captcha'})
