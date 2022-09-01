@@ -910,16 +910,11 @@ header {
     margin-bottom: 30px;
     padding-bottom: 20px;
     position: relative;
-    .error {
-        border: 2px solid #ff0000;
-        box-shadow: 0 0 8px #bb0000;
-        border-radius: 5px;
-    }
     i {
         position: absolute;
         right: 10px;
         bottom: 32px;
-        // visibility: hidden;
+        visibility: hidden;
         color: #ff0000;
     }
     small {
@@ -927,8 +922,28 @@ header {
         bottom: 0;
         left: 0;
         color: #ff0000;
-        // visibility: hidden;
+        visibility: hidden;
     }
+}
+
+.formControl.error input {
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 8px #bb0000;
+    border-radius: 5px;
+}
+
+.formControl.error textarea {
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 8px #bb0000;
+    border-radius: 5px;
+}
+
+.formControl.error i {
+    visibility: visible;
+}
+
+.formControl.error small {
+    visibility: visible;
 }
 
 .formMsg {
