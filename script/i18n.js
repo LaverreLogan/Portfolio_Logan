@@ -68,13 +68,6 @@ function bindLocaleSwitcher(initialValue) {
     };
 }
 
-function selectedLang() {
-    if (locale === "fr") {
-    } else if (locale === "en") {
-    }
-}
-
-
 const switchEn = document.getElementById('switchEn');
 const switchFr = document.getElementById('switchFr');
 

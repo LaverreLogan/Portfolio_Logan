@@ -39,5 +39,6 @@
     "privacyTerms2": "&nbsp;et les&nbsp;",
     "privacyLink2": "Conditions d'utilisation",
     "privacyTerms3": "&nbsp;de Google s'appliquent.",
-    "contactButton": "Envoyer"
+    "contactButton": "Envoyer",
+    "msgSent": "Message envoyé avec succès !"
 }

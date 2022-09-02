@@ -117,9 +117,6 @@ form.addEventListener('submit', (e) => {
         setSuccesFor(formMsg);
     }
 })
-// function checkInputs() {
-    
-// }
 
 function setErrorFor(input, message) {
     const formControl = input.parentElement;
@@ -127,10 +124,12 @@ function setErrorFor(input, message) {
     small.innerText = message;
     formControl.classList.add('error');
 }
+
 function setSuccesFor(input) {
     const formControl = input.parentElement;
     formControl.classList.remove('error');
 }
+
 function isEmail(formEmailValue) {
     return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(formEmailValue);
 }
