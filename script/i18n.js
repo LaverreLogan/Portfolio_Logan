@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const initialLocale = supportedOrDefault(browserLocales(true));
     setLocale(initialLocale);
     bindLocaleSwitcher(initialLocale);
-    selectedLang();
     setImg(initialLocale);
     translatePh();
     isMobile();

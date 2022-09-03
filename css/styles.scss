@@ -928,7 +928,7 @@ header {
         position: absolute;
         bottom: 0;
         left: 0;
-        color: #ff0000;
+        color: #c41a1a;
         visibility: hidden;
     }
 }
@@ -991,6 +991,7 @@ header {
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
+    box-shadow: 0 0 0 1000px var(--regular-green-color) inset !important;
     -webkit-box-shadow: 0 0 0 1000px var(--regular-green-color) inset !important;
     -webkit-text-fill-color: white !important;
 }

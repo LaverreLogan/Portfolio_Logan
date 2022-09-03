@@ -6,13 +6,14 @@
 	/**
 	 * Variables
 	 */
-
+	
 	$email = Env::get("EMAIL_FROM");
 	$keys = [
 		'name' => 'Nom',
 		'email' => 'E-mail',
 		'message' => 'Message',
 	];
+	$secret = Env::get('RECAPTCHA_SECRET');
 
 	/**
 	 * Functions
@@ -61,8 +62,40 @@
 	 * Formulaire de contact
 	 */
 
+	// if (isFormSubmited($keys)) {
+	// 	if (check_token()) {
+	// 		$contact = postData($keys);
+			
+	// 		saveContact($_POST);
+	// 		try {
+	// 			sendEmail($email, $contact);
+	// 		} catch (\Exception $e) 
+	// 		{ unset($e); }
+	// 	}
+	// 	header('Location: /#page5');
+	// 	exit;
+	// }
+
+	function check_token($token, $secret) {
+		$url_verif = "https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$token";
+		$curl = curl_init($url_verif);
+		curl_setopt($curl, CURLOPT_HEADER, false);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+		$verif_response = curl_exec($curl);
+
+		if (empty($verif_response)) return false;
+		else {
+			$json = json_decode($verif_response);
+			return $json->success;
+		}
+	}
+
 	if (isFormSubmited($keys)) {
-		if (checkRecaptcha()) {
+		if (check_token($_POST['g-recaptcha-response'], $secret)) {
+			echo "<script>
+			
+			window.location.replace('https://www.laverre-logan.com/#page5');
+			</script>";
 			$contact = postData($keys);
 			
 			saveContact($_POST);
@@ -70,22 +103,25 @@
 				sendEmail($email, $contact);
 			} catch (\Exception $e) 
 			{ unset($e); }
+		}else {
+			echo "Formulaire non traité";
+			echo "<script>window.location.replace('https://www.laverre-logan.com');</script>";
 		}
-		header('Location: /#page5');
-		exit;
 	}
-
-	function checkRecaptcha() {
-		if(isset($_POST['g-recaptcha-response'])) {
-			$captcha = $_POST['g-recaptca-response'];
-		} else {
-			return false;
-		}
-		$secret = Env::get('RECAPTCHA_SECRET');
-		$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
-		$response = json_decode($response);
-		// return (bool)$response->success;
-		return true;
-	}
+	// function checkRecaptcha() {
+		// if(isset($_POST['g-recaptcha-response'])) {
+		// 	$captcha = $_POST['g-recaptca-response'];
+		// } else {
+		// 	return false;
+		// }
+		// $secret = Env::get('RECAPTCHA_SECRET');
+		// $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$captcha);
+		// $response = json_decode($response, true);
+		// if (!$response['success'] == false) {
+		// 	echo "<script>console.log('false')</script>";
+		// } else {
+		// 	return true;
+		// }
+	// }
 
 
