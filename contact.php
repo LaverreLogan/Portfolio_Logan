@@ -85,19 +85,17 @@
 
 		if (empty($verif_response)) return false;
 		else {
-			$json = json_decode($verif_response);
-			return $json->success;
+			$json_response = json_decode($verif_response);
+			return $json_response->success;
 		}
 	}
 
 	if (isFormSubmited($keys)) {
 		if (check_token($_POST['g-recaptcha-response'], $secret)) {
 			echo "<script>
-			
 			window.location.replace('https://www.laverre-logan.com/#page5');
 			</script>";
 			$contact = postData($keys);
-			
 			saveContact($_POST);
 			try {
 				sendEmail($email, $contact);
