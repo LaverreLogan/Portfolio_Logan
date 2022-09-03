@@ -272,13 +272,21 @@ header {
   height: 75px;
 }
 
-#mainTitle {
+.mainTitle {
   position: relative;
   width: 250px;
+  color: white;
+  font-weight: 500;
+  font-size: 2rem;
+  text-align: center;
 }
 
-#mainTitle::before,
-#mainTitle::after {
+#mainTitleFr {
+  width: 360px;
+}
+
+.mainTitle::before,
+.mainTitle::after {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -286,23 +294,16 @@ header {
   content: " ";
 }
 
-#mainTitle::before {
+.mainTitle::before {
   top: -25%;
   left: 0;
   border-width: 4px 0 0 4px;
 }
 
-#mainTitle::after {
+.mainTitle::after {
   bottom: -25%;
   right: 0;
   border-width: 0 4px 4px 0;
-}
-
-#mainTitle {
-  color: white;
-  font-weight: 500;
-  font-size: 2rem;
-  text-align: center;
 }
 
 .imgMain {
@@ -552,9 +553,21 @@ header {
 .localeFr #mobileSkillsEn, .localeFr #desktopSkillsEn {
   display: none;
 }
+.localeFr #mainTitleEn {
+  display: none;
+}
+.localeFr #mainTitleFr {
+  display: block;
+}
 
 .localeEn #mobileSkillsFr, .localeEn #desktopSkillsFr {
   display: none;
+}
+.localeEn #mainTitleFr {
+  display: none;
+}
+.localeEn #mainTitleEn {
+  display: block;
 }
 
 .desktopSkills {

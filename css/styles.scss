@@ -272,13 +272,19 @@ header {
     height: 75px;
 }
 
-#mainTitle {
+.mainTitle {
     position: relative;
     width: 250px;
+    color: white;
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
 }
-
-#mainTitle::before,
-#mainTitle::after {
+#mainTitleFr {
+    width: 360px;
+}
+.mainTitle::before,
+.mainTitle::after {
     position: absolute;
     width: 20px;
     height: 20px;
@@ -286,24 +292,18 @@ header {
     content: ' ';
 }
 
-#mainTitle::before {
+.mainTitle::before {
     top: -25%;
     left: 0;
     border-width: 4px 0 0 4px;
 }
 
-#mainTitle::after {
+.mainTitle::after {
     bottom: -25%;
     right: 0;
     border-width: 0 4px 4px 0
 }
 
-#mainTitle {
-    color: white;
-    font-weight: 500;
-    font-size: 2rem;
-    text-align: center;
-}
 
 .imgMain {
     width: clamp(45%, 500px, 65vw);
@@ -554,11 +554,23 @@ header {
     #mobileSkillsEn, #desktopSkillsEn {
         display: none;
     }
+    #mainTitleEn {
+        display: none;
+    }
+    #mainTitleFr {
+        display: block;
+    }
 }
 
 .localeEn {
     #mobileSkillsFr, #desktopSkillsFr {
         display: none;
+    }
+    #mainTitleFr {
+        display: none;
+    }
+    #mainTitleEn {
+        display: block;
     }
 }
 .desktopSkills {
