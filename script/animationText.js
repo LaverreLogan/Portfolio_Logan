@@ -4,7 +4,7 @@ const randomBetween = (min , max) => {
 
 const animateText = (element, index = 0) => {
     let text = element.parentElement.dataset.animate;
-
+    let enText = 'Bonjour, je suis Logan, Developpeur web'
     if (index === -1) {
         element.textContent = '';
         index = 0;
