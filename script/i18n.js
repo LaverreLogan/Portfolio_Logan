@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const initialLocale = supportedOrDefault(browserLocales(true));
     setLocale(initialLocale);
     bindLocaleSwitcher(initialLocale);
-    setImg(initialLocale);
+    setLang(initialLocale);
     translatePh();
     isMobile();
 });
@@ -69,7 +69,8 @@ function bindLocaleSwitcher(initialValue) {
 
 const switchEn = document.getElementById('switchEn');
 const switchFr = document.getElementById('switchFr');
-
+const switchEnMobile = document.getElementById('switchEnMobile');
+const switchFrMobile = document.getElementById('switchFrMobile');
 function isMobile() {
     return Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= 768;
 }
@@ -82,20 +83,24 @@ window.addEventListener('resize', () => {
 });
 
 
-async function translateFr() {
+function translateFr() {
     setLocale('fr');
     document.body.classList.remove('localeEn');
     document.body.classList.add('localeFr');
     switchEn.classList.remove('activeLink');
     switchFr.classList.add('activeLink');
+    switchEnMobile.classList.remove('activeLink');
+    switchFrMobile.classList.add('activeLink');
 }
 
-async function translateEn() {
+function translateEn() {
     setLocale('en');
     document.body.classList.remove('localeFr');
     document.body.classList.add('localeEn');
     switchFr.classList.remove('activeLink');
     switchEn.classList.add('activeLink');
+    switchFrMobile.classList.remove('activeLink');
+    switchEnMobile.classList.add('activeLink');
 }  
 
 function isSupported(locale) {
@@ -108,24 +113,27 @@ function supportedOrDefault(locales) {
 
 function browserLocales(languageCodeOnly = false) {
     return navigator.languages.map((locale) =>
-languageCodeOnly ? locale.split("-")[0] : locale,);
+languageCodeOnly ? locale.split("-")[0] : locale);
 }
 
-function setImg(initialLocale) {
+function setLang(initialLocale) {
     if(initialLocale === "fr") {
-        document.body.classList.remove('localeEn');
-        document.body.classList.add('localeFr');
-        switchEn.classList.remove('activeLink');
-        switchFr.classList.add('activeLink');
+        translateFr();
+        // document.body.classList.remove('localeEn');
+        // document.body.classList.add('localeFr');
+        // switchEn.classList.remove('activeLink');
+        // switchFr.classList.add('activeLink');
     } else if (initialLocale === "en") {
-        document.body.classList.remove('localeFr');
-        document.body.classList.add('localeEn');
-        switchFr.classList.remove('activeLink');
-        switchEn.classList.add('activeLink');
+        translateEn();
+        // document.body.classList.remove('localeFr');
+        // document.body.classList.add('localeEn');
+        // switchFr.classList.remove('activeLink');
+        // switchEn.classList.add('activeLink');
     } else {
-        document.body.classList.remove('localeFr');
-        document.body.classList.add('localeEn');
-        switchEn.classList.remove('activeLink');
-        switchFr.classList.add('activeLink');
+        translateEn();
+        // document.body.classList.remove('localeFr');
+        // document.body.classList.add('localeEn');
+        // switchEn.classList.remove('activeLink');
+        // switchFr.classList.add('activeLink');
     }
 }
