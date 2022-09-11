@@ -560,6 +560,12 @@ header {
 .localeFr #mainTitleFr {
   display: block;
 }
+.localeFr .pdfEn {
+  display: none;
+}
+.localeFr .pdfFr {
+  display: flex;
+}
 
 .localeEn #mobileSkillsFr, .localeEn #desktopSkillsFr {
   display: none;
@@ -569,6 +575,12 @@ header {
 }
 .localeEn #mainTitleEn {
   display: block;
+}
+.localeEn .pdfEn {
+  display: flex;
+}
+.localeEn .pdfFr {
+  display: none;
 }
 
 .desktopSkills {

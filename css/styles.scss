@@ -562,6 +562,12 @@ header {
     #mainTitleFr {
         display: block;
     }
+    .pdfEn {
+        display: none;
+    }
+    .pdfFr {
+        display: flex;
+    }
 }
 
 .localeEn {
@@ -573,6 +579,12 @@ header {
     }
     #mainTitleEn {
         display: block;
+    }
+    .pdfEn {
+        display: flex;
+    }
+    .pdfFr {
+        display: none;
     }
 }
 .desktopSkills {
