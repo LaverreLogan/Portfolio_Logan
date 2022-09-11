@@ -307,7 +307,9 @@ header {
 }
 
 .imgMain {
-  width: clamp(45%, 500px, 65vw);
+  width: 50%;
+  max-width: 800px;
+  min-width: 500px;
   height: auto;
   padding-top: 70px;
 }
@@ -329,12 +331,13 @@ header {
 }
 
 #githubLogo {
-  width: 35px;
+  font-size: 40px;
   color: white;
 }
 
 #linkedinLogo {
-  width: 40px;
+  font-size: 40px;
+  color: white;
 }
 
 [data-animate] .cursor {
@@ -1238,6 +1241,8 @@ textarea:focus, input:focus {
 
   #imgHand {
     display: block;
+    font-size: 40px;
+    color: var(--light-green-color);
   }
 
   /*-------------- About Me --------------*/
