@@ -2,14 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Laverre Logan développeur web / web mobile à Lyon. Création de sites internet ergonomiques. Sur mon portfolio, vous retrouverez tous mes projets et un formulaire pour me contacter.">
-    <meta name="author" content="Laverre Logan">
-    <meta name="robots" content="all">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1 minimum-scale=1">
-    <meta property="og:title" content="Laverre Logan - Portfolio">
-    <meta property="og:description" content="Portfolio Developpeur Web de Laverre Logan">
-    <meta property="og:url" content="//laverre-logan.com">
     <title>Logan LAVERRE - Portfolio</title>
     <link rel="icon" href="assets/logo/favicon-32x32.png">
     <link rel="stylesheet" href="css/normalize.css">
@@ -17,9 +10,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <script src="script/carousel.js" async></script>
-    <script src="https://kit.fontawesome.com/fb6886427e.js" crossorigin="anonymous"></script>
+    <script src="script/i18n.js" defer></script>
+    <script src="script/main.js" defer></script>
+    <script src="https://kit.fontawesome.com/fb6886427e.js" crossorigin="anonymous" async></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6Lfb4KQhAAAAAPi5jACDfRncMywjZHqIqnEzJLQD"></script>
+    <meta name="description" content="Laverre Logan développeur web / web mobile à Lyon. Création de sites internet ergonomiques. Sur mon portfolio, vous retrouverez tous mes projets et un formulaire pour me contacter.">
+    <meta name="author" content="Laverre Logan">
+    <meta name="robots" content="all">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Laverre Logan - Portfolio">
+    <meta property="og:description" content="Portfolio Developpeur Web de Laverre Logan">
+    <meta property="og:url" content="//laverre-logan.com">
 </head>
 <body>
     <header>
@@ -181,24 +182,24 @@
                     <div class="x-mark" onclick="closeExtend()">
                         <label for="portfolioItem2" class="xmarkLabel">&times;</label>
                     </div>
-                        <div class="portfolioDetailsContainer">
-                            <div class="portfolioDetailsImg">
-                                <img src="./assets/imgs/Mock2FX.webp" alt="Mockup ordinateur">
-                            </div>
-                            <div class="portfolioDetailsTitle">
-                                <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
-                            </div>
-                            <div class="portfolioDetailsText">
-                                <ul>
-                                    <li data-i18n-key="portfolioDetailsList2_1">Development with Vue.js</li>
-                                    <li data-i18n-key="portfolioDetailsList2_2">Html / CSS integration</li>
-                                    <li data-i18n-key="portfolioDetailsList2_3">Shopify API integration</li>
-                                    <li data-i18n-key="portfolioDetailsList2_4">User page creation</li>
-                                    <li data-i18n-key="portfolioDetailsList2_5">Requests with GraphQL</li>
-                                    <li data-i18n-key="portfolioDetailsList2_6">Responsive design</li>
-                                </ul>
-                            </div>
+                    <div class="portfolioDetailsContainer">
+                        <div class="portfolioDetailsImg">
+                            <img src="./assets/imgs/Mock2FX.webp" alt="Mockup ordinateur">
                         </div>
+                        <div class="portfolioDetailsTitle">
+                            <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
+                        </div>
+                        <div class="portfolioDetailsText">
+                            <ul>
+                                <li data-i18n-key="portfolioDetailsList2_1">Development with Vue.js</li>
+                                <li data-i18n-key="portfolioDetailsList2_2">Html / CSS integration</li>
+                                <li data-i18n-key="portfolioDetailsList2_3">Shopify API integration</li>
+                                <li data-i18n-key="portfolioDetailsList2_4">User page creation</li>
+                                <li data-i18n-key="portfolioDetailsList2_5">Requests with GraphQL</li>
+                                <li data-i18n-key="portfolioDetailsList2_6">Responsive design</li>
+                            </ul>
+                        </div>
+                    </div>
                     <a href="https://www.foxlabs.fr/" data-i18n-key="portfolioDetailsLink" rel="nofollow">Visit website</a>
                 </div>
             </div>
@@ -218,21 +219,21 @@
                     <div class="x-mark" onclick="closeExtend()">
                         <label for="portfolioItem3" class="xmarkLabel">&times;</label>
                     </div>
-                        <div class="portfolioDetailsContainer">
-                            <div class="portfolioDetailsImg">
-                                <img src="./assets/imgs/Mock2SH.webp" alt="Mockup ordinateur">
-                            </div>
-                            <div class="portfolioDetailsTitle">
-                                <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
-                            </div>
-                            <div class="portfolioDetailsText">
-                                <ul>
-                                    <li data-i18n-key="portfolioDetailsList3_1">Development with Vue.js</li>
-                                    <li data-i18n-key="portfolioDetailsList3_2">Html / CSS integration</li>
-                                    <li data-i18n-key="portfolioDetailsList3_3">Api's integration (Roadmap and distribution graph)</li>
-                                </ul>
-                            </div>
+                    <div class="portfolioDetailsContainer">
+                        <div class="portfolioDetailsImg">
+                            <img src="./assets/imgs/Mock2SH.webp" alt="Mockup ordinateur">
                         </div>
+                        <div class="portfolioDetailsTitle">
+                            <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
+                        </div>
+                        <div class="portfolioDetailsText">
+                            <ul>
+                                <li data-i18n-key="portfolioDetailsList3_1">Development with Vue.js</li>
+                                <li data-i18n-key="portfolioDetailsList3_2">Html / CSS integration</li>
+                                <li data-i18n-key="portfolioDetailsList3_3">Api's integration (Roadmap and distribution graph)</li>
+                            </ul>
+                        </div>
+                    </div>
                     <a href="https://www.cryptoshrimps.io/" data-i18n-key="portfolioDetailsLink" rel="nofollow">Visit website</a>
                 </div>
             </div>
@@ -252,21 +253,21 @@
                     <div class="x-mark" onclick="closeExtend()">
                         <label for="portfolioItem4" class="xmarkLabel">&times;</label>
                     </div>
-                        <div class="portfolioDetailsContainer">
-                            <div class="portfolioDetailsImg">
-                                <img src="./assets/imgs/Mock2PNFT.webp" alt="Mockup ordinateur">
-                            </div>
-                            <div class="portfolioDetailsTitle">
-                                <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
-                            </div>
-                            <div class="portfolioDetailsText">
-                                <ul>
-                                    <li data-i18n-key="portfolioDetailsList4_1">Development with Vue.js</li>
-                                    <li data-i18n-key="portfolioDetailsList4_2">Html / CSS integration</li>
-                                    <li data-i18n-key="portfolioDetailsList4_3">Responsive design</li>
-                                </ul>
-                            </div>
+                    <div class="portfolioDetailsContainer">
+                        <div class="portfolioDetailsImg">
+                            <img src="./assets/imgs/Mock2PNFT.webp" alt="Mockup ordinateur">
                         </div>
+                        <div class="portfolioDetailsTitle">
+                            <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
+                        </div>
+                        <div class="portfolioDetailsText">
+                            <ul>
+                                <li data-i18n-key="portfolioDetailsList4_1">Development with Vue.js</li>
+                                <li data-i18n-key="portfolioDetailsList4_2">Html / CSS integration</li>
+                                <li data-i18n-key="portfolioDetailsList4_3">Responsive design</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -275,35 +276,35 @@
         <h2 class="contactTitle"  data-i18n-key="contactTitle">You want to start a project or you have a question ? <br><br>Contact me !</h2>
         <form action="contact.php" method="post" class="formContainer" id="messageForm" name="contactForm">
             <!-- <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
-            <input type="hidden" name="action" value="validate_captcha"> -->
-            <div class="nameContainer">
-                <div class="formControl">
-                    <input type="text" id="formName" name="name" pattern="^[A-Za-z '-]+$" maxlength="20" data-i18n-ph="formName" class="formInput">
-                    <small>Error</small>
-                    <i class="fa-solid fa-triangle-exclamation"></i>
+                <input type="hidden" name="action" value="validate_captcha"> -->
+                <div class="nameContainer">
+                    <div class="formControl">
+                        <input type="text" id="formName" name="name" pattern="^[A-Za-z '-]+$" maxlength="20" data-i18n-ph="formName" class="formInput">
+                        <small>Error</small>
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="formControl">
+                        <input type="email" id="formMail" data-i18n-ph="formMail" name="email" class="formInput">
+                        <small>blabla</small>
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
                 </div>
-                <div class="formControl">
-                    <input type="email" id="formMail" data-i18n-ph="formMail" name="email" class="formInput">
+                <div class="formControl formMsg">
+                    <textarea data-i18n-ph="formMsg" id="formMsg" autocomplete="false" name="message" class="formInput" pattern="^[A-Za-z0-9 '-]+$"></textarea>
                     <small>blabla</small>
                     <i class="fa-solid fa-triangle-exclamation"></i>
                 </div>
-            </div>
-            <div class="formControl formMsg">
-                <textarea data-i18n-ph="formMsg" id="formMsg" autocomplete="false" name="message" class="formInput" pattern="^[A-Za-z0-9 '-]+$"></textarea>
-                <small>blabla</small>
-                <i class="fa-solid fa-triangle-exclamation"></i>
-            </div>
-            <button type="submit" class="sendButton g-recaptcha" form="messageForm" data-sitekey="6Lfb4KQhAAAAAPi5jACDfRncMywjZHqIqnEzJLQD" data-callback="onSubmit" data-action="submit" data-i18n-key="contactButton">Send</button>
-            <div class="msgSent" id="msgSent">
-                <p data-i18n-key="msgSent"></p>
-            </div>
-            <div class="privacyTerms">
-                <p data-i18n-key="privacyTerms1">
-                    This site is protected by reCAPTCHA and the Google
-                </p>
-                <a href="https://policies.google.com/privacy" data-i18n-key="privacyLink1" rel="nofollow">Privacy Policy</a>
-                <p data-i18n-key="privacyTerms2">
-                    and
+                <button type="submit" class="sendButton g-recaptcha" form="messageForm" data-sitekey="6Lfb4KQhAAAAAPi5jACDfRncMywjZHqIqnEzJLQD" data-callback="onSubmit" data-action="submit" data-i18n-key="contactButton">Send</button>
+                <div class="msgSent" id="msgSent">
+                    <p data-i18n-key="msgSent"></p>
+                </div>
+                <div class="privacyTerms">
+                    <p data-i18n-key="privacyTerms1">
+                        This site is protected by reCAPTCHA and the Google
+                    </p>
+                    <a href="https://policies.google.com/privacy" data-i18n-key="privacyLink1" rel="nofollow">Privacy Policy</a>
+                    <p data-i18n-key="privacyTerms2">
+                        and
                 </p>
                 <a href="https://policies.google.com/terms" data-i18n-key="privacyLink2" rel="nofollow">Terms of Service</a> 
                 <p data-i18n-key="privacyTerms3">apply.</p>
@@ -311,24 +312,23 @@
         </form>
         <script>
             // grecaptcha.ready(function () {
-            //     grecaptcha.execute('6Lfb4KQhAAAAAPi5jACDfRncMywjZHqIqnEzJLQD', {action: 'validate_captcha'})
-            //     .then(function(token) {
-            //         document.getElementById('g-recaptcha-response').value = token;
-            //     })
-            // });
-            function onSubmit(token) {
-                document.getElementById('msgSent').style.display = "block";
-                setTimeout(() => {
-                    document.getElementById('messageForm').submit();
-                }, 3000)
-            }
-        </script>
+                //     grecaptcha.execute('6Lfb4KQhAAAAAPi5jACDfRncMywjZHqIqnEzJLQD', {action: 'validate_captcha'})
+                //     .then(function(token) {
+                    //         document.getElementById('g-recaptcha-response').value = token;
+                    //     })
+                    // });
+                    function onSubmit(token) {
+                        document.getElementById('msgSent').style.display = "block";
+                        setTimeout(() => {
+                            document.getElementById('messageForm').submit();
+                        }, 3000)
+                    }
+            </script>
         <div class="credits">
             <p>© 2022 | <span class="creditsName">Logan LAVERRE</span></p>
         </div>
     </section>
-    <script src="script/i18n.js"></script>
-    <script src="script/main.js"></script>
-    <script src="script/animationText.js" async></script>
+    <script src="script/carousel.js"></script>
+    <script src="script/animationText.js"></script>
 </body>
 </html>
