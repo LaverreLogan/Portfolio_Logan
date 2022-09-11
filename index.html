@@ -13,7 +13,7 @@
     <script src="script/i18n.js" defer></script>
     <script src="script/main.js" defer></script>
     <script src="https://kit.fontawesome.com/fb6886427e.js" crossorigin="anonymous" async></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lfb4KQhAAAAAPi5jACDfRncMywjZHqIqnEzJLQD"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lfb4KQhAAAAAPi5jACDfRncMywjZHqIqnEzJLQD" defer></script>
     <meta name="description" content="Laverre Logan développeur web / web mobile à Lyon. Création de sites internet ergonomiques. Sur mon portfolio, vous retrouverez tous mes projets et un formulaire pour me contacter.">
     <meta name="author" content="Laverre Logan">
     <meta name="robots" content="all">
@@ -88,8 +88,8 @@
     <section class="homePage" id="page1">
         <div class="homeContainer">
             <div class="titleContainer">
-                <h1 id="mainTitleEn" class="mainTitle" data-animate="Hi, I am Logan, Web Developer" data-animate-cursor="|"></h1>
-                <h1 id="mainTitleFr" class="mainTitle" data-animate="Hey, moi c'est Logan, Developpeur web" data-animate-cursor="|"></h1>
+                <h1 id="mainTitleEn" class="mainTitle" data-animate="Hi, I am Logan, Web Developer." data-animate-cursor="|"></h1>
+                <h1 id="mainTitleFr" class="mainTitle" data-animate="Hey, moi c'est Logan, Developpeur web." data-animate-cursor="|"></h1>
                 <div class="mainLogo">
                     <a href="https://github.com/LaverreLogan">
                         <i id="githubLogo" class="fa-brands fa-github"></i>
@@ -275,8 +275,8 @@
     <section class="container contact" id="page5">
         <h2 class="contactTitle"  data-i18n-key="contactTitle">You want to start a project or you have a question ? <br><br>Contact me !</h2>
         <form action="contact.php" method="post" class="formContainer" id="messageForm" name="contactForm">
-            <!-- <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
-                <input type="hidden" name="action" value="validate_captcha"> -->
+            <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+                <input type="hidden" name="action" value="validate_captcha">
                 <div class="nameContainer">
                     <div class="formControl">
                         <input type="text" id="formName" name="name" pattern="^[A-Za-z '-]+$" maxlength="20" data-i18n-ph="formName" class="formInput">
