@@ -329,12 +329,7 @@ header {
   margin: 5px;
 }
 
-#githubLogo {
-  font-size: 40px;
-  color: white;
-}
-
-#linkedinLogo {
+#githubLogo, #linkedinLogo {
   font-size: 40px;
   color: white;
 }
