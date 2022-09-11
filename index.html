@@ -87,7 +87,8 @@
     <input type="checkbox" id="showPDF">
     <div class="pdf">
         <label for="showPDF" class="close"><i class="fa-solid fa-arrow-right"></i></label>
-        <embed height="900" width="1000" src="./assets/pdf/CV_Logan.pdf"></embed>
+        <!-- <embed height="900" width="1000" src="./assets/pdf/CV_Logan.pdf"></embed> -->
+        
     </div>
     <section class="homePage" id="page1">
         <div class="homeContainer">
@@ -96,11 +97,9 @@
                 <h1 id="mainTitleFr" class="mainTitle" data-animate="Hey, moi c'est Logan, Developpeur web" data-animate-cursor="|"></h1>
                 <div class="mainLogo">
                     <a href="https://github.com/LaverreLogan">
-                        <!-- <img id="githubLogo" src="assets/imgs/kisspng-github-logo-repository-computer-icons-5afa376c51ca94.387166531526347628335.png" alt="Logo github"> -->
                         <i id="githubLogo" class="fa-brands fa-github"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/logan-laverre-80b64b20b/">
-                        <!-- <img id="linkedinLogo" src="assets/imgs/kisspng-linkedin-computer-icons-business-advertising-compa-grey-background-5acab17806b152.7517612915232331440274.png" alt="Logo linkedin"> -->
                         <i id="linkedinLogo" class="fa-brands fa-linkedin"></i>
                     </a>
                 </div>
@@ -108,30 +107,30 @@
             <img src="assets/imgs/Illu1.webp" alt="Illustration d'un ordinateur" class="imgMain">
         </div>
         <div class="mouseContainer">
-            <img src="assets/imgs/288907413_1044856339501864_2033747940007282119_n.png" alt="Image souris" class="mouse" id="imgMouse">
-            <!-- <img src="assets/imgs/hand-point-down-solid.png" alt="Image main" class="mouse" id="imgHand"> -->
+            <img src="assets/imgs/mouse.webp" alt="Image souris" class="mouse" id="imgMouse">
             <i class="fa-solid fa-hand-point-down mouse" id="imgHand"></i>
         </div>
     </section>
     <section class="container aboutMe" id="page2">
         <div class="darkContainer">
             <div class="imgBorder"></div>
-            <img class="imgProfil" src="./assets/imgs/Sans titre-1.png" alt="Photo de Logan">
+            <img class="imgProfil" src="./assets/imgs/Sans_titre-2.webp" alt="Photo de Logan">
             <span id="greenQuote1">«</span>
             <div class="greenContainer"></div>
             <p class="aboutMeP" data-i18n-key="aboutMeText"></p>
             <span id="greenQuote2">«</span>
-            <label for="showPDF" class="downloadButton" data-i18n-key="aboutMeButton">Look at my CV</label>
+            <!-- <label for="showPDF" class="downloadButton" data-i18n-key="aboutMeButton">Look at my CV</label> -->
+            <a class="downloadButton" data-i18n-key="aboutMeButton" href="assets/pdf/CV_Logan.pdf">Click</a>
         </div>
     </section>
     <section class="container skills" id="page3">
         <div class="desktopSkills">
-            <img src="assets/imgs/Illu2_FR.png" alt="Illustration compétences" id="desktopSkillsFr">
-            <img src="assets/imgs/Illu2_EN.png" alt="Illustration compétences" id="desktopSkillsEn">
+            <img src="assets/imgs/Illu2_FR.webp" alt="Illustration compétences" id="desktopSkillsFr">
+            <img src="assets/imgs/Illu2_EN.webp" alt="Illustration compétences" id="desktopSkillsEn">
         </div>
         <div class="mobileSkills">
-            <img src="assets/imgs/Illu3_FR.png" alt="Illustration compétences" id="mobileSkillsFr">
-            <img src="assets/imgs/Illu3_EN.png" alt="Illustration compétences" id="mobileSkillsEn">
+            <img src="assets/imgs/Illu3_FR.webp" alt="Illustration compétences" id="mobileSkillsFr">
+            <img src="assets/imgs/Illu3_EN.webp" alt="Illustration compétences" id="mobileSkillsEn">
         </div>
     </section>
     <section class="container portfolio" id="page4">
@@ -140,7 +139,7 @@
             <div class="itemBody">
                 <input type="checkbox" id="portfolioItem1">
                 <div class="itemImg" onclick="extendSlider()">
-                    <label for="portfolioItem1"><img src="./assets/imgs/Mockup1RG.png" alt="Mockup ordinateur"></label>
+                    <label for="portfolioItem1"><img src="./assets/imgs/Mockup1RG.webp" alt="Mockup ordinateur"></label>
                     <label for="portfolioItem1" class="itemSeeMore" data-i18n-key="seeMoreButton">Click to see more !</label>
                 </div>
                 <div class="itemDivTitle">
@@ -155,7 +154,7 @@
                     </div>
                     <div class="portfolioDetailsContainer">
                         <div class="portfolioDetailsImg">
-                            <img src="./assets/imgs/Mock2RG.png" alt="Mockup ordinateur">
+                            <img src="./assets/imgs/Mock2RG.webp" alt="Mockup ordinateur">
                         </div>
                         <div class="portfolioDetailsTitle">
                             <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
@@ -175,7 +174,7 @@
             <div class="itemBody">
                 <input type="checkbox" id="portfolioItem2">
                 <div class="itemImg" onclick="extendSlider()">
-                    <label for="portfolioItem2"><img src="./assets/imgs/Mockup1FX.png" alt="Mockup ordinateur"></label>
+                    <label for="portfolioItem2"><img src="./assets/imgs/Mockup1FX.webp" alt="Mockup ordinateur"></label>
                     <label for="portfolioItem2" class="itemSeeMore" data-i18n-key="seeMoreButton">Click to see more !</label>
                 </div>
                 <div class="itemDivTitle">
@@ -190,7 +189,7 @@
                     </div>
                         <div class="portfolioDetailsContainer">
                             <div class="portfolioDetailsImg">
-                                <img src="./assets/imgs/Mock2FX.png" alt="Mockup ordinateur">
+                                <img src="./assets/imgs/Mock2FX.webp" alt="Mockup ordinateur">
                             </div>
                             <div class="portfolioDetailsTitle">
                                 <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
@@ -212,7 +211,7 @@
             <div class="itemBody">
                 <input type="checkbox" id="portfolioItem3">
                 <div class="itemImg" onclick="extendSlider()">
-                    <label for="portfolioItem3"><img src="./assets/imgs/Mockup1SH.png" alt="Mockup ordinateur"></label>
+                    <label for="portfolioItem3"><img src="./assets/imgs/Mockup1SH.webp" alt="Mockup ordinateur"></label>
                     <label for="portfolioItem3" class="itemSeeMore" data-i18n-key="seeMoreButton">Click to see more !</label>
                 </div>
                 <div class="itemDivTitle">
@@ -227,7 +226,7 @@
                     </div>
                         <div class="portfolioDetailsContainer">
                             <div class="portfolioDetailsImg">
-                                <img src="./assets/imgs/Mock2SH.png" alt="Mockup ordinateur">
+                                <img src="./assets/imgs/Mock2SH.webp" alt="Mockup ordinateur">
                             </div>
                             <div class="portfolioDetailsTitle">
                                 <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
@@ -246,7 +245,7 @@
             <div class="itemBody">
                 <input type="checkbox" id="portfolioItem4">
                 <div class="itemImg" onclick="extendSlider()">
-                    <label for="portfolioItem4"><img src="./assets/imgs/Mockup1PNFT.png" alt="Mockup ordinateur"></label>
+                    <label for="portfolioItem4"><img src="./assets/imgs/Mockup1PNFT.webp" alt="Mockup ordinateur"></label>
                     <label for="portfolioItem4" class="itemSeeMore" data-i18n-key="seeMoreButton">Click to see more !</label>
                 </div>
                 <div class="itemDivTitle">
@@ -261,7 +260,7 @@
                     </div>
                         <div class="portfolioDetailsContainer">
                             <div class="portfolioDetailsImg">
-                                <img src="./assets/imgs/Mock2PNFT.png" alt="Mockup ordinateur">
+                                <img src="./assets/imgs/Mock2PNFT.webp" alt="Mockup ordinateur">
                             </div>
                             <div class="portfolioDetailsTitle">
                                 <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>

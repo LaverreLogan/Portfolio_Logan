@@ -307,7 +307,6 @@ header {
 }
 
 .imgMain {
-  width: 50%;
   max-width: 800px;
   min-width: 500px;
   height: auto;
@@ -1264,7 +1263,8 @@ textarea:focus, input:focus {
     justify-content: center;
   }
   .mobileSkills img {
-    width: 350px;
+    max-width: 350px;
+    height: auto;
   }
 
   /*--------------- Portfolio ---------------*/

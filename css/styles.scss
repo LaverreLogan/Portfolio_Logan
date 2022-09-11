@@ -306,7 +306,7 @@ header {
 
 
 .imgMain {
-    width: 50%;
+    // width: 50%;
     max-width: 800px;
     min-width: 500px;
     height: auto;
@@ -1265,7 +1265,8 @@ textarea:focus, input:focus {
         display: flex;
         justify-content: center;
         img {
-            width: 350px;
+            max-width: 350px;
+            height: auto;
         }
     }
     /*--------------- Portfolio ---------------*/ 
