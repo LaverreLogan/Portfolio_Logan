@@ -436,7 +436,6 @@ header {
     .imgProfil {
         position: absolute;
         top: -83px;
-        width: 160px;
         border-radius: 50%;
     }
     
@@ -652,11 +651,6 @@ header {
     position: absolute;
     top: -90px;
     left: 245px;
-    width: 350px;
-    img {
-        width: 100%;
-    }
-    
 }
 
 .itemSeeMore {
@@ -783,10 +777,6 @@ header {
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
     .portfolioDetailsImg {
         margin: 20px 0 0 0;
-        // height: 45%;
-        img {
-            width: 400px;
-        }
     }
     .portfolioDetailsTitle {
         // height: 10%;
@@ -1180,11 +1170,11 @@ textarea:focus, input:focus {
         width: 100vw;
         height: 40rem;
     }
-    .itemImg {
-        width: 250px;
-        height: auto;
-        left: 45%;
-    }
+    // .itemImg img{
+    //     width: 250px;
+    //     height: auto;
+    //     left: 45%;
+    // }
     .carousel {
         width: 100vw;
     }
@@ -1287,6 +1277,13 @@ textarea:focus, input:focus {
         height: 864px;
     }
     .itemBody {
+        .itemImg {
+            left: 190px;
+            img {
+                width: 300px;
+                height: 166px;
+            }
+        }
         .itemDetails {
             height: 700px;
         }
@@ -1294,9 +1291,6 @@ textarea:focus, input:focus {
     .portfolioDetailsContainer {
         width: 90vw;
     }
-    // .portfolioDetailsImg {
-    //     margin-top: 10px;
-    // }
     .darkContainer {
         height: 700px;
     }
@@ -1311,11 +1305,6 @@ textarea:focus, input:focus {
         .portfolioDetailsImg {
             width: 90%;
             text-align: center;
-            img {
-                width: 100%;
-                max-width: 400px;
-                height: auto;
-            }
         }
         .portfolioDetailsText {
             margin: 0;
@@ -1357,6 +1346,14 @@ textarea:focus, input:focus {
         height: 550px;
         width: 80vw;
         padding: 0;
+        .itemImg {
+            left: 0px;
+            img {
+                max-width: 100%;
+                width: 250px;
+                height: auto;
+            }
+        }
     }
     .itemImg, .itemDivTitle, .itemDescription {
         position: relative;
@@ -1365,15 +1362,19 @@ textarea:focus, input:focus {
         left: auto;
         inset: auto;
     }
-    .itemImg {
-        max-width: 250px;
-    }
     .itemDescription {
         p {
             text-align: center;
         }
     }
     .portfolioDetailsContainer {
+        .portfolioDetailsImg {
+            img {
+                max-width: 100%;
+                width: 250px;
+                height: auto;
+            }
+        }
         .portfolioDetailsText {
             ul li {
                 font-size: 0.9rem;
@@ -1398,6 +1399,11 @@ textarea:focus, input:focus {
     .contact {
         input[type="text"], input[type="email"] {
             width: 100%;
+        }
+    }
+    .formMsg {
+        textarea {
+            height: 90%;
         }
     }
     .privacyTerms {

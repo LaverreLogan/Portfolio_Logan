@@ -23,7 +23,7 @@
         <nav class="headerContainer">
             <div class="mobileMenu">
                 <a class="logo" href="#page1">
-                    <img src="assets/logo/Logo.png" alt="Logo Laverre Logan">
+                    <img src="assets/logo/Logo.png" alt="Logo Laverre Logan" style="width: 30px; height: 40px">
                 </a>
                 <input type="checkbox" id="burgerCheck">
                 <ul class="mobileList">
@@ -105,7 +105,7 @@
     <section class="container aboutMe" id="page2">
         <div class="darkContainer">
             <div class="imgBorder"></div>
-            <img class="imgProfil" src="./assets/imgs/Sans_titre-2.webp" alt="Photo de Logan">
+            <img class="imgProfil" src="./assets/imgs/Sans_titre-2.webp" alt="Photo de Logan" width="160">
             <span id="greenQuote1">«</span>
             <div class="greenContainer"></div>
             <p class="aboutMeP" data-i18n-key="aboutMeText"></p>
@@ -130,7 +130,7 @@
             <div class="itemBody">
                 <input type="checkbox" id="portfolioItem1">
                 <div class="itemImg" onclick="extendSlider()">
-                    <label for="portfolioItem1"><img src="./assets/imgs/Mockup1RG.webp" alt="Mockup ordinateur" loading="lazy"></label>
+                    <label for="portfolioItem1"><img src="./assets/imgs/Mockup1RG.webp" alt="Mockup ordinateur" loading="lazy" width="350" height="194"></label>
                     <label for="portfolioItem1" class="itemSeeMore" data-i18n-key="seeMoreButton">Click to see more !</label>
                 </div>
                 <div class="itemDivTitle">
@@ -145,7 +145,7 @@
                     </div>
                     <div class="portfolioDetailsContainer">
                         <div class="portfolioDetailsImg">
-                            <img src="./assets/imgs/Mock2RG.webp" alt="Mockup ordinateur" loading="lazy">
+                            <img src="./assets/imgs/Mock2RG.webp" alt="Mockup ordinateur" loading="lazy" width="400" height="222">
                         </div>
                         <div class="portfolioDetailsTitle">
                             <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
@@ -165,7 +165,7 @@
             <div class="itemBody">
                 <input type="checkbox" id="portfolioItem2">
                 <div class="itemImg" onclick="extendSlider()">
-                    <label for="portfolioItem2"><img src="./assets/imgs/Mockup1FX.webp" alt="Mockup ordinateur" loading="lazy"></label>
+                    <label for="portfolioItem2"><img src="./assets/imgs/Mockup1FX.webp" alt="Mockup ordinateur" loading="lazy" width="350" height="194"></label>
                     <label for="portfolioItem2" class="itemSeeMore" data-i18n-key="seeMoreButton">Click to see more !</label>
                 </div>
                 <div class="itemDivTitle">
@@ -180,7 +180,7 @@
                     </div>
                     <div class="portfolioDetailsContainer">
                         <div class="portfolioDetailsImg">
-                            <img src="./assets/imgs/Mock2FX.webp" alt="Mockup ordinateur" loading="lazy">
+                            <img src="./assets/imgs/Mock2FX.webp" alt="Mockup ordinateur" loading="lazy" width="400" height="222">
                         </div>
                         <div class="portfolioDetailsTitle">
                             <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
@@ -202,7 +202,7 @@
             <div class="itemBody">
                 <input type="checkbox" id="portfolioItem3">
                 <div class="itemImg" onclick="extendSlider()">
-                    <label for="portfolioItem3"><img src="./assets/imgs/Mockup1SH.webp" alt="Mockup ordinateur" loading="lazy"></label>
+                    <label for="portfolioItem3"><img src="./assets/imgs/Mockup1SH.webp" alt="Mockup ordinateur" loading="lazy" width="350" height="194"></label>
                     <label for="portfolioItem3" class="itemSeeMore" data-i18n-key="seeMoreButton">Click to see more !</label>
                 </div>
                 <div class="itemDivTitle">
@@ -217,7 +217,7 @@
                     </div>
                     <div class="portfolioDetailsContainer">
                         <div class="portfolioDetailsImg">
-                            <img src="./assets/imgs/Mock2SH.webp" alt="Mockup ordinateur" loading="lazy">
+                            <img src="./assets/imgs/Mock2SH.webp" alt="Mockup ordinateur" loading="lazy" width="400" height="222">
                         </div>
                         <div class="portfolioDetailsTitle">
                             <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
@@ -236,7 +236,7 @@
             <div class="itemBody">
                 <input type="checkbox" id="portfolioItem4">
                 <div class="itemImg" onclick="extendSlider()">
-                    <label for="portfolioItem4"><img src="./assets/imgs/Mockup1PNFT.webp" alt="Mockup ordinateur" loading="lazy"></label>
+                    <label for="portfolioItem4"><img src="./assets/imgs/Mockup1PNFT.webp" alt="Mockup ordinateur" loading="lazy" width="350" height="194"></label>
                     <label for="portfolioItem4" class="itemSeeMore" data-i18n-key="seeMoreButton">Click to see more !</label>
                 </div>
                 <div class="itemDivTitle">
@@ -251,7 +251,7 @@
                     </div>
                     <div class="portfolioDetailsContainer">
                         <div class="portfolioDetailsImg">
-                            <img src="./assets/imgs/Mock2PNFT.webp" alt="Mockup ordinateur" loading="lazy">
+                            <img src="./assets/imgs/Mock2PNFT.webp" alt="Mockup ordinateur" loading="lazy" width="400" height="222">
                         </div>
                         <div class="portfolioDetailsTitle">
                             <h2 data-i18n-key="portfolioRealisationTitle">Realisation</h2>
@@ -306,20 +306,14 @@
                 <p data-i18n-key="privacyTerms3">apply.</p>
             </div>
         </form>
-        <script>
-            // grecaptcha.ready(function () {
-                //     grecaptcha.execute('6Lfb4KQhAAAAAPi5jACDfRncMywjZHqIqnEzJLQD', {action: 'validate_captcha'})
-                //     .then(function(token) {
-                    //         document.getElementById('g-recaptcha-response').value = token;
-                    //     })
-                    // });
-                    function onSubmit(token) {
-                        document.getElementById('msgSent').style.display = "block";
-                        setTimeout(() => {
-                            document.getElementById('messageForm').submit();
-                        }, 3000)
-                    }
-            </script>
+        <script defer>
+            function onSubmit(token) {
+                document.getElementById('msgSent').style.display = "block";
+                setTimeout(() => {
+                    document.getElementById('messageForm').submit();
+                }, 3000)
+            }
+        </script>
         <div class="credits">
             <p>© 2022 | <span class="creditsName">Logan LAVERRE</span></p>
         </div>

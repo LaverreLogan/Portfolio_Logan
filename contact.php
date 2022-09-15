@@ -62,20 +62,6 @@
 	 * Formulaire de contact
 	 */
 
-	// if (isFormSubmited($keys)) {
-	// 	if (check_token()) {
-	// 		$contact = postData($keys);
-			
-	// 		saveContact($_POST);
-	// 		try {
-	// 			sendEmail($email, $contact);
-	// 		} catch (\Exception $e) 
-	// 		{ unset($e); }
-	// 	}
-	// 	header('Location: /#page5');
-	// 	exit;
-	// }
-
 	function check_token($token, $secret) {
 		$url_verif = "https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$token";
 		$curl = curl_init($url_verif);
@@ -106,20 +92,4 @@
 			echo "<script>window.location.replace('https://www.laverre-logan.com');</script>";
 		}
 	}
-	// function checkRecaptcha() {
-		// if(isset($_POST['g-recaptcha-response'])) {
-		// 	$captcha = $_POST['g-recaptca-response'];
-		// } else {
-		// 	return false;
-		// }
-		// $secret = Env::get('RECAPTCHA_SECRET');
-		// $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$captcha);
-		// $response = json_decode($response, true);
-		// if (!$response['success'] == false) {
-		// 	echo "<script>console.log('false')</script>";
-		// } else {
-		// 	return true;
-		// }
-	// }
-
 
