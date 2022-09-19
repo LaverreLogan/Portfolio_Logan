@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "prod": "uglifyjs script/i18n.js script/main.js script/animationText.js script/carousel.js -o dist.js -c && sass --style compressed css",
     "dev": "sass --watch css"
   },
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/LaverreLogan/Portfolio_Logan/issues"
   },
-  "homepage": "https://github.com/LaverreLogan/Portfolio_Logan#readme"
+  "homepage": "https://github.com/LaverreLogan/Portfolio_Logan#readme",
+  "devDependencies": {
+    "jest": "^29.0.3"
+  }
 }

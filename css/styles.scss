@@ -322,6 +322,7 @@ header {
     margin-top: 1.5rem;
     width: 250px;
     :hover {
+        color: white;
         filter: drop-shadow(1px 1px 2px var(--light-green-color));
     }
     a {
@@ -329,9 +330,10 @@ header {
     }
 }
 
-#githubLogo,  #linkedinLogo{
-    font-size: 40px;
-    color: white;
+.github {
+    width: 40px;
+    height: 40px;
+    filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(52deg) brightness(107%) contrast(101%);
 }
 
 [data-animate] .cursor {
@@ -933,7 +935,7 @@ header {
     margin-bottom: 30px;
     padding-bottom: 20px;
     position: relative;
-    i {
+    svg {
         position: absolute;
         right: 10px;
         bottom: 32px;
@@ -963,7 +965,7 @@ header {
     border-radius: 5px;
 }
 
-.formControl.error i {
+.formControl.error svg {
     visibility: visible;
 }
 
@@ -1233,7 +1235,8 @@ textarea:focus, input:focus {
     .imgMain {
         position: absolute;
         opacity: 0.3;
-        width: clamp(45%, 500px, 90vw);
+        width: clamp(45%, 300px, 90vw);
+        min-width: 300px;
     }
     #imgMouse {
         display: none;
