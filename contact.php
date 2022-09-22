@@ -30,7 +30,6 @@
 
 	function postData($keys) {
 		$data = [];
-
 		foreach ($keys as $key => $label) {
 			$data[$label] = $_POST[$key];
 		}
@@ -51,9 +50,9 @@
 	function saveContact($data) {
 		$date = date('Y/m/d H:i');
 		$content = <<<CONTENT
-	[$date]: {$data['name']} <{$data['email']}>
-	{$data['message']}\n
-	CONTENT;
+		[$date]: {$data['name']} <{$data['email']}>
+		{$data['message']}\n
+		CONTENT;
 
 		return file_put_contents('contacts.log', $content, FILE_APPEND);
 	}
@@ -62,39 +61,8 @@
 	 * Formulaire de contact
 	 */
 
-	// if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['recaptcha_response'])) {
-	// 	check_token($_POST['recaptcha_response'], $secret);
-	// 	if ($jsons_response->score >= 0.5) {
-	// 		$contact = postData($keys);
-	// 		saveContact($_POST);
-	// 		try {
-	// 			sendEmail($email, $contact);
-	// 		} catch (\Exception $e) 
-	// 		{ unset($e); }
-	// 		echo "<script>
-	// 		window.location.replace('https://www.laverre-logan.com/#page5');
-	// 		</script>";
-	// 	} else {
-	// 		echo "<script>window.location.replace('https://www.laverre-logan.com/#page2');</script>";
-	// 	}
-	// }
-
-
-	function check_token($token, $secret) {
-		$url_verif = "https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$token";
-		$curl = curl_init($url_verif);
-		curl_setopt($curl, CURLOPT_HEADER, false);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-		$verif_response = curl_exec($curl);
-		if (empty($verif_response)) return false;
-		else {
-			$json_response = json_decode($verif_response);
-			return $json_response->success;
-		}
-	}
 
 	if (isFormSubmited($keys)) {
-		if (check_token($_POST['g-recaptcha-response'], $secret)) {
 			echo "<script>
 			window.location.replace('https://www.laverre-logan.com/#page5');
 			</script>";
@@ -105,7 +73,8 @@
 			} catch (\Exception $e) 
 			{ unset($e); }
 		}else {
-			echo "<script>window.location.replace('https://www.laverre-logan.com/#page2');</script>";
+			echo "<script>
+			window.location.replace('https://www.laverre-logan.com/#page5');
+			</script>";
 		}
-	}
 

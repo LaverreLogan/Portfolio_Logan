@@ -301,25 +301,15 @@
                 <a href="https://policies.google.com/terms" data-i18n-key="privacyLink2" rel="nofollow">Terms of Service</a> 
                 <p data-i18n-key="privacyTerms3">apply.</p>
             </div>
-            <button type="submit" class="sendButton" form="messageForm"  data-i18n-key="contactButton">Send</button>
-            <!-- <button type="submit" class="sendButton g-recaptcha" form="messageForm" data-sitekey="6Lfb4KQhAAAAAPi5jACDfRncMywjZHqIqnEzJLQD" data-callback="onSubmit" data-action="submit" data-i18n-key="contactButton">Send</button> -->
-            <input type="hidden" id="g-recaptcha-response" name="recaptcha_response">
+            <!-- <button type="submit" class="sendButton" form="messageForm"  data-i18n-key="contactButton">Send</button> -->
+            <button class="sendButton g-recaptcha" 
+            data-sitekey="6Lfb4KQhAAAAAPi5jACDfRncMywjZHqIqnEzJLQD" 
+            data-callback='onSubmit' 
+            data-action='submit' data-i18n-key="contactButton">Send</button>
         </form>
         <script>
-            // function onSubmit(token) {
-            //     document.getElementById('msgSent').style.display = "block";
-            //     setTimeout(() => {
-            //         document.getElementById('messageForm').submit();
-            //     }, 3000)
-            // }
-            function onloadCallback() {
-                grecaptcha.ready(function () {
-                    grecaptcha.execute('6Lfb4KQhAAAAAPi5jACDfRncMywjZHqIqnEzJLQD', {action: 'contact'})
-                    .then(function(token) {
-                        document.getElementById('g-recaptcha-response').value = token;
-                        console.log(token);
-                    })
-                });
+            function onSubmit(token) {
+                document.getElementById("messageForm").submit();
             }
         </script>
         <div class="credits">
@@ -327,7 +317,6 @@
         </div>
     </section>
     <script src="dist.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lfb4KQhAAAAAPi5jACDfRncMywjZHqIqnEzJLQD" defer></script>
-
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </body>
 </html>
