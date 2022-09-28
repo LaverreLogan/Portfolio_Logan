@@ -59,77 +59,77 @@ function closeExtend() {
 
 /*-------------------------- Form --------------------------*/
 
-const form = document.getElementById('messageForm');
-const formName = document.getElementById('formName');
-const formEmail = document.getElementById('formMail');
-const formMsg = document.getElementById('formMsg');
-const body = document.body;
-form.addEventListener('submit', (e) => {
-    const formNameValue = formName.value.trim();
-    const formEmailValue = formEmail.value.trim();
-    const formMsgValue = formMsg.value.trim();
+// const form = document.getElementById('messageForm');
+// const formName = document.getElementById('formName');
+// const formEmail = document.getElementById('formMail');
+// const formMsg = document.getElementById('formMsg');
+// const body = document.body;
+// form.addEventListener('submit', (e) => {
+//     const formNameValue = formName.value.trim();
+//     const formEmailValue = formEmail.value.trim();
+//     const formMsgValue = formMsg.value.trim();
 
-    if (formNameValue === '') {
-        e.preventDefault();
-        if (body.classList.contains('localeEn')) {
-            setErrorFor(formName, 'Username cannot be blank');
-        } else if (body.classList.contains('localeFr')) {
-            setErrorFor(formName, 'Le nom ne peut être vide');
-        } else {
-            setErrorFor(formName, 'Username cannot be blank');
-        }
-    } else {
-        setSuccesFor(formName);
-    }
+//     if (formNameValue === '') {
+//         e.preventDefault();
+//         if (body.classList.contains('localeEn')) {
+//             setErrorFor(formName, 'Username cannot be blank');
+//         } else if (body.classList.contains('localeFr')) {
+//             setErrorFor(formName, 'Le nom ne peut être vide');
+//         } else {
+//             setErrorFor(formName, 'Username cannot be blank');
+//         }
+//     } else {
+//         setSuccesFor(formName);
+//     }
 
-    if (formEmailValue === '') {
-        e.preventDefault();
-        if (body.classList.contains('localeEn')) {
-            setErrorFor(formEmail, 'Mail cannot be blank')
-        } else if (body.classList.contains('localeFr')) {
-            setErrorFor(formEmail, 'L\'email ne peut être vide');
-        } else {
-            setErrorFor(formEmail, 'Mail cannot be blank');
-        }
-    } else if (!isEmail(formEmailValue)) {
-        e.preventDefault();
-        if (body.classList.contains('localeEn')) {
-            setErrorFor(formEmail, 'Mail is not valid')
-        } else if (body.classList.contains('localeFr')) {
-            setErrorFor(formEmail, 'L\'email n\'est pas valide');
-        } else {
-            setErrorFor(formEmail, 'Mail is not valid');
-        }
-    }else {
-        setSuccesFor(formEmail);
-    }
+//     if (formEmailValue === '') {
+//         e.preventDefault();
+//         if (body.classList.contains('localeEn')) {
+//             setErrorFor(formEmail, 'Mail cannot be blank')
+//         } else if (body.classList.contains('localeFr')) {
+//             setErrorFor(formEmail, 'L\'email ne peut être vide');
+//         } else {
+//             setErrorFor(formEmail, 'Mail cannot be blank');
+//         }
+//     } else if (!isEmail(formEmailValue)) {
+//         e.preventDefault();
+//         if (body.classList.contains('localeEn')) {
+//             setErrorFor(formEmail, 'Mail is not valid')
+//         } else if (body.classList.contains('localeFr')) {
+//             setErrorFor(formEmail, 'L\'email n\'est pas valide');
+//         } else {
+//             setErrorFor(formEmail, 'Mail is not valid');
+//         }
+//     }else {
+//         setSuccesFor(formEmail);
+//     }
 
-    if (formMsgValue === '') {
-        e.preventDefault();
-        if (body.classList.contains('localeEn')) {
-            setErrorFor(formMsg, 'Message cannot be blank')
-        } else if (body.classList.contains('localeFr')) {
-            setErrorFor(formMsg, 'Le message ne peut être vide');
-        } else {
-            setErrorFor(formMsg, 'Message cannot be blank');
-        }
-    }else {
-        setSuccesFor(formMsg);
-    }
-})
+//     if (formMsgValue === '') {
+//         e.preventDefault();
+//         if (body.classList.contains('localeEn')) {
+//             setErrorFor(formMsg, 'Message cannot be blank')
+//         } else if (body.classList.contains('localeFr')) {
+//             setErrorFor(formMsg, 'Le message ne peut être vide');
+//         } else {
+//             setErrorFor(formMsg, 'Message cannot be blank');
+//         }
+//     }else {
+//         setSuccesFor(formMsg);
+//     }
+// })
 
-function setErrorFor(input, message) {
-    const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
-    small.innerText = message;
-    formControl.classList.add('error');
-}
+// function setErrorFor(input, message) {
+//     const formControl = input.parentElement;
+//     const small = formControl.querySelector('small');
+//     small.innerText = message;
+//     formControl.classList.add('error');
+// }
 
-function setSuccesFor(input) {
-    const formControl = input.parentElement;
-    formControl.classList.remove('error');
-}
+// function setSuccesFor(input) {
+//     const formControl = input.parentElement;
+//     formControl.classList.remove('error');
+// }
 
-function isEmail(formEmailValue) {
-    return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(formEmailValue);
-}
+// function isEmail(formEmailValue) {
+//     return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(formEmailValue);
+// }
