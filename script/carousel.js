@@ -78,7 +78,7 @@ class Carousel {
         if (index < 0) {
             index = this.items.length - 1
         }
-        else if (index >= this.items.length || (this.items[this.currentSlide + 1] === undefined && index > this.currentSlide)) {
+        else if (index >= this.items.length) {
             index = 0
         }
         let translateX = index * -100 / this.items.length
@@ -94,7 +94,6 @@ class Carousel {
     prev () {
         this.gotoSlide(this.currentSlide - 1)
     }
-
 
     onMove (cb) {
         this.moveCallbacks.push(cb)

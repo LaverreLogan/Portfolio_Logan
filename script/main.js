@@ -1,6 +1,6 @@
 /*------------------- Navbar highlight -------------------*/
 
-const sections = document.querySelectorAll('section');
+const sections = document.querySelectorAll('section, footer');
 const navList = document.querySelectorAll('nav .menu ul li');
 
 window.addEventListener('scroll', () => {

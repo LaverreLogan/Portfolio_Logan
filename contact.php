@@ -74,7 +74,7 @@
 			{ unset($e); }
 		}else {
 			echo "<script>
-			window.location.replace('https://www.laverre-logan.com/#page5');
+			window.location.replace('https://www.laverre-logan.com/#page1');
 			</script>";
 		}
 

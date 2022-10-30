@@ -1,29 +1,24 @@
-const defaultLocale = "fr";
+const defaultLocale = "en";
 const supportedLocales = ["en", "fr"];
 let locale;
 let translations = {};
 document.addEventListener("DOMContentLoaded", () => {
     const initialLocale = supportedOrDefault(browserLocales(true));
-    setLocale(initialLocale);
     bindLocaleSwitcher(initialLocale);
     setLang(initialLocale);
     translatePh();
-    isMobile();
 });
 async function setLocale(newLocale) {
     if (newLocale === locale) return;
-
-    const newTranslations = 
-        await fetchTranslationsFor(newLocale);
-
+    const newTranslations = await fetchTranslationsFor(newLocale);
     locale = newLocale;
     translations = newTranslations;
-
     translatePage();
 }
 
 async function fetchTranslationsFor(newLocale) {
     const response = await fetch(`lang/${newLocale}.json`);
+    console.log(response);
     return await response.json();
 }
 
@@ -40,6 +35,7 @@ function translateElement(element) {
     const key = element.getAttribute("data-i18n-key");
     const translation = translations[key];
     element.innerHTML = translation;
+    console.log(translation);
 }
 
 function translatePh() {
@@ -63,7 +59,6 @@ function bindLocaleSwitcher(initialValue) {
     switcher.value = initialValue;
     switcher.onchange = (e) => {
         setLocale(e.target.value);
-        changeImgs();
     };
 }
 
@@ -71,16 +66,10 @@ const switchEn = document.getElementById('switchEn');
 const switchFr = document.getElementById('switchFr');
 const switchEnMobile = document.getElementById('switchEnMobile');
 const switchFrMobile = document.getElementById('switchFrMobile');
+
 function isMobile() {
     return Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= 768;
 }
-window.addEventListener('resize', () => {
-    if (locale === 'fr') {
-        translateFr();
-    } else {
-        translateEn();
-    }
-});
 
 
 function translateFr() {
@@ -119,21 +108,9 @@ languageCodeOnly ? locale.split("-")[0] : locale);
 function setLang(initialLocale) {
     if(initialLocale === "fr") {
         translateFr();
-        // document.body.classList.remove('localeEn');
-        // document.body.classList.add('localeFr');
-        // switchEn.classList.remove('activeLink');
-        // switchFr.classList.add('activeLink');
     } else if (initialLocale === "en") {
         translateEn();
-        // document.body.classList.remove('localeFr');
-        // document.body.classList.add('localeEn');
-        // switchFr.classList.remove('activeLink');
-        // switchEn.classList.add('activeLink');
     } else {
         translateEn();
-        // document.body.classList.remove('localeFr');
-        // document.body.classList.add('localeEn');
-        // switchEn.classList.remove('activeLink');
-        // switchFr.classList.add('activeLink');
     }
 }
