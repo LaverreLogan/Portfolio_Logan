@@ -130,16 +130,17 @@
         <div id="portfolioContainer">
             <div class="itemBody">
                 <input type="checkbox" id="portfolioItem1">
-                <div class="itemImg" onclick="extendSlider()">
-                    <label for="portfolioItem1"><img src="./assets/imgs/Mockup1RG.webp" alt="Mockup ordinateur" loading="lazy" width="350" height="194"></label>
-                    <label for="portfolioItem1" class="itemSeeMore" data-i18n-key="seeMoreButton">Click to see more !</label>
+                <div class="itemImg">
+                    <img src="./assets/imgs/Mockup1RG.webp" alt="Mockup ordinateur" loading="lazy" width="350" height="194">
+                    <!-- <label for="portfolioItem1" class="itemSeeMore" data-i18n-key="seeMoreButton">Click to see more !</label> -->
                 </div>
                 <div class="itemDivTitle">
-                    <h2 class="itemTitle" data-i18n-key="portfolioTitle1">Game, seat<br> & match</h2>
+                    <h2 class="itemTitle" data-i18n-key="portfolioTitle1">Game, seat & match</h2>
                 </div>
                 <div class="itemDescription">
                     <p data-i18n-key="portfolioDetailsText1" class="itemP">The famous tennis Roland-Garros tournament launched their first NFT collection in the form of a virtual seat on the Philippe-Chatrier court. Holders received exclusive benefits during the tournament.</p>
                 </div>
+                <label for="portfolioItem1"> <a class="readMore" onclick="extendSlider()">En savoir plus</a></label>
                 <div class="itemDetails">
                     <div class="x-mark" onclick="closeExtend()">
                         <label for="portfolioItem1" class="xmarkLabel">&times;</label>

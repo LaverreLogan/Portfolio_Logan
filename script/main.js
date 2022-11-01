@@ -56,7 +56,6 @@ function closeExtend() {
     document.getElementsByClassName('carousel__next')[0].style.opacity = "100";
 }
 
-
 /*-------------------------- Form --------------------------*/
 
 // const form = document.getElementById('messageForm');

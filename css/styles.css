@@ -603,6 +603,7 @@ header {
   position: absolute;
   margin: 0;
   z-index: 0;
+  height: 80vh;
 }
 
 #pagination_prev_next {
@@ -620,7 +621,7 @@ header {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(210deg, var(--regular-green-color) 0%, #619a87 100%, white 100%);
+  background: linear-gradient(210deg, var(--regular-green-color) 0%, rgba(97, 154, 135, 0.1) 100%, rgba(255, 255, 255, 0.1) 100%);
   box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
   width: 30rem;
   height: 12rem;
@@ -644,7 +645,19 @@ header {
 .itemImg {
   position: absolute;
   top: -90px;
-  left: 245px;
+  left: calc(50% - 175px);
+  width: 100%;
+}
+.itemImg img {
+  border-radius: 20px;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.readMore {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  background-color: var(--light-green-color);
 }
 
 .itemSeeMore {
@@ -667,17 +680,9 @@ header {
   opacity: 1;
 }
 
-.itemImg:hover img {
-  opacity: 0.8;
-  transform: scale(1.1);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  cursor: pointer;
-}
-
 .itemDivTitle {
   position: absolute;
-  width: 45%;
-  inset: 115px 50px;
+  top: 100px;
 }
 .itemDivTitle .itemTitle {
   font-size: 1.8rem;
@@ -686,11 +691,13 @@ header {
 
 .itemDescription {
   position: absolute;
-  inset: 220px 50px;
+  padding: 0 30px;
+  top: 200px;
 }
 .itemDescription .itemP {
   font-size: 1rem;
   color: white;
+  text-align: center;
 }
 
 .itemDetails {
@@ -818,6 +825,7 @@ header {
 }
 
 .carousel__container {
+  position: relative;
   transition: transform 0.3s;
   height: 100vh;
 }
@@ -856,9 +864,8 @@ header {
 
 .carousel__pagination {
   position: absolute;
-  bottom: 165px;
+  bottom: 100px;
   left: 50%;
-  text-align: center;
   transform: translateX(-50%);
 }
 
@@ -1247,7 +1254,7 @@ textarea:focus, input:focus {
   }
 
   .itemBody .itemImg {
-    left: 190px;
+    left: calc(50% - 150px);
   }
   .itemBody .itemImg img {
     width: 300px;

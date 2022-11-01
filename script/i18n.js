@@ -18,7 +18,6 @@ async function setLocale(newLocale) {
 
 async function fetchTranslationsFor(newLocale) {
     const response = await fetch(`lang/${newLocale}.json`);
-    console.log(response);
     return await response.json();
 }
 
@@ -35,13 +34,12 @@ function translateElement(element) {
     const key = element.getAttribute("data-i18n-key");
     const translation = translations[key];
     element.innerHTML = translation;
-    console.log(translation);
 }
 
 function translatePh() {
-    const formName = document.getElementById('formName').getAttribute('placeholder');
-    const formMail = document.getElementById('formMail').getAttribute('placeholder');
-    const formMsg = document.getElementById('formMsg').getAttribute('placeholder');
+    // const formName = document.getElementById('formName').getAttribute('placeholder');
+    // const formMail = document.getElementById('formMail').getAttribute('placeholder');
+    // const formMsg = document.getElementById('formMsg').getAttribute('placeholder');
     if (locale === "fr") {
         this.formName.setAttribute('placeholder', 'Nom');
         this.formMail.setAttribute('placeholder', 'Mail');
